@@ -515,6 +515,104 @@ p.hobby-notes {
     padding-left: 12%;
 }
 
+/* Certificates */
+/* Privacy */
+.certificates {
+    /*position: absolute;*/
+    /*left: 0rem;*/
+    /*top: 3.4375rem;*/
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: none;
+}
+
+div.nav-certificates-bar {
+    height: 5.265625rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+
+}
+
+div.nav-certificates-container {
+    height: 3.328125rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+}
+
+div.nav-certificates-title {
+    min-height: 17.5rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+    background-color: rgb(244 244 246);
+}
+
+div.nav-certificates-title.scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+h1.nav-certificates {
+    font-weight: bold;
+    font-size: 3.9375rem;
+    color: rgb(60 64 67);
+}
+
+p.nav-certificates {
+    color: rgb(60 64 67);
+}
+
+img.nav-certificates {
+    width: 23.0625rem;
+    height: 14rem;
+}
+div.nav-certificates-title-text {
+    width: 72%;
+    padding-right: 0.96875rem;
+    float: left;
+}
+
+div.nav-certificates-high-school {
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+}
+
+div.nav-privacy-auth,
+div.nav-privacy-cat,
+div.nav-privacy-meaning,
+div.nav-privacy-changes {
+    padding-bottom: 0.96875rem;
+}
+
+h2.nav-certificates,
+li.nav-certificates,
+p.nav-certificates {
+    color: rgb(60 64 67);
+}
+
+h2.nav-certificates {
+    font-weight: bolder;
+}
+
+p.exams {
+    font-size: x-small;
+    color: rgb(60 64 67);
+}
+
+.nav-medal {
+    width: 6.25rem;
+    height: 6.25rem;
+    margin-top: 1.9375rem;
+    margin-bottom: 3.9375rem;
+    margin-left: 47%;
+}
+
 /* Region picker*/
 .region-picker {
     /*position: absolute;*/

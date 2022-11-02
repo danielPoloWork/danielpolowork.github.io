@@ -16,6 +16,7 @@ $(document).ready(function () {
         "click",
         function() {
             $(".main").css("display", "block");
+            $(".certificates").css("display", "none");
             $(".privacy").css("display", "none");
             $(".region-picker").css("display", "none");
             $(document).scrollTop(0);
@@ -39,6 +40,35 @@ $(document).ready(function () {
             $("#resume-li").css("border-bottom-style", "none");
         }
     );
+
+    $("#certificate-li").on(
+            "click",
+            function() {
+                $(".certificates").css("display", "block");
+                $(".main").css("display", "none");
+                $(".privacy").css("display", "none");
+                $(".region-picker").css("display", "none");
+                $(document).scrollTop(0);
+
+                $("#about-li").attr("class", "nav-top-bar");
+                $("#about-li").css("border-bottom-style", "none");
+
+                $("#certificate-li").attr("class", "nav-top-bar active");
+                $("#certificate-li").css("border-bottom-style", "solid");
+
+                $("#skill-li").attr("class", "nav-top-bar");
+                $("#skill-li").css("border-bottom-style", "none");
+
+                $("#git-li").attr("class", "nav-top-bar");
+                $("#git-li").css("border-bottom-style", "none");
+
+                $("#contact-li").attr("class", "nav-top-bar");
+                $("#contact-li").css("border-bottom-style", "none");
+
+                $("#resume-li").attr("class", "nav-top-bar");
+                $("#resume-li").css("border-bottom-style", "none");
+            }
+        );
 
 // MAIN - BUTTONS "FIND OUT MORE" --------------------------------------------------------------------------------------
     $("#card-button-hard-div").hover(
@@ -137,6 +167,7 @@ $(document).ready(function () {
         function() {
             $(".region-picker").css("display", "block");
             $(".main").css("display", "none");
+            $(".certificates").css("display", "none");
             $(".privacy").css("display", "none");
             $(document).scrollTop(0);
 
@@ -165,6 +196,7 @@ $(document).ready(function () {
         function() {
             $(".privacy").css("display", "block");
             $(".main").css("display", "none");
+            $(".certificates").css("display", "none");
             $(".region-picker").css("display", "none");
             $(document).scrollTop(0);
 
@@ -240,4 +272,60 @@ function aboutNext() {
 
 function openHard() {
 
+}
+
+function openSoft() {
+
+}
+
+function openEducation() {
+    $(".certificates").css("display", "block");
+    $(".main").css("display", "none");
+    $(".privacy").css("display", "none");
+    $(".region-picker").css("display", "none");
+    $(document).scrollTop(0);
+
+    $("#about-li").attr("class", "nav-top-bar");
+    $("#about-li").css("border-bottom-style", "none");
+
+    $("#certificate-li").attr("class", "nav-top-bar active");
+    $("#certificate-li").css("border-bottom-style", "solid");
+
+    $("#skill-li").attr("class", "nav-top-bar");
+    $("#skill-li").css("border-bottom-style", "none");
+
+    $("#git-li").attr("class", "nav-top-bar");
+    $("#git-li").css("border-bottom-style", "none");
+
+    $("#contact-li").attr("class", "nav-top-bar");
+    $("#contact-li").css("border-bottom-style", "none");
+
+    $("#resume-li").attr("class", "nav-top-bar");
+    $("#resume-li").css("border-bottom-style", "none");
+}
+
+function openCourses() {
+    $(".certificates").css("display", "block");
+    $(".main").css("display", "none");
+    $(".privacy").css("display", "none");
+    $(".region-picker").css("display", "none");
+    $(document).scrollTop(900);
+
+    $("#about-li").attr("class", "nav-top-bar");
+    $("#about-li").css("border-bottom-style", "none");
+
+    $("#certificate-li").attr("class", "nav-top-bar active");
+    $("#certificate-li").css("border-bottom-style", "solid");
+
+    $("#skill-li").attr("class", "nav-top-bar");
+    $("#skill-li").css("border-bottom-style", "none");
+
+    $("#git-li").attr("class", "nav-top-bar");
+    $("#git-li").css("border-bottom-style", "none");
+
+    $("#contact-li").attr("class", "nav-top-bar");
+    $("#contact-li").css("border-bottom-style", "none");
+
+    $("#resume-li").attr("class", "nav-top-bar");
+    $("#resume-li").css("border-bottom-style", "none");
 }

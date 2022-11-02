@@ -152,6 +152,7 @@ div.nav-main-about-page {
 }
 
 div.nav-main-about-button {
+    cursor: pointer;
     display: flex;
     margin-top: 0.96875rem;
     margin-left: 38%;
@@ -356,6 +357,7 @@ p.nav-main-info-repository {
 }
 
 div.nav-main-card-button {
+    cursor: pointer;
     display: flex;
     margin-top: 0.96875rem;
     margin-left: 29%;
@@ -401,7 +403,7 @@ div.nav-main-info-hobby {
     border-radius: 1.5625rem;
     padding-top: 3.328125rem;;
     background-color: rgb(255 255 255);
-    margin-bottom: 100px;
+    /*margin-bottom: 100px;*/
 }
 
 div.nav-main-info-hobby-title {
@@ -503,9 +505,191 @@ h3.nav-main-info-jobs-extra {
     color: rgb(60 64 67);
 }
 
+p.hobby-notes {
+    color: rgb(158 158 158);
+    font-size: smaller;
+}
+
 .signature {
     padding-top: 3.328125rem;
     padding-left: 12%;
+}
+
+/* Region picker*/
+.region-picker {
+    /*position: absolute;*/
+    /*left: 0rem;*/
+    /*top: 3.4375rem;*/
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: none;
+}
+
+div.nav-region-picker-bar {
+    height: 5.265625rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+
+}
+
+div.nav-region-picker-container {
+    height: 3.328125rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+}
+
+div.nav-region-picker-title {
+    min-height: 17.5rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+    background-color: rgb(244 244 246);
+}
+
+div.nav-region-picker-title.scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+h1.nav-region-picker {
+    font-weight: bold;
+    font-size: 3.9375rem;
+    color: rgb(60 64 67);
+}
+
+p.nav-region-picker {
+    color: rgb(60 64 67);
+}
+
+img.nav-region-picker {
+    width: 14.025rem;
+    height: 14.025rem;
+}
+div.nav-region-picker-title-text {
+    width: 75%;
+    padding-right: 15.5px;
+    float: left;
+}
+
+div.nav-region-picker-tab {
+    height: 32.09375rem;
+}
+
+div.nav-region-picker-lang {
+    height : 36.3225rem;
+    padding-top: 3.9375rem;
+    padding-bottom: 3.9375rem;
+}
+
+img.nav-region-picker-lang {
+    padding-top: 0.375rem;
+    float: left;
+}
+
+div.nav-region-picker-lang-nationality {
+    padding-bottom: 1.5rem;
+    float: left;
+}
+
+span.nationality {
+    font-size: larger;
+}
+
+div.nav-region-picker-lang-americas,
+div.nav-region-picker-lang-asia-pacific,
+div.nav-region-picker-lang-europe {
+    float: left;
+    width: 33%
+}
+
+/* Privacy */
+.privacy {
+    /*position: absolute;*/
+    /*left: 0rem;*/
+    /*top: 3.4375rem;*/
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: none;
+}
+
+div.nav-privacy-bar {
+    height: 5.265625rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+
+}
+
+div.nav-privacy-container {
+    height: 3.328125rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+}
+
+div.nav-privacy-title {
+    min-height: 17.5rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+    background-color: rgb(244 244 246);
+}
+
+div.nav-privacy-title.scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+h1.nav-privacy {
+    font-weight: bold;
+    font-size: 3.9375rem;
+    color: rgb(60 64 67);
+}
+
+p.nav-privacy {
+    color: rgb(60 64 67);
+}
+
+img.nav-privacy {
+    width: 14.025rem;
+    height: 14.025rem;
+}
+div.nav-privacy-title-text {
+    width: 75%;
+    padding-right: 15.5px;
+    float: left;
+}
+
+div.nav-privacy-policy {
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+}
+
+div.nav-privacy-auth,
+div.nav-privacy-cat,
+div.nav-privacy-meaning,
+div.nav-privacy-changes {
+    padding-bottom: 0.96875rem;
+}
+
+h2.nav-privacy,
+li.nav-privacy,
+p.nav-privacy {
+    color: rgb(60 64 67);
+}
+
+h2.nav-privacy {
+    font-weight: bolder;
 }
 
 /* Footer */
@@ -555,12 +739,12 @@ div.footer-flag {
     color: rgb(186 211 198);
 }
 
-div.footer-policy {
+div.footer-privacy {
     float: left;
     padding-top: 0,0625rem;
 }
 
-.footer-policy {
+.footer-privacy {
     font-size: smaller;
     color: rgb(186 211 198);
 }

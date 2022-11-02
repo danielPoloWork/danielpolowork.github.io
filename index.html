@@ -9,8 +9,10 @@
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans"/>
-        <link rel="stylesheet" href="../bowerComponents/foundation/css/foundation.css">
-        <link rel="stylesheet" href="../src/assets/css/app.css">
+        <link rel="stylesheet" href="../bowerComponents/foundation/css/foundation.css" type="text/css">
+        <link rel="stylesheet" href="../src/assets/css/app.css" type="text/css" media="screen and (min-device-width: 1300px)">
+        <!--<link rel="stylesheet" href="../src/assets/css/tablet.css" type="text/css" media="screen and (min-device-width: 700px)">-->
+        <!--<link rel="stylesheet" href="../src/assets/css/mobile.css" type="text/css" media="screen and (min-device-width: 200x)">-->
     </head>
     <body id="desktop">
         <header class="header">
@@ -24,12 +26,12 @@
                     </div>
                     <div class="nav-top-bar">
                         <ul class="menu nav-top-bar">
-                            <li class="nav-top-bar active"><a class="nav-top-bar">About me</a></li>
-                            <li class="nav-top-bar"><a class="nav-top-bar">Certificates</a></li>
-                            <li class="nav-top-bar"><a class="nav-top-bar">Skills</a></li>
-                            <li class="nav-top-bar"><a class="nav-top-bar">Repositories</a></li>
-                            <li class="nav-top-bar"><a class="nav-top-bar">Contacts</a></li>
-                            <li class="nav-top-bar"><a class="nav-top-bar">Resume</a></li>
+                            <li id="about-li" class="nav-top-bar active"><a class="nav-top-bar">About me</a></li>
+                            <li id="certificate-li" class="nav-top-bar"><a class="nav-top-bar">Certificates</a></li>
+                            <li id="skill-li" class="nav-top-bar"><a class="nav-top-bar">Skills</a></li>
+                            <li id="git-li" class="nav-top-bar"><a class="nav-top-bar">Repositories</a></li>
+                            <li id="contact-li" class="nav-top-bar"><a class="nav-top-bar">Contacts</a></li>
+                            <li id="resume-li" class="nav-top-bar"><a class="nav-top-bar">Resume</a></li>
                         </ul>
                     </div>
                 </div>
@@ -95,7 +97,7 @@
                         <div id="about-page-2" class="nav-main-about-page p-2 row">
                             <p class="nav-main-about text-justify">
                                 <br><br>I find it enjoyable to work in close-knit teams in a context of equal
-                                experiences, where everyone is encouraged to improve and do your best.
+                                experiences, where everyone is encouraged to improve and do our best.
                                 <br><br>I have been described as a sincere, tenacious, motivated, dedicated,
                                 authoritarian and extremely self-critical person, characteristics that have marked
                                 mutual esteem with some of my colleagues.
@@ -148,7 +150,7 @@
                             university, study and training courses (including specialization courses and
                             internships) or through work experience.
                         </p><br><br>
-                        <div id="card-button-hard-div" class="nav-main-card-button" >
+                        <div id="card-button-hard-div" class="nav-main-card-button" onclick="openHard();">
                             <p id="card-button-hard-string" class="nav-main-card-button"><b>Find out more</b></p>
                         </div>
                     </div>
@@ -162,7 +164,7 @@
                             traditional school and educational context; during my studies such integrations had not yet
                             been made.
                         </p><br><br>
-                        <div id="card-button-soft-div" class="nav-main-card-button soft" >
+                        <div id="card-button-soft-div" class="nav-main-card-button soft" onclick="openSoft();">
                             <p id="card-button-soft-string" class="nav-main-card-button"><b>Find out more</b></p>
                         </div>
                     </div>
@@ -184,11 +186,11 @@
                             The first approach to programming took place in middle school with an extracurricular course
                             where I created my first application in Qbasic.
                             <br>I continued attending high school faculty of computer science.
-                            <br>I embarked on a new training course attending university at the faculty of "mathematical,
-                            computer, multimedia, physical sciences" attending the three-year course of "Internet of
+                            <br>I embarked on a new training course attending university at the faculty of "Mathematical,
+                            computer, multimedia and physical sciences" attending the course of "Internet of
                             things, big data & web".
                         </p><br><br>
-                        <div id="card-button-education-div" class="nav-main-card-button education" >
+                        <div id="card-button-education-div" class="nav-main-card-button education" onclick="openEducation();">
                             <p id="card-button-education-string" class="nav-main-card-button"><b>Find out more</b></p>
                         </div>
                     </div>
@@ -198,9 +200,9 @@
                         <p class="nav-main-info-certificate text-center">
                             Over the years I have graduated from professional courses to expand my skills and / or
                             obtain certificates for work purposes.
-                            <br><br>Relevant to IT but also to other fields.
+                            <br>I have obtained certificates relevant to the IT field and others that are otherwise relevant.
                         </p><br><br>
-                        <div id="card-button-courses-div" class="nav-main-card-button" >
+                        <div id="card-button-courses-div" class="nav-main-card-button" onclick="openCourses();">
                             <p id="card-button-courses-string" class="nav-main-card-button"><b>Find out more</b></p>
                         </div>
                     </div>
@@ -225,7 +227,7 @@
                             <br><br>Otherwise you can find more details by browsing the site.
                             <br>I have created an index page from which you can access the corresponding repositories.
                         </p><br>
-                        <div id="card-button-git-div" class="nav-main-card-button git" >
+                        <div id="card-button-git-div" class="nav-main-card-button git" onclick="openRepository();">
                             <p id="card-button-git-string" class="nav-main-card-button"><b>Find out more</b></p>
                         </div>
                     </div>
@@ -301,6 +303,12 @@
                                 </p>
                             </div>
                         </div>
+
+                        <div class="nav-main-info-clear grid-container"></div>
+
+                        <div>
+                            <p class="hobby-notes text-center">*These are the main activities I like to dedicate myself to. Many of these are sporadic and random, but that doesn't mean they're any less important.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -337,6 +345,198 @@
 
         <div class="nav-main-info-clear"></div>
 
+        <main class="region-picker">
+            <div class="nav-region-picker-title">
+                <div class="nav-region-picker-container grid-container">
+                    <div class="nav-region-picker-title-text">
+                        <h1 class="nav-region-picker text-left">
+                            Change your region and language
+                        </h1>
+                        <p class="nav-region-picker">
+                            <b>Be sure to pick the location that matches your language skills.</b>
+                        </p>
+                    </div>
+                    <div class="nav-region-picker-title-img">
+                        <img id="region-picker-img" class="nav-region-picker" src="../src/assets/images/world.png" alt="Region picker">
+                    </div>
+                </div>
+            </div>
+            <div class="nav-region-picker-lang grid-container">
+                <div class="row">
+                    <div class="nav-region-picker-lang-americas text">
+                        <h2 class="nav-region-picker-lang"><b>Americas</b></h2>
+                    </div>
+                    <div class="nav-region-picker-lang-asia-pacific text">
+                        <h2 class="nav-region-picker-lang"><b>Asia Pacific</b></h2>
+                        <a>
+                            <img class="nav-region-picker-lang" src="../src/assets/images/flags/jp.circle.png">
+                            <div class="nav-region-picker-lang-nationality">
+                                <span class="nationality"><b>日本</b></span>
+                                <br>
+                                <span>日本語</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="nav-region-picker-lang-europe text">
+                        <h2 class="nav-region-picker-lang"><b>Europe</b></h2>
+                        <a>
+                            <img class="nav-region-picker-lang"  src="../src/assets/images/flags/it.circle.png">
+                            <div class="nav-region-picker-lang-nationality">
+                                <span class="nationality"><b>Italia</b></span>
+                                <br>
+                                <span>Italiano</span>
+                            </div>
+                        </a>
+
+                        <div class="nav-main-info-clear"></div>
+
+                        <a>
+                            <img class="nav-region-picker-lang"  src="../src/assets/images/flags/gb.circle.png">
+                            <div class="nav-region-picker-lang-nationality">
+                                <span class="nationality"><b>United Kingdom</b></span>
+                                <br>
+                                <span>English</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="nav-main-info-clear"></div>
+
+        <main class="privacy">
+            <div class="nav-privacy-title">
+                <div class="nav-privacy-container grid-container">
+                    <div class="nav-privacy-title-text">
+                        <h1 class="nav-privacy text-left">
+                            Check the privacy policy when using my information
+                        </h1>
+                        <p class="nav-privacy">
+                            <b>I entrust my information to you, aware that this is a great responsibility,
+                                <br>therefore I work to protect myself as expressed by the EU Regulation.</b>
+                        </p>
+                    </div>
+                    <div class="nav-privacy-title-img">
+                        <img id="privacy-img" class="nav-privacy" src="../src/assets/images/shield.png" alt="Privacy">
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-main-info-clear"></div>
+
+            <div class="nav-privacy-policy grid-container">
+                <div class="row">
+                    <div class="nav-privacy-policy text">
+                        <h2 class="nav-privacy">
+                            Privacy Policy
+                        </h2>
+                        <p class="nav-privacy">
+                            Taking into account the current privacy regulations and the recent innovations introduced by
+                            the GDPR on the processing of personal data:
+                        </p>
+                        <br><p class="nav-privacy">
+                        I authorize the processing of information on this website, pursuant to of Legislative Decree
+                        196 of 2003 June 30 and art. 13 GDPR (EU Regulation 2016/679) for the purposes of research
+                        and selection of personnel by companies.
+                    </p>
+                        <img class="signature" src="../src/assets/images/signature.png" alt="Signature">
+                    </div>
+                </div>
+            </div>
+
+            <hr><div class="nav-main-info-clear"></div>
+
+            <div class="nav-privacy-auth grid-container">
+                <div class="row">
+                    <div class="nav-privacy-auth text">
+                        <h2 class="nav-privacy">
+                            Authorization to process personal data
+                        </h2>
+                        <p class="nav-privacy">
+                            The authorization to process personal data has become, in recent years, a fundamental issue
+                            for those involved in personnel selection but also for those looking for work.
+                        </p>
+                        <p class="nav-privacy">
+                            The new European GDPR (General Data Protection Regulation) on Privacy, of 2018 May 25, is a
+                            very decisive aspect that can affect the taking charge of the job application. The inclusion
+                            of the authorization to process personal data has become an essential clause for it to be
+                            taken into consideration by recruiters.
+                        </p>
+                        <p class="nav-privacy">
+                            The inclusion of the authorization to the processing of personal data authorizes, be it the
+                            employer and / or the human resources manager, to the processing of personal data. Thanks to
+                            this authorization, the employer, or whoever for it, can use the data present to proceed
+                            with the selection, or can keep them pending future job searches.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <hr><div class="nav-main-info-clear"></div>
+
+            <div class="nav-privacy-cat grid-container">
+                <div class="row">
+                    <div class="nav-privacy-cat text">
+                        <h2 class="nav-privacy">
+                            What is personal data?
+                        </h2>
+                        <p class="nav-privacy">
+                            Personal data means all information that identifies a person and provides details about his
+                            characteristics, habits, personal relationships, etc. They are divided into three different
+                            categories:
+                        </p>
+                        <ul>
+                            <li class="nav-privacy"><b>Identification data:</b> any information that allows the direct identification of
+                                natural or legal persons, bodies or associations (e.g. name, surname, address, email,
+                                telephone number..);</li>
+                            <li class="nav-privacy"><b>Sensitive data:</b> those relating to the ethnicity of origin, political opinions,
+                                religious beliefs, state of health..;</li>
+                            <li class="nav-privacy"><b>Legal data:</b> those that indicate the possible presence of judicial measures (e.g.
+                                criminal convictions, alternative measures to detention..).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <hr><div class="nav-main-info-clear"></div>
+
+            <div class="nav-privacy-meaning grid-container">
+                <div class="row">
+                    <div class="nav-privacy-meaning text">
+                        <h2 class="nav-privacy">
+                            What is meant by the processing of personal data?
+                        </h2>
+                        <p class="nav-privacy">
+                            The processing of personal data therefore means any operation carried out, paper or with the
+                            support of electronic tools, which concerns the collection, consultation, use, storage,
+                            processing, modification, dissemination and cancellation of the data.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <hr><div class="nav-main-info-clear"></div>
+
+            <div class="nav-privacy-changes grid-container">
+                <div class="row">
+                    <div class="nav-privacy-changes text">
+                        <h2 class="nav-privacy">
+                            What changed with the new GDPR privacy?
+                        </h2>
+                        <p class="nav-privacy">
+                            With the entry into force in Italy, from 2018 September 19, of Legislative Decree 101/2018,
+                            with the aim of adapting Italian legislation to the European GDPR, it was established that
+                            consent to the processing of personal data is not mandatory. However, each individual can
+                            freely choose to insert it or not and that is why I decided to use it.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="nav-main-info-clear"></div>
+
         <footer class="footer">
             <div class="grid-container">
                 <div class="footer-socials">
@@ -362,8 +562,8 @@
                             <img id="footer-flag" class="flag" src="../src/assets/images/flags/gb.circle.png" alt="flag">&nbsp;UK, English
                         </a>
                     </div>
-                    <div class="footer-policy">
-                        <a class="footer-flag" href="#region-picker">Policy</a>
+                    <div class="footer-privacy">
+                        <a class="footer-privacy" href="#privacy">Privacy</a>
                     </div>
                 </div>
             </div>

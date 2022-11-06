@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
-/* Google Icon*/
+/* Google Icon ********************************************************************************************************* GOOGLE */
 .material-symbols-outlined {
+  color: rgb(60 64 67);
   font-variation-settings:
   'FILL' 0,
   'wght' 400,
@@ -10,6 +11,7 @@
 }
 
 span.material-symbols-outlined.filled {
+  color: rgb(60 64 67);
   font-variation-settings:
   'FILL' 1,
   'wght' 400,
@@ -17,7 +19,7 @@ span.material-symbols-outlined.filled {
   'opsz' 48
 }
 
-/* Header */
+/* Header ************************************************************************************************************** HEADER */
 .header {
     left: 0rem;
     top: 0rem;
@@ -84,7 +86,7 @@ a.nav-top-bar {
     padding-right: 0.96875rem;
 }
 
-/* Main */
+/* Main **************************************************************************************************************** MAIN */
 .main {
     /*position: absolute;*/
     /*left: 0rem;*/
@@ -138,7 +140,7 @@ p.nav-main-about {
 div.nav-main-about-text {
     height: 35.5625rem;
     width: 50%;
-    padding-right: 15.5px;
+    padding-right: 0.96875rem;
     float: left;
 }
 
@@ -155,12 +157,20 @@ div.nav-main-about-button {
     cursor: pointer;
     display: flex;
     margin-top: 0.96875rem;
-    margin-left: 38%;
+    margin-left: 18.1875rem;
     padding: 0.5rem;
     height: 2.5rem;
     width: 8.0rem;
     border-radius: 1.5625rem;
     background-color: rgb(24 25 23);
+}
+
+span.about-button {
+    color: rgb(95 99 104);
+}
+
+span.about-button:hover {
+    color: rgb(66 133 244);
 }
 
 p.nav-main-about-button {
@@ -172,7 +182,7 @@ p.nav-main-about-button {
 
 div.nav-main-about-img {
     height: 289px;
-    padding-left: 65%;
+    padding-left: 57.6875rem;
 }
 
 p.nav-main-about.motto{
@@ -233,7 +243,7 @@ div.nav-main-card-button {
 }
 
 div.nav-main-card-button.soft {
-    margin-left: 37.5%;
+    margin-left: 13.30028125rem;
 }
 
 div.nav-main-info-skill-hard {
@@ -243,7 +253,7 @@ div.nav-main-info-skill-hard {
     background-color: rgb(234 245 214);
     float: left;
     margin-right: 1.5rem;
-    margin-left: 13.5%;
+    margin-left: 12.546875rem;
     padding: 1.5rem;
 }
 
@@ -326,7 +336,7 @@ div.nav-main-info-certificate-education {
     background-color: rgb(220 221 205);
     padding: 1.5rem;
     margin-right: 1.5rem;
-    margin-left: 13.5%;
+    margin-left: 12.546875rem;
     float: left;
 }
 
@@ -335,10 +345,6 @@ h3.nav-main-info-certificate-education {
     width: 100%;
     color: rgb(60 64 67);
 }
-
-
-
-
 
 div.nav-main-info-repository {
     min-height: 17.8125rem;
@@ -384,7 +390,7 @@ div.nav-main-info-repository-git {
     background-color: rgb(252 229 205);
     padding: 1.5rem;
     margin-right: 1.5rem;
-    margin-left: 13.5%;
+    margin-left: 12.546875rem;
     float: left;
 }
 
@@ -411,6 +417,10 @@ div.nav-main-info-hobby-title {
     margin-bottom: 3.328125rem;
 }
 
+.hobby-list {
+    float: left;
+}
+
 div.nav-main-info-hobby-indoor,
 div.nav-main-info-hobby-outdoor,
 div.nav-main-info-hobby-sport {
@@ -435,7 +445,7 @@ div.nav-main-info-hobby-indoor{
 
 div.nav-main-info-hobby-indoor-list {
     width: 100%;
-    height: 22.125rem;
+    height: 17.25rem;
     border-radius: 1.5625rem;
     background-color: rgb(255 242 204);
     padding: 1.5rem;
@@ -451,7 +461,7 @@ div.nav-main-info-hobby-outdoor{
 
 div.nav-main-info-hobby-outdoor-list {
     width: 100%;
-    height: 22.125rem;
+    height: 17.25rem;
     border-radius: 1.5625rem;
     background-color: rgb(217 234 211);
     padding: 1.5rem;
@@ -466,7 +476,7 @@ div.nav-main-info-hobby-sport {
 
 div.nav-main-info-hobby-sport-list {
     width: 100%;
-    height: 22.125rem;
+    height: 17.25rem;
     border-radius: 1.5625rem;
     background-color: rgb(208 224 227);
     padding: 1.5rem;
@@ -492,7 +502,7 @@ p.nav-main-info-jobs {
 
 div.nav-main-info-jobs-extra {
     width: 65.15625rem;
-    height: 27.8125rem;
+    height: 40.8125rem;
     padding: 1.5rem;
     margin-right: 1.5rem;
     margin-left: 13.5%;
@@ -516,7 +526,6 @@ p.hobby-notes {
 }
 
 /* Certificates */
-/* Privacy */
 .certificates {
     /*position: absolute;*/
     /*left: 0rem;*/
@@ -578,18 +587,6 @@ div.nav-certificates-title-text {
     float: left;
 }
 
-div.nav-certificates-high-school {
-    padding-top: 0.96875rem;
-    padding-bottom: 0.96875rem;
-}
-
-div.nav-privacy-auth,
-div.nav-privacy-cat,
-div.nav-privacy-meaning,
-div.nav-privacy-changes {
-    padding-bottom: 0.96875rem;
-}
-
 h2.nav-certificates,
 li.nav-certificates,
 p.nav-certificates {
@@ -598,6 +595,122 @@ p.nav-certificates {
 
 h2.nav-certificates {
     font-weight: bolder;
+}
+
+div.nav-certificates-top-bar {
+    height: 6.125rem;
+    padding: 2.0859375rem;
+    margin-left: 33.3990625rem;
+}
+
+li.nav-certificates-top-bar {
+    height: 2.5rem;
+    padding: 0.5rem;
+    background-color: rgb(242 242 242);
+    border-radius: 2.0rem;
+    margin-left: 0.5rem;
+}
+
+a.nav-certificates-top-bar {
+    margin: 0rem;
+}
+
+div.nav-certificates-high-school {
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+}
+
+span.material-symbols-outlined.certificates-list-icon {
+  /*color: rgb(251 188 5);*/
+  float: left;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.certificates-list {
+   float: left;
+   /*color: rgb(251 188 5);*/
+}
+
+.high-name {
+    padding-left: 38.2046875rem;
+}
+
+.high-location {
+    margin-bottom: 0rem;
+    padding-left: 39.07625rem;
+}
+
+.high-address {
+    padding-left: 38.881875rem;
+}
+
+.high-website {
+    padding-left: 41.6890625rem;
+}
+
+.university-name {
+    padding-left: 34.510625rem;
+}
+
+.university-location {
+    padding-left: 39.3534375rem;
+}
+
+.university-address {
+    padding-left: 39.6590625rem;
+}
+
+.university-website {
+    padding-left: 41.6890625rem;
+}
+
+.courses-1-name {
+    padding-left: 34.2884375rem;
+}
+
+.courses-2-name {
+    padding-top: 2.5rem;
+    padding-left: 34.760625rem;
+}
+
+.courses-3-name {
+    padding-top: 2.5rem;
+    padding-left: 37.6240625rem;
+}
+
+.courses-4-name {
+    padding-top: 2.5rem;
+    padding-left: 39.6803125rem;
+}
+
+.courses-5-name {
+    padding-top: 2.5rem;
+    padding-left: 37.73375rem;
+}
+
+/*div.nav-privacy-auth,
+div.nav-privacy-cat,
+div.nav-privacy-meaning,
+div.nav-privacy-changes {
+    padding-bottom: 0.96875rem;
+}*/
+
+div.nav-certificates-university-hint {
+    height: 20.4375rem;
+    width: 48.875rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: rgb(238 237 244);
+    background-color: rgb(197 199 201);
+    border-radius: 1.5625rem;
+    margin-bottom: 1.5rem;
+    margin-left: 19.9375rem;
 }
 
 p.exams {
@@ -610,10 +723,668 @@ p.exams {
     height: 6.25rem;
     margin-top: 1.9375rem;
     margin-bottom: 3.9375rem;
+    margin-left: 41.25rem;
+}
+
+/* Skills ************************************************************************************************************** SKILLS */
+.skills {
+    /*position: absolute;*/
+    /*left: 0rem;*/
+    /*top: 3.4375rem;*/
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: none;
+}
+
+div.nav-skills-bar {
+    height: 5.265625rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+
+}
+
+div.nav-skills-container {
+    height: 3.328125rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+}
+
+div.nav-skills-title {
+    min-height: 17.5rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+    background-color: rgb(244 244 246);
+}
+
+div.nav-skills-top-bar {
+    height: 6.125rem;
+    padding-top: 2.0859375rem;
+    padding-bottom: 2.0859375rem;
+    padding-right: 0rem;
+    padding-left: 31.98rem;
+}
+
+li.nav-skills-top-bar {
+    height: 2.5rem;
+    padding: 0.5rem;
+    background-color: rgb(242 242 242);
+    border-radius: 2.0rem;
+    margin-left: 0.5rem;
+}
+
+a.nav-skills-top-bar {
+    margin: 0rem;
+}
+
+div.nav-skills-hard-hint {
+    height: 14.35rem;
+    width: 48.875rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: rgb(238 237 244);
+    background-color: rgb(197 199 201);
+    border-radius: 1.5625rem;
+    margin-bottom: 1.5rem;
+    margin-left: 19.9375rem;
+}
+
+div.nav-skills-soft-hint {
+    height: 15.6875rem;
+    width: 48.875rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: rgb(238 237 244);
+    background-color: rgb(197 199 201);
+    border-radius: 1.5625rem;
+    margin-bottom: 1.5rem;
+    margin-left: 19.9375rem;
+}
+
+div.nav-skills-lang-en-hint {
+    height: 20.4375rem;
+    width: 48.875rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: rgb(238 237 244);
+    background-color: rgb(197 199 201);
+    border-radius: 1.5625rem;
+    margin-bottom: 1.5rem;
+    margin-left: 19.9375rem;
+}
+
+div.nav-skills-lang-jp-hint {
+    height: 10.875rem;
+    width: 48.875rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: rgb(238 237 244);
+    background-color: rgb(197 199 201);
+    border-radius: 1.5625rem;
+    margin-bottom: 1.5rem;
+    margin-left: 19.9375rem;
+}
+
+div.nav-skills-considerations {
+    height: 10.875rem;
+    width: 48.875rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: rgb(255 255 255);
+    border-radius: 1.5625rem;
+    margin-bottom: 1.5rem;
+    margin-left: 19.9375rem;
+}
+
+div.nav-skills-title.scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+h1.nav-skills {
+    font-weight: bold;
+    font-size: 3.9375rem;
+    color: rgb(60 64 67);
+}
+
+p.nav-skills {
+    color: rgb(60 64 67);
+}
+
+img.nav-skills {
+    /*width: 23.0625rem;*/
+    height: 12.5rem;
+    margin-top: 0.625rem;
+}
+div.nav-skills-title-text {
+    width: 69%;
+    padding-right: 0.96875rem;
+    float: left;
+}
+
+div.nav-skills-hard {
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+}
+
+div.nav-skills-soft {
+    padding-bottom: 0.96875rem;
+}
+
+h2.nav-skills,
+li.nav-skills,
+p.nav-skills {
+    color: rgb(60 64 67);
+}
+
+h2.nav-skills {
+    font-weight: bolder;
+}
+
+.nav-balance-img {
+    width: 6.25rem;
+    height: 6.25rem;
+    margin-top: 1.9375rem;
+    margin-bottom: 3.9375rem;
+    margin-left: 41.25rem;
+}
+
+span.material-symbols-outlined.skills-list-icon {
+  /*color: rgb(251 188 5);*/
+  float: left;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.skills-list {
+   float: left;
+   /*color: rgb(251 188 5);*/
+}
+
+.academic-name {
+    margin-bottom: 0rem;
+    padding-left: 41.1421875rem;
+}
+
+.basic-name {
+    padding-top: 2rem;
+    padding-left: 42.151875rem;
+}
+
+.intermediate-name {
+    padding-top: 2rem;
+    padding-left: 40.5128125rem;
+}
+.advanced-name {
+    padding-top: 2rem;
+    padding-left: 41.1146875rem;
+}
+
+.expert-name {
+    padding-top: 2rem;
+    padding-left: 41.9296875rem;
+}
+
+.communication-name {
+    margin-bottom: 0rem;
+    padding-left: 39.708125rem;
+}
+
+.thinking-name {
+    padding-top: 2rem;
+    padding-left: 41.4028125rem;
+}
+
+.leadership-name {
+    padding-top: 2rem;
+    padding-left: 40.8184375rem;
+}
+.attitude-name {
+    padding-top: 2rem;
+    padding-left: 41.61625rem;
+}
+
+.teamwork-name {
+    padding-top: 2rem;
+    padding-left: 41.0496875rem;
+}
+
+.ethics-name {
+    padding-top: 2rem;
+    padding-left: 41.9853125rem;
+}
+
+.it-name {
+    margin-bottom: 0rem;
+    padding-left: 42.0409375rem;
+}
+
+.en-name {
+    padding-top: 2rem;
+    padding-left: 41.6803125rem;
+}
+
+.jp-name {
+    padding-top: 2rem;
+    padding-left: 41.2065625rem;
+}
+
+/* Repositories ******************************************************************************************************** REPOSITORIES */
+.repositories {
+    /*position: absolute;*/
+    /*left: 0rem;*/
+    /*top: 3.4375rem;*/
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: none;
+}
+
+div.nav-repositories-bar {
+    height: 5.265625rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+
+}
+
+div.nav-repositories-container {
+    height: 3.328125rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+}
+
+div.nav-repositories-title {
+    min-height: 17.5rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+    background-color: rgb(244 244 246);
+}
+
+div.nav-repositories-top-bar {
+    height: 6.125rem;
+    padding: 2.0859375rem;
+    padding-left: 29.98rem;
+}
+
+li.nav-repositories-top-bar {
+    height: 2.5rem;
+    padding: 0.5rem;
+    background-color: rgb(242 242 242);
+    border-radius: 2.0rem;
+    margin-left: 0.5rem;
+}
+
+a.nav-repositories-top-bar {
+    margin: 0rem;
+}
+
+div.nav-repositories-hint {
+    height: fit-content;
+    width: 48.875rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: rgb(232 240 254);
+    /*background-color: rgb(197 199 201);*/
+    border-radius: 1.5625rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 19.9375rem;
+}
+
+div.leetcode-algorithms {
+    display: block;
+}
+div.leetcode-concurrency {
+    display: none;
+}
+div.leetcode-database {
+    display: none;
+}
+div.leetcode-shell {
+    display: none;
+}
+
+div.nav-leetcode-top-bar {
+    padding-left: 11.52rem;
+    padding-bottom: 0.5rem;
+}
+
+li.nav-leetcode-top-bar {
+    background-color: rgb(232 240 254);
+    height: 2.5rem;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+a.nav-leetcode-top-bar {
+    background: rgb(232 240 254);
+    margin: 0rem;
+}
+
+li.nav-leetcode-top-bar-active {
+    background-color: rgb(232 240 254);
+    height: 2.5rem;
+    padding: 0.5rem;
+    border: 0.2rem;
+    margin-left: 0.5rem;
+    border-bottom-color: #4285F4;
+    border-bottom-style: solid;
+}
+
+a.nav-leetcode-top-bar-active {
+    background: rgb(232 240 254);
+    margin: 0rem;
+}
+
+.repositories-list {
+    float: left;
+    color: rgb(60 64 67);
+}
+
+.leet-code-name {
+    padding-left: 41.208125rem;
+}
+
+.leet-code-img-url {
+    height: 1.5rem;
+    width: 1.5rem;
+    background-image: url("http://localhost:63342/danielpolo.github.io/src/assets/images/leet-code.24px.png");
+}
+
+.my-stack-name {
+    padding-left: 38.4290625rem;
+}
+
+.utilities-name {
+    padding-left: 31.316875rem;
+}
+
+.exams-name {
+    padding-left: 41.095625rem;
+}
+
+div.materials-name {
+    padding-top: 2rem;
+}
+
+.materials-name {
+    padding-left: 38.99375rem;
+}
+
+div.nav-repositories-my-stack-hint {
+    height: 15.6875rem;
+    width: 48.875rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: rgb(238 237 244);
+    background-color: rgb(197 199 201);
+    border-radius: 1.5625rem;
+    margin-bottom: 1.5rem;
+    margin-left: 19.9375rem;
+}
+
+div.nav-repositories-utilities-hint {
+    height: 20.4375rem;
+    width: 48.875rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: rgb(238 237 244);
+    background-color: rgb(197 199 201);
+    border-radius: 1.5625rem;
+    margin-bottom: 1.5rem;
+    margin-left: 19.9375rem;
+}
+
+div.nav-repositories-euris-hint {
+    height: 10.875rem;
+    width: 48.875rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: rgb(238 237 244);
+    background-color: rgb(197 199 201);
+    border-radius: 1.5625rem;
+    margin-bottom: 1.5rem;
+    margin-left: 19.9375rem;
+}
+
+div.nav-repositories-title.scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+h1.nav-repositories {
+    font-weight: bold;
+    font-size: 3.9375rem;
+    color: rgb(60 64 67);
+}
+
+p.nav-repositories {
+    color: rgb(60 64 67);
+}
+
+img.nav-repositories {
+    /*width: 23.0625rem;*/
+    height: 12.5rem;
+    margin-top: 0.625rem;
+}
+div.nav-repositories-title-text {
+    width: 69%;
+    padding-right: 0.96875rem;
+    float: left;
+}
+
+div.nav-repositories-hard {
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+}
+
+div.nav-repositories-soft {
+    padding-bottom: 0.96875rem;
+}
+
+h2.nav-repositories,
+li.nav-repositories,
+p.nav-repositories {
+    color: rgb(60 64 67);
+}
+
+h2.nav-repositories {
+    font-weight: bolder;
+}
+
+.nav-repositories-img {
+    width: 6.25rem;
+    height: 6.25rem;
+    margin-top: 1.9375rem;
+    margin-bottom: 3.9375rem;
+    margin-left: 41.25rem;
+}
+
+div.goal {
+    padding-top: 7.5rem;
+}
+/* Contacts ************************************************************************************************************ CONTACTS */
+.contacts {
+    /*position: absolute;*/
+    /*left: 0rem;*/
+    /*top: 3.4375rem;*/
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: none;
+}
+
+div.nav-contacts-bar {
+    height: 5.265625rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+
+}
+
+div.nav-contacts-container {
+    height: 3.328125rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+}
+
+div.nav-contacts-title {
+    min-height: 17.5rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+    background-color: rgb(244 244 246);
+}
+
+div.nav-contacts-title.scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+div.nav-contacts-info {
+    height: 34.625rem;
+}
+
+h1.nav-contacts {
+    font-weight: bold;
+    font-size: 3.9375rem;
+    color: rgb(60 64 67);
+}
+
+p.nav-contacts {
+    color: rgb(60 64 67);
+}
+
+img.nav-contacts {
+    /*width: 23.0625rem;*/
+    height: 12.5rem;
+    margin-top: 0.625rem;
+}
+
+div.nav-contacts-title-text {
+    width: 69%;
+    padding-right: 0.96875rem;
+    float: left;
+}
+
+div.nav-contacts {
+    padding-bottom: 1.7rem;
+}
+
+div.nav-contacts-left {
+    padding-bottom: 0.96875rem;
+    float: left;
+}
+
+div.nav-contacts-right {
+    padding-left: 7rem;
+    padding-bottom: 0.96875rem;
+    float: left;
+}
+
+h2.nav-contacts,
+li.nav-contacts,
+p.nav-contacts {
+    color: rgb(60 64 67);
+}
+
+h2.nav-contacts {
+    font-weight: bolder;
+}
+
+.nav-contacts-img {
+    width: 6.25rem;
+    height: 6.25rem;
+    margin-top: 1.9375rem;
+    margin-bottom: 3.9375rem;
     margin-left: 47%;
 }
 
-/* Region picker*/
+span#location-icon,
+span#location-label{
+    color: rgb(234 67 53);
+}
+
+.contacts-discord {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url("http://localhost:63342/danielpolo.github.io/src/assets/images/socials/discord.24px.png");
+}
+
+.contacts-github {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url("http://localhost:63342/danielpolo.github.io/src/assets/images/socials/github.24px.png");
+}
+
+.contacts-linkedin {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url("http://localhost:63342/danielpolo.github.io/src/assets/images/socials/linkedin.24px.png");
+}
+
+.contacts-stack-overflow {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url("http://localhost:63342/danielpolo.github.io/src/assets/images/socials/stack-overflow.24px.png");
+}
+
+.contacts-teams {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url("http://localhost:63342/danielpolo.github.io/src/assets/images/socials/teams.24px.png");
+}
+
+.contacts-trello {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url("http://localhost:63342/danielpolo.github.io/src/assets/images/socials/trello.24px.png");
+}
+
+.contacts-twitter {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url("http://localhost:63342/danielpolo.github.io/src/assets/images/socials/twitter.24px.png");
+}
+
+/* Region picker ******************************************************************************************************* REGION PICKER */
 .region-picker {
     /*position: absolute;*/
     /*left: 0rem;*/
@@ -659,6 +1430,7 @@ h1.nav-region-picker {
     font-weight: bold;
     font-size: 3.9375rem;
     color: rgb(60 64 67);
+    padding-bottom: 1.9375rem;
 }
 
 p.nav-region-picker {
@@ -703,10 +1475,10 @@ div.nav-region-picker-lang-americas,
 div.nav-region-picker-lang-asia-pacific,
 div.nav-region-picker-lang-europe {
     float: left;
-    width: 33%
+    width: 29.58333333333125rem;
 }
 
-/* Privacy */
+/* Privacy ************************************************************************************************************* PRIVACY */
 .privacy {
     /*position: absolute;*/
     /*left: 0rem;*/
@@ -764,8 +1536,26 @@ img.nav-privacy {
 }
 div.nav-privacy-title-text {
     width: 75%;
-    padding-right: 15.5px;
+    padding-right: 0.96875rem;
     float: left;
+}
+
+div.nav-privacy-top-bar {
+    height: 6.125rem;
+    padding: 2.0859375rem;
+    margin-left: 24.505rem;
+}
+
+li.nav-privacy-top-bar {
+    height: 2.5rem;
+    padding: 0.5rem;
+    background-color: rgb(242 242 242);
+    border-radius: 2.0rem;
+    margin-left: 0.5rem;
+}
+
+a.nav-privacy-top-bar {
+    margin: 0rem;
 }
 
 div.nav-privacy-policy {
@@ -790,7 +1580,20 @@ h2.nav-privacy {
     font-weight: bolder;
 }
 
-/* Footer */
+.privacy-signature {
+    padding-top: 1.328125rem;
+    padding-left: 20.8125rem;
+}
+
+.nav-policy-img {
+    width: 6.25rem;
+    height: 6.25rem;
+    margin-top: 1.9375rem;
+    margin-bottom: 3.9375rem;
+    margin-left: 41.25rem;
+}
+
+/* Footer ************************************************************************************************************** FOOTER */
 .footer {
     /*left: 0rem;*/
     /*bottom: 0rem;*/
@@ -810,7 +1613,16 @@ h2.nav-privacy {
 }
 
 a.footer-socials {
-    padding-right: 15.5px;
+    padding-right: 0.96875rem;
+}
+
+span.footer-socials {
+    color: rgb(186 211 198);
+    padding-left: 17.56003125rem;
+}
+
+span.footer-socials.with {
+    padding-left: 0rem;
 }
 
 img.footer-socials {
@@ -839,7 +1651,18 @@ div.footer-flag {
 
 div.footer-privacy {
     float: left;
-    padding-top: 0,0625rem;
+    padding-top: 0.0625rem;
+}
+
+span.privacy-list-icon {
+   float: left;
+   color: rgb(186 211 198);
+}
+
+span.privacy-list-text {
+    padding-top: 0.2rem;
+    color: rgb(186 211 198);
+    float: left;
 }
 
 .footer-privacy {

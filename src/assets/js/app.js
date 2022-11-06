@@ -19,6 +19,7 @@ $(document).ready(function () {
             $(".certificates").css("display", "none");
             $(".skills").css("display", "none");
             $(".repositories").css("display", "none");
+            $(".resume").css("display", "none");
             $(".contacts").css("display", "none");
             $(".privacy").css("display", "none");
             $(".region-picker").css("display", "none");
@@ -51,6 +52,7 @@ $(document).ready(function () {
             $(".main").css("display", "none");
             $(".skills").css("display", "none");
             $(".repositories").css("display", "none");
+            $(".resume").css("display", "none");
             $(".contacts").css("display", "none");
             $(".privacy").css("display", "none");
             $(".region-picker").css("display", "none");
@@ -83,6 +85,7 @@ $(document).ready(function () {
             $(".main").css("display", "none");
             $(".certificates").css("display", "none");
             $(".repositories").css("display", "none");
+            $(".resume").css("display", "none");
             $(".contacts").css("display", "none");
             $(".privacy").css("display", "none");
             $(".region-picker").css("display", "none");
@@ -115,6 +118,7 @@ $(document).ready(function () {
             $(".main").css("display", "none");
             $(".certificates").css("display", "none");
             $(".skills").css("display", "none");
+            $(".resume").css("display", "none");
             $(".contacts").css("display", "none");
             $(".privacy").css("display", "none");
             $(".region-picker").css("display", "none");
@@ -140,6 +144,39 @@ $(document).ready(function () {
         }
     );
 
+    $("#resume-li").on(
+        "click",
+        function() {
+            $(".resume").css("display", "block");
+            $(".main").css("display", "none");
+            $(".certificates").css("display", "none");
+            $(".skills").css("display", "none");
+            $(".repositories").css("display", "none");
+            $(".contacts").css("display", "none");
+            $(".privacy").css("display", "none");
+            $(".region-picker").css("display", "none");
+            $(document).scrollTop(0);
+
+            $("#about-li").attr("class", "nav-top-bar");
+            $("#about-li").css("border-bottom-style", "none");
+
+            $("#certificate-li").attr("class", "nav-top-bar");
+            $("#certificate-li").css("border-bottom-style", "none");
+
+            $("#skill-li").attr("class", "nav-top-bar");
+            $("#skill-li").css("border-bottom-style", "none");
+
+            $("#repository-li").attr("class", "nav-top-bar");
+            $("#repository-li").css("border-bottom-style", "none");
+
+            $("#resume-li").attr("class", "nav-top-bar active");
+            $("#resume-li").css("border-bottom-style", "solid");
+
+            $("#contact-li").attr("class", "nav-top-bar");
+            $("#contact-li").css("border-bottom-style", "none");
+        }
+    );
+
     $("#contact-li").on(
         "click",
         function() {
@@ -148,6 +185,7 @@ $(document).ready(function () {
             $(".certificates").css("display", "none");
             $(".skills").css("display", "none");
             $(".repositories").css("display", "none");
+            $(".resume").css("display", "none");
             $(".privacy").css("display", "none");
             $(".region-picker").css("display", "none");
             $(document).scrollTop(0);
@@ -376,6 +414,7 @@ $("#algorithms-li").on(
             $(".certificates").css("display", "none");
             $(".skills").css("display", "none");
             $(".repositories").css("display", "none");
+            $(".resume").css("display", "none");
             $(".contacts").css("display", "none");
             $(".privacy").css("display", "none");
             $(document).scrollTop(0);
@@ -408,6 +447,7 @@ $("#algorithms-li").on(
             $(".certificates").css("display", "none");
             $(".skills").css("display", "none");
             $(".repositories").css("display", "none");
+            $(".resume").css("display", "none");
             $(".contacts").css("display", "none");
             $(".region-picker").css("display", "none");
             $(document).scrollTop(0);
@@ -487,6 +527,7 @@ function openHard() {
     $(".main").css("display", "none");
     $(".certificates").css("display", "none");
     $(".repositories").css("display", "none");
+    $(".resume").css("display", "none");
     $(".contacts").css("display", "none");
     $(".privacy").css("display", "none");
     $(".region-picker").css("display", "none");
@@ -516,6 +557,7 @@ function openSoft() {
     $(".main").css("display", "none");
     $(".certificates").css("display", "none");
     $(".repositories").css("display", "none");
+    $(".resume").css("display", "none");
     $(".contacts").css("display", "none");
     $(".privacy").css("display", "none");
     $(".region-picker").css("display", "none");
@@ -545,6 +587,7 @@ function openEducation() {
     $(".main").css("display", "none");
     $(".skills").css("display", "none");
     $(".repositories").css("display", "none");
+    $(".resume").css("display", "none");
     $(".contacts").css("display", "none");
     $(".privacy").css("display", "none");
     $(".region-picker").css("display", "none");
@@ -574,6 +617,7 @@ function openCourses() {
     $(".main").css("display", "none");
     $(".skills").css("display", "none");
     $(".repositories").css("display", "none");
+    $(".resume").css("display", "none");
     $(".contacts").css("display", "none");
     $(".privacy").css("display", "none");
     $(".region-picker").css("display", "none");
@@ -600,10 +644,10 @@ function openCourses() {
 
 function openRepositories() {
     $(".repositories").css("display", "block");
-
     $(".main").css("display", "none");
     $(".certificates").css("display", "none");
     $(".skills").css("display", "none");
+    $(".resume").css("display", "none");
     $(".contacts").css("display", "none");
     $(".privacy").css("display", "none");
     $(".region-picker").css("display", "none");

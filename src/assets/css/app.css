@@ -525,7 +525,7 @@ p.hobby-notes {
     padding-left: 12%;
 }
 
-/* Certificates */
+/* Certificates ******************************************************************************************************** CERTIFICATE */
 .certificates {
     /*position: absolute;*/
     /*left: 0rem;*/
@@ -600,7 +600,7 @@ h2.nav-certificates {
 div.nav-certificates-top-bar {
     height: 6.125rem;
     padding: 2.0859375rem;
-    margin-left: 33.3990625rem;
+    padding-left: 33.3990625rem;
 }
 
 li.nav-certificates-top-bar {
@@ -1115,7 +1115,7 @@ a.nav-leetcode-top-bar-active {
 .leet-code-img-url {
     height: 1.5rem;
     width: 1.5rem;
-    background-image: url("http://localhost:63342/danielpolo.github.io/src/assets/images/leet-code.24px.png");
+    background-image: url("https://danielpolowork.github.io/src/assets/images/leet-code.24px.png");
 }
 
 .my-stack-name {
@@ -1345,43 +1345,43 @@ span#location-label{
 .contacts-discord {
     width: 1.5rem;
     height: 1.5rem;
-    background-image: url("http://localhost:63342/danielpolo.github.io/src/assets/images/socials/discord.24px.png");
+    background-image: url("https://danielpolowork.github.io/src/assets/images/socials/discord.24px.png");
 }
 
 .contacts-github {
     width: 1.5rem;
     height: 1.5rem;
-    background-image: url("http://localhost:63342/danielpolo.github.io/src/assets/images/socials/github.24px.png");
+    background-image: url("https://danielpolowork.github.io/src/assets/images/socials/github.24px.png");
 }
 
 .contacts-linkedin {
     width: 1.5rem;
     height: 1.5rem;
-    background-image: url("http://localhost:63342/danielpolo.github.io/src/assets/images/socials/linkedin.24px.png");
+    background-image: url("https://danielpolowork.github.io/src/assets/images/socials/linkedin.24px.png");
 }
 
 .contacts-stack-overflow {
     width: 1.5rem;
     height: 1.5rem;
-    background-image: url("http://localhost:63342/danielpolo.github.io/src/assets/images/socials/stack-overflow.24px.png");
+    background-image: url("https://danielpolowork.github.io/src/assets/images/socials/stack-overflow.24px.png");
 }
 
 .contacts-teams {
     width: 1.5rem;
     height: 1.5rem;
-    background-image: url("http://localhost:63342/danielpolo.github.io/src/assets/images/socials/teams.24px.png");
+    background-image: url("https://danielpolowork.github.io/src/assets/images/socials/teams.24px.png");
 }
 
 .contacts-trello {
     width: 1.5rem;
     height: 1.5rem;
-    background-image: url("http://localhost:63342/danielpolo.github.io/src/assets/images/socials/trello.24px.png");
+    background-image: url("https://danielpolowork.github.io/src/assets/images/socials/trello.24px.png");
 }
 
 .contacts-twitter {
     width: 1.5rem;
     height: 1.5rem;
-    background-image: url("http://localhost:63342/danielpolo.github.io/src/assets/images/socials/twitter.24px.png");
+    background-image: url("https://danielpolowork.github.io/src/assets/images/socials/twitter.24px.png");
 }
 
 /* Region picker ******************************************************************************************************* REGION PICKER */

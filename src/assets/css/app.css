@@ -840,7 +840,7 @@ div.nav-skills-lang-jp-hint {
 }
 
 div.nav-skills-considerations {
-    height: 10.875rem;
+    height: fit-content;
     width: 48.875rem;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -1236,7 +1236,140 @@ h2.nav-repositories {
 div.goal {
     padding-top: 7.5rem;
 }
-/* Contacts ************************************************************************************************************ CONTACTS */
+
+/* Resume **************************************************************************************************************PAGE:RESUME */
+.resume {
+    /*position: absolute;*/
+    /*left: 0rem;*/
+    /*top: 3.4375rem;*/
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: none;
+}
+
+div.nav-resume-bar {
+    height: 5.265625rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+
+}
+
+div.nav-resume-container {
+    height: 3.328125rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+}
+
+div.nav-resume-title {
+    min-height: 17.5rem;
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+    padding-left: 0.96875rem;
+    padding-right: 0.96875rem;
+    background-color: rgb(244 244 246);
+}
+
+div.nav-resume-top-bar {
+    height: 6.125rem;
+    padding: 2.0859375rem;
+    padding-left: 29.98rem;
+}
+
+li.nav-resume-top-bar {
+    height: 2.5rem;
+    padding: 0.5rem;
+    background-color: rgb(242 242 242);
+    border-radius: 2.0rem;
+    margin-left: 0.5rem;
+}
+
+a.nav-resume-top-bar {
+    margin: 0rem;
+}
+
+div.nav-resume-hint {
+    height: fit-content;
+    width: 48.875rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    background-color: rgb(232 240 254);
+    /*background-color: rgb(197 199 201);*/
+    border-radius: 1.5625rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 19.9375rem;
+}
+
+div.nav-resume-info.docs {
+    height: 36.3125rem;
+}
+
+.repositories-list {
+    float: left;
+    color: rgb(60 64 67);
+}
+
+div.nav-resume-title.scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+h1.nav-resume {
+    font-weight: bold;
+    font-size: 3.9375rem;
+    color: rgb(60 64 67);
+}
+
+p.nav-resume {
+    color: rgb(60 64 67);
+}
+
+img.nav-resume {
+    /*width: 23.0625rem;*/
+    height: 12.5rem;
+    margin-top: 0.625rem;
+}
+div.nav-resume-title-text {
+    width: 69%;
+    padding-right: 0.96875rem;
+    float: left;
+}
+
+div.nav-resume-hard {
+    padding-top: 0.96875rem;
+    padding-bottom: 0.96875rem;
+}
+
+div.nav-resume-soft {
+    padding-bottom: 0.96875rem;
+}
+
+h2.nav-resume,
+li.nav-resume,
+p.nav-resume {
+    color: rgb(60 64 67);
+}
+
+h2.nav-resume {
+    font-weight: bolder;
+}
+
+.nav-resume-img {
+    width: 6.25rem;
+    height: 6.25rem;
+    margin-top: 1.9375rem;
+    margin-bottom: 3.9375rem;
+    margin-left: 41.25rem;
+}
+
+/* Contacts ************************************************************************************************************PAGE:CONTACTS */
 .contacts {
     /*position: absolute;*/
     /*left: 0rem;*/
@@ -1384,7 +1517,7 @@ span#location-label{
     background-image: url("https://danielpolowork.github.io/src/assets/images/socials/twitter.24px.png");
 }
 
-/* Region picker ******************************************************************************************************* REGION PICKER */
+/* Region picker *******************************************************************************************************PAGE:REGION PICKER */
 .region-picker {
     /*position: absolute;*/
     /*left: 0rem;*/
@@ -1478,7 +1611,7 @@ div.nav-region-picker-lang-europe {
     width: 29.58333333333125rem;
 }
 
-/* Privacy ************************************************************************************************************* PRIVACY */
+/* Privacy *************************************************************************************************************PAGE:PRIVACY */
 .privacy {
     /*position: absolute;*/
     /*left: 0rem;*/

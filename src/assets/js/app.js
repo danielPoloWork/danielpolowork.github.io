@@ -17,6 +17,9 @@ $(document).ready(function () {
         function() {
             $(".main").css("display", "block");
             $(".certificates").css("display", "none");
+            $(".skills").css("display", "none");
+            $(".repositories").css("display", "none");
+            $(".contacts").css("display", "none");
             $(".privacy").css("display", "none");
             $(".region-picker").css("display", "none");
             $(document).scrollTop(0);
@@ -30,45 +33,144 @@ $(document).ready(function () {
             $("#skill-li").attr("class", "nav-top-bar");
             $("#skill-li").css("border-bottom-style", "none");
 
-            $("#git-li").attr("class", "nav-top-bar");
-            $("#git-li").css("border-bottom-style", "none");
-
-            $("#contact-li").attr("class", "nav-top-bar");
-            $("#contact-li").css("border-bottom-style", "none");
+            $("#repository-li").attr("class", "nav-top-bar");
+            $("#repository-li").css("border-bottom-style", "none");
 
             $("#resume-li").attr("class", "nav-top-bar");
             $("#resume-li").css("border-bottom-style", "none");
+
+            $("#contact-li").attr("class", "nav-top-bar");
+            $("#contact-li").css("border-bottom-style", "none");
         }
     );
 
     $("#certificate-li").on(
-            "click",
-            function() {
-                $(".certificates").css("display", "block");
-                $(".main").css("display", "none");
-                $(".privacy").css("display", "none");
-                $(".region-picker").css("display", "none");
-                $(document).scrollTop(0);
+        "click",
+        function() {
+            $(".certificates").css("display", "block");
+            $(".main").css("display", "none");
+            $(".skills").css("display", "none");
+            $(".repositories").css("display", "none");
+            $(".contacts").css("display", "none");
+            $(".privacy").css("display", "none");
+            $(".region-picker").css("display", "none");
+            $(document).scrollTop(0);
 
-                $("#about-li").attr("class", "nav-top-bar");
-                $("#about-li").css("border-bottom-style", "none");
+            $("#about-li").attr("class", "nav-top-bar");
+            $("#about-li").css("border-bottom-style", "none");
 
-                $("#certificate-li").attr("class", "nav-top-bar active");
-                $("#certificate-li").css("border-bottom-style", "solid");
+            $("#certificate-li").attr("class", "nav-top-bar active");
+            $("#certificate-li").css("border-bottom-style", "solid");
 
-                $("#skill-li").attr("class", "nav-top-bar");
-                $("#skill-li").css("border-bottom-style", "none");
+            $("#skill-li").attr("class", "nav-top-bar");
+            $("#skill-li").css("border-bottom-style", "none");
 
-                $("#git-li").attr("class", "nav-top-bar");
-                $("#git-li").css("border-bottom-style", "none");
+            $("#repository-li").attr("class", "nav-top-bar");
+            $("#repository-li").css("border-bottom-style", "none");
 
-                $("#contact-li").attr("class", "nav-top-bar");
-                $("#contact-li").css("border-bottom-style", "none");
+            $("#resume-li").attr("class", "nav-top-bar");
+            $("#resume-li").css("border-bottom-style", "none");
 
-                $("#resume-li").attr("class", "nav-top-bar");
-                $("#resume-li").css("border-bottom-style", "none");
-            }
-        );
+            $("#contact-li").attr("class", "nav-top-bar");
+            $("#contact-li").css("border-bottom-style", "none");
+        }
+    );
+
+    $("#skill-li").on(
+        "click",
+        function() {
+            $(".skills").css("display", "block");
+            $(".main").css("display", "none");
+            $(".certificates").css("display", "none");
+            $(".repositories").css("display", "none");
+            $(".contacts").css("display", "none");
+            $(".privacy").css("display", "none");
+            $(".region-picker").css("display", "none");
+            $(document).scrollTop(0);
+
+            $("#about-li").attr("class", "nav-top-bar");
+            $("#about-li").css("border-bottom-style", "none");
+
+            $("#certificate-li").attr("class", "nav-top-bar");
+            $("#certificate-li").css("border-bottom-style", "none");
+
+            $("#skill-li").attr("class", "nav-top-bar active");
+            $("#skill-li").css("border-bottom-style", "solid");
+
+            $("#repository-li").attr("class", "nav-top-bar");
+            $("#repository-li").css("border-bottom-style", "none");
+
+            $("#resume-li").attr("class", "nav-top-bar");
+            $("#resume-li").css("border-bottom-style", "none");
+
+            $("#contact-li").attr("class", "nav-top-bar");
+            $("#contact-li").css("border-bottom-style", "none");
+        }
+    );
+
+    $("#repository-li").on(
+        "click",
+        function() {
+            $(".repositories").css("display", "block");
+            $(".main").css("display", "none");
+            $(".certificates").css("display", "none");
+            $(".skills").css("display", "none");
+            $(".contacts").css("display", "none");
+            $(".privacy").css("display", "none");
+            $(".region-picker").css("display", "none");
+            $(document).scrollTop(0);
+
+            $("#about-li").attr("class", "nav-top-bar");
+            $("#about-li").css("border-bottom-style", "none");
+
+            $("#certificate-li").attr("class", "nav-top-bar");
+            $("#certificate-li").css("border-bottom-style", "none");
+
+            $("#skill-li").attr("class", "nav-top-bar");
+            $("#skill-li").css("border-bottom-style", "none");
+
+            $("#repository-li").attr("class", "nav-top-bar active");
+            $("#repository-li").css("border-bottom-style", "solid");
+
+            $("#resume-li").attr("class", "nav-top-bar");
+            $("#resume-li").css("border-bottom-style", "none");
+
+            $("#contact-li").attr("class", "nav-top-bar");
+            $("#contact-li").css("border-bottom-style", "none");
+        }
+    );
+
+    $("#contact-li").on(
+        "click",
+        function() {
+            $(".contacts").css("display", "block");
+            $(".main").css("display", "none");
+            $(".certificates").css("display", "none");
+            $(".skills").css("display", "none");
+            $(".repositories").css("display", "none");
+            $(".privacy").css("display", "none");
+            $(".region-picker").css("display", "none");
+            $(document).scrollTop(0);
+
+            $("#about-li").attr("class", "nav-top-bar");
+            $("#about-li").css("border-bottom-style", "none");
+
+            $("#certificate-li").attr("class", "nav-top-bar");
+            $("#certificate-li").css("border-bottom-style", "none");
+
+            $("#skill-li").attr("class", "nav-top-bar");
+            $("#skill-li").css("border-bottom-style", "none");
+
+            $("#repository-li").attr("class", "nav-top-bar");
+            $("#repository-li").css("border-bottom-style", "none");
+
+            $("#resume-li").attr("class", "nav-top-bar");
+            $("#resume-li").css("border-bottom-style", "none");
+
+            $("#contact-li").attr("class", "nav-top-bar active");
+            $("#contact-li").css("border-bottom-style", "solid");
+        }
+    );
 
 // MAIN - BUTTONS "FIND OUT MORE" --------------------------------------------------------------------------------------
     $("#card-button-hard-div").hover(
@@ -121,6 +223,110 @@ $(document).ready(function () {
         }
     );
 
+// MAIN - REPOSITORIES -------------------------------------------------------------------------------------------------
+$("#algorithms-li").on(
+        "click",
+        function() {
+            $(".leetcode-algorithms").css("display", "block");
+            $(".leetcode-concurrency").css("display", "none");
+            $(".leetcode-database").css("display", "none");
+            $(".leetcode-shell").css("display", "none");
+
+            $("#algorithms-li").attr("class", "nav-leetcode-top-bar-active");
+            $("#algorithms-li").css("border-bottom-style", "solid");
+            $("#algorithms-a").attr("class", "nav-leetcode-top-bar-active");
+
+            $("#concurrency-li").attr("class", "nav-leetcode-top-bar");
+            $("#concurrency-li").css("border-bottom-style", "none");
+            $("#concurrency-a").attr("class", "nav-leetcode-top-bar");
+
+            $("#database-li").attr("class", "nav-leetcode-top-bar");
+            $("#database-li").css("border-bottom-style", "none");
+            $("#database-a").attr("class", "nav-leetcode-top-bar");
+
+            $("#shell-li").attr("class", "nav-leetcode-top-bar");
+            $("#shell-li").css("border-bottom-style", "none");
+            $("#shell-a").attr("class", "nav-leetcode-top-bar");
+        }
+    );
+
+    $("#concurrency-li").on(
+        "click",
+        function() {
+            $(".leetcode-concurrency").css("display", "block");
+            $(".leetcode-algorithms").css("display", "none");
+            $(".leetcode-database").css("display", "none");
+            $(".leetcode-shell").css("display", "none");
+
+            $("#algorithms-li").attr("class", "nav-leetcode-top-bar");
+            $("#algorithms-li").css("border-bottom-style", "none");
+            $("#algorithms-a").attr("class", "nav-leetcode-top-bar");
+
+            $("#concurrency-li").attr("class", "nav-leetcode-top-bar-active");
+            $("#concurrency-li").css("border-bottom-style", "solid");
+            $("#concurrency-a").attr("class", "nav-leetcode-top-bar-active");
+
+            $("#database-li").attr("class", "nav-leetcode-top-bar");
+            $("#database-li").css("border-bottom-style", "none");
+            $("#database-a").attr("class", "nav-leetcode-top-bar");
+
+            $("#shell-li").attr("class", "nav-leetcode-top-bar");
+            $("#shell-li").css("border-bottom-style", "none");
+            $("#shell-a").attr("class", "nav-leetcode-top-bar");
+        }
+    );
+
+    $("#database-li").on(
+        "click",
+        function() {
+            $(".leetcode-database").css("display", "block");
+            $(".leetcode-algorithms").css("display", "none");
+            $(".leetcode-concurrency").css("display", "none");
+            $(".leetcode-shell").css("display", "none");
+
+            $("#algorithms-li").attr("class", "nav-leetcode-top-bar");
+            $("#algorithms-li").css("border-bottom-style", "none");
+            $("#algorithms-a").attr("class", "nav-leetcode-top-bar");
+
+            $("#concurrency-li").attr("class", "nav-leetcode-top-bar");
+            $("#concurrency-li").css("border-bottom-style", "none");
+            $("#concurrency-a").attr("class", "nav-leetcode-top-bar");
+
+            $("#database-li").attr("class", "nav-leetcode-top-bar-active");
+            $("#database-li").css("border-bottom-style", "solid");
+            $("#database-a").attr("class", "nav-leetcode-top-bar-active");
+
+            $("#shell-li").attr("class", "nav-leetcode-top-bar");
+            $("#shell-li").css("border-bottom-style", "none");
+            $("#shell-a").attr("class", "nav-leetcode-top-bar");
+        }
+    );
+
+    $("#shell-li").on(
+        "click",
+        function() {
+            $(".leetcode-shell").css("display", "block");
+            $(".leetcode-algorithms").css("display", "none");
+            $(".leetcode-concurrency").css("display", "none");
+            $(".leetcode-database").css("display", "none");
+
+            $("#algorithms-li").attr("class", "nav-leetcode-top-bar");
+            $("#algorithms-li").css("border-bottom-style", "none");
+            $("#algorithms-a").attr("class", "nav-leetcode-top-bar");
+
+            $("#concurrency-li").attr("class", "nav-leetcode-top-bar");
+            $("#concurrency-li").css("border-bottom-style", "none");
+            $("#concurrency-a").attr("class", "nav-leetcode-top-bar");
+
+            $("#database-li").attr("class", "nav-leetcode-top-bar");
+            $("#database-li").css("border-bottom-style", "none");
+            $("#database-a").attr("class", "nav-leetcode-top-bar");
+
+            $("#shell-li").attr("class", "nav-leetcode-top-bar-active");
+            $("#shell-li").css("border-bottom-style", "solid");
+            $("#shell-a").attr("class", "nav-leetcode-top-bar-active");
+        }
+    );
 // FOOTER - SOCIALS ----------------------------------------------------------------------------------------------------
     $("#footer-github").hover(
         function () {
@@ -168,6 +374,9 @@ $(document).ready(function () {
             $(".region-picker").css("display", "block");
             $(".main").css("display", "none");
             $(".certificates").css("display", "none");
+            $(".skills").css("display", "none");
+            $(".repositories").css("display", "none");
+            $(".contacts").css("display", "none");
             $(".privacy").css("display", "none");
             $(document).scrollTop(0);
 
@@ -180,8 +389,8 @@ $(document).ready(function () {
             $("#skill-li").attr("class", "nav-top-bar");
             $("#skill-li").css("border-bottom-style", "none");
 
-            $("#git-li").attr("class", "nav-top-bar");
-            $("#git-li").css("border-bottom-style", "none");
+            $("#repository-li").attr("class", "nav-top-bar");
+            $("#repository-li").css("border-bottom-style", "none");
 
             $("#contact-li").attr("class", "nav-top-bar");
             $("#contact-li").css("border-bottom-style", "none");
@@ -197,6 +406,9 @@ $(document).ready(function () {
             $(".privacy").css("display", "block");
             $(".main").css("display", "none");
             $(".certificates").css("display", "none");
+            $(".skills").css("display", "none");
+            $(".repositories").css("display", "none");
+            $(".contacts").css("display", "none");
             $(".region-picker").css("display", "none");
             $(document).scrollTop(0);
 
@@ -209,8 +421,8 @@ $(document).ready(function () {
             $("#skill-li").attr("class", "nav-top-bar");
             $("#skill-li").css("border-bottom-style", "none");
 
-            $("#git-li").attr("class", "nav-top-bar");
-            $("#git-li").css("border-bottom-style", "none");
+            $("#repository-li").attr("class", "nav-top-bar");
+            $("#repository-li").css("border-bottom-style", "none");
 
             $("#contact-li").attr("class", "nav-top-bar");
             $("#contact-li").css("border-bottom-style", "none");
@@ -271,16 +483,69 @@ function aboutNext() {
 
 
 function openHard() {
+    $(".skills").css("display", "block");
+    $(".main").css("display", "none");
+    $(".certificates").css("display", "none");
+    $(".repositories").css("display", "none");
+    $(".contacts").css("display", "none");
+    $(".privacy").css("display", "none");
+    $(".region-picker").css("display", "none");
+    $(document).scrollTop(0);
 
+    $("#about-li").attr("class", "nav-top-bar");
+    $("#about-li").css("border-bottom-style", "none");
+
+    $("#certificate-li").attr("class", "nav-top-bar");
+    $("#certificate-li").css("border-bottom-style", "none");
+
+    $("#skill-li").attr("class", "nav-top-bar active");
+    $("#skill-li").css("border-bottom-style", "solid");
+
+    $("#repository-li").attr("class", "nav-top-bar");
+    $("#repository-li").css("border-bottom-style", "none");
+
+    $("#contact-li").attr("class", "nav-top-bar");
+    $("#contact-li").css("border-bottom-style", "none");
+
+    $("#resume-li").attr("class", "nav-top-bar");
+    $("#resume-li").css("border-bottom-style", "none");
 }
 
 function openSoft() {
+    $(".skills").css("display", "block");
+    $(".main").css("display", "none");
+    $(".certificates").css("display", "none");
+    $(".repositories").css("display", "none");
+    $(".contacts").css("display", "none");
+    $(".privacy").css("display", "none");
+    $(".region-picker").css("display", "none");
+    $(document).scrollTop(1432);
 
+    $("#about-li").attr("class", "nav-top-bar");
+    $("#about-li").css("border-bottom-style", "none");
+
+    $("#certificate-li").attr("class", "nav-top-bar");
+    $("#certificate-li").css("border-bottom-style", "none");
+
+    $("#skill-li").attr("class", "nav-top-bar active");
+    $("#skill-li").css("border-bottom-style", "solid");
+
+    $("#repository-li").attr("class", "nav-top-bar");
+    $("#repository-li").css("border-bottom-style", "none");
+
+    $("#contact-li").attr("class", "nav-top-bar");
+    $("#contact-li").css("border-bottom-style", "none");
+
+    $("#resume-li").attr("class", "nav-top-bar");
+    $("#resume-li").css("border-bottom-style", "none");
 }
 
 function openEducation() {
     $(".certificates").css("display", "block");
     $(".main").css("display", "none");
+    $(".skills").css("display", "none");
+    $(".repositories").css("display", "none");
+    $(".contacts").css("display", "none");
     $(".privacy").css("display", "none");
     $(".region-picker").css("display", "none");
     $(document).scrollTop(0);
@@ -294,8 +559,8 @@ function openEducation() {
     $("#skill-li").attr("class", "nav-top-bar");
     $("#skill-li").css("border-bottom-style", "none");
 
-    $("#git-li").attr("class", "nav-top-bar");
-    $("#git-li").css("border-bottom-style", "none");
+    $("#repository-li").attr("class", "nav-top-bar");
+    $("#repository-li").css("border-bottom-style", "none");
 
     $("#contact-li").attr("class", "nav-top-bar");
     $("#contact-li").css("border-bottom-style", "none");
@@ -307,9 +572,12 @@ function openEducation() {
 function openCourses() {
     $(".certificates").css("display", "block");
     $(".main").css("display", "none");
+    $(".skills").css("display", "none");
+    $(".repositories").css("display", "none");
+    $(".contacts").css("display", "none");
     $(".privacy").css("display", "none");
     $(".region-picker").css("display", "none");
-    $(document).scrollTop(900);
+    $(document).scrollTop(1320);
 
     $("#about-li").attr("class", "nav-top-bar");
     $("#about-li").css("border-bottom-style", "none");
@@ -320,8 +588,38 @@ function openCourses() {
     $("#skill-li").attr("class", "nav-top-bar");
     $("#skill-li").css("border-bottom-style", "none");
 
-    $("#git-li").attr("class", "nav-top-bar");
-    $("#git-li").css("border-bottom-style", "none");
+    $("#repository-li").attr("class", "nav-top-bar");
+    $("#repository-li").css("border-bottom-style", "none");
+
+    $("#contact-li").attr("class", "nav-top-bar");
+    $("#contact-li").css("border-bottom-style", "none");
+
+    $("#resume-li").attr("class", "nav-top-bar");
+    $("#resume-li").css("border-bottom-style", "none");
+}
+
+function openRepositories() {
+    $(".repositories").css("display", "block");
+
+    $(".main").css("display", "none");
+    $(".certificates").css("display", "none");
+    $(".skills").css("display", "none");
+    $(".contacts").css("display", "none");
+    $(".privacy").css("display", "none");
+    $(".region-picker").css("display", "none");
+    $(document).scrollTop(0);
+
+    $("#about-li").attr("class", "nav-top-bar");
+    $("#about-li").css("border-bottom-style", "none");
+
+    $("#certificate-li").attr("class", "nav-top-bar");
+    $("#certificate-li").css("border-bottom-style", "none");
+
+    $("#skill-li").attr("class", "nav-top-bar");
+    $("#skill-li").css("border-bottom-style", "none");
+
+    $("#repository-li").attr("class", "nav-top-bar active");
+    $("#repository-li").css("border-bottom-style", "solid");
 
     $("#contact-li").attr("class", "nav-top-bar");
     $("#contact-li").css("border-bottom-style", "none");

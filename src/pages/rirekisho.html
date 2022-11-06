@@ -1,0 +1,856 @@
+<!doctype html>
+<!-- HTML --------------------------------------------------------------------------------------------------------------HTML-->
+<html class="no-js" lang="en" dir="ltr">
+    <!-- HEAD ----------------------------------------------------------------------------------------------------------HEAD-->
+    <head>
+        <title>Daniel Polo - Rirekisho</title>
+
+        <!-- META ------------------------------------------------------------------------------------------------------HEAD:META-->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html">
+
+        <!-- CSS -------------------------------------------------------------------------------------------------------HEAD:CSS-->
+        <link type="text/css" rel="stylesheet" href="../src/assets/css/resources/sheet.css" >
+        <style type="text/css">
+            .ritz .waffle a { color: inherit; }
+            .ritz .waffle .s7{border-right:1px SOLID #000000;background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:11pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s41{border-bottom:1px SOLID #000000;border-right:1px DOTTED #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:12pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s16{border-bottom:1px DOTTED #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:12pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s44{border-right:1px SOLID #000000;background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:12pt;vertical-align:top;white-space:normal;overflow:hidden;word-wrap:break-word;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s13{border-bottom:1px DOTTED #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:10pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s18{border-bottom:1px SOLID #000000;border-right:1px DOTTED #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:10pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s15{border-bottom:1px DOTTED #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:12pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s32{border-bottom:1px SOLID #000000;background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:11pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s20{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:12pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s46{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:12pt;vertical-align:top;white-space:normal;overflow:hidden;word-wrap:break-word;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s36{border-bottom:1px SOLID #000000;background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:11pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s8{border-bottom:3px DOUBLE #000000;border-right:1px DOTTED #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:10pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s43{border-bottom:1px DOTTED #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:10pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s22{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:11pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0;}
+            .ritz .waffle .s4{background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:11pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s10{border-bottom:1px SOLID #000000;background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:8pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s33{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:11pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s2{background-color:#ffffff;text-align:right;color:#000000;font-family:'docs-Roboto',Arial;font-size:11pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s0{background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:22pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s38{border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:12pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s9{border-bottom:3px DOUBLE #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:10pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s40{border-bottom:1px DOTTED #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:12pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s1{background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:8pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s29{border-bottom:1px SOLID #000000;border-right:1px DOTTED #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:12pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s25{border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:10pt;vertical-align:middle;white-space:normal;overflow:hidden;word-wrap:break-word;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s5{border-bottom:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:11pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s39{border-bottom:1px DOTTED #000000;border-right:1px DOTTED #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:12pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s49{background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:8pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s17{border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:10pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s42{border-bottom:1px SOLID #000000;background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:10pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s28{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;color:#1155cc;font-family:'docs-Roboto',Arial;font-size:10pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s21{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:12pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s31{border-bottom:1px DOTTED #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:11pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s45{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:10pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0;}
+            .ritz .waffle .s27{border-right:1px SOLID #000000;background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:9pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s3{background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:11pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s6{border-bottom:1px SOLID #000000;background-color:#ffffff;text-align:right;color:#000000;font-family:'docs-Roboto',Arial;font-size:12pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s48{background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:10pt;vertical-align:middle;white-space:normal;overflow:hidden;word-wrap:break-word;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s50{background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:8pt;vertical-align:middle;white-space:normal;overflow:hidden;word-wrap:break-word;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s11{border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:9pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s24{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:10pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s30{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:12pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s35{border-right:1px SOLID #000000;background-color:#ffffff;text-align:right;color:#000000;font-family:'docs-Roboto',Arial;font-size:10pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s34{background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:9pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s26{border-bottom:1px SOLID #000000;border-right:1px DOTTED #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:10pt;vertical-align:middle;white-space:normal;overflow:hidden;word-wrap:break-word;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s19{border-bottom:1px SOLID #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:22pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s23{border-bottom:1px DOTTED #000000;border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:10pt;vertical-align:top;white-space:normal;overflow:hidden;word-wrap:break-word;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s47{background-color:#ffffff;text-align:left;color:#000000;font-family:'docs-Roboto',Arial;font-size:11pt;vertical-align:top;white-space:normal;overflow:hidden;word-wrap:break-word;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s12{border-bottom:1px DOTTED #000000;border-right:1px DOTTED #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:10pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s37{border-right:1px SOLID #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:11pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+            .ritz .waffle .s14{border-bottom:1px DOTTED #000000;border-right:1px DOTTED #000000;background-color:#ffffff;text-align:center;color:#000000;font-family:'docs-Roboto',Arial;font-size:12pt;vertical-align:middle;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}
+        </style>
+    </head>
+
+    <!-- BODY DESKTOP --------------------------------------------------------------------------------------------------BODY:Desktop-->
+    <body>
+        <div class="ritz grid-container" dir="ltr">
+            <table class="waffle" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th class="row-header freezebar-origin-ltr"></th>
+                        <th id="616954004C0" style="width:57px;" class="column-headers-background">A</th>
+                        <th id="616954004C1" style="width:70px;" class="column-headers-background">B</th>
+                        <th id="616954004C2" style="width:57px;" class="column-headers-background">C</th>
+                        <th id="616954004C3" style="width:57px;" class="column-headers-background">D</th>
+                        <th id="616954004C4" style="width:57px;" class="column-headers-background">E</th>
+                        <th id="616954004C5" style="width:57px;" class="column-headers-background">F</th>
+                        <th id="616954004C6" style="width:57px;" class="column-headers-background">G</th>
+                        <th id="616954004C7" style="width:57px;" class="column-headers-background">H</th>
+                        <th id="616954004C8" style="width:57px;" class="column-headers-background">I</th>
+                        <th id="616954004C9" style="width:57px;" class="column-headers-background">J</th>
+                        <th id="616954004C10" style="width:57px;" class="column-headers-background">K</th>
+                        <th id="616954004C11" style="width:57px;" class="column-headers-background">L</th>
+                        <th id="616954004C12" style="width:57px;" class="column-headers-background">M</th>
+                        <th id="616954004C13" style="width:57px;" class="column-headers-background">N</th>
+                        <th id="616954004C14" style="width:57px;" class="column-headers-background">O</th>
+                        <th id="616954004C15" style="width:57px;" class="column-headers-background">P</th>
+                        <th id="616954004C16" style="width:57px;" class="column-headers-background">Q</th>
+                        <th id="616954004C17" style="width:57px;" class="column-headers-background">R</th>
+                        <th id="616954004C18" style="width:57px;" class="column-headers-background">S</th>
+                        <th id="616954004C19" style="width:57px;" class="column-headers-background">T</th>
+                        <th id="616954004C20" style="width:57px;" class="column-headers-background">U</th>
+                        <th id="616954004C21" style="width:57px;" class="column-headers-background">V</th>
+                        <th id="616954004C22" style="width:57px;" class="column-headers-background">W</th>
+                        <th id="616954004C23" style="width:57px;" class="column-headers-background">X</th>
+                        <th id="616954004C24" style="width:57px;" class="column-headers-background">Y</th>
+                        <th id="616954004C25" style="width:57px;" class="column-headers-background">Z</th>
+                        <th id="616954004C26" style="width:57px;" class="column-headers-background">AA</th>
+                        <th id="616954004C27" style="width:57px;" class="column-headers-background">AB</th>
+                        <th id="616954004C28" style="width:57px;" class="column-headers-background">AC</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="height: 19px">
+                        <th id="616954004R0" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">1</div>
+                        </th>
+                        <td class="s0" dir="ltr"></td>
+                        <td class="s0" dir="ltr"></td>
+                        <td class="s0" dir="ltr"></td>
+                        <td class="s1" dir="ltr"></td>
+                        <td class="s1" dir="ltr"></td>
+                        <td class="s2"></td>
+                        <td class="s2"></td>
+                        <td class="s2"></td>
+                        <td class="s2"></td>
+                        <td class="s2"></td>
+                        <td class="s2"></td>
+                        <td class="s3"></td>
+                        <td class="s3"></td>
+                        <td class="s3"></td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                        <td class="s3"></td>
+                        <td class="s3"></td>
+                        <td class="s3"></td>
+                        <td class="s3"></td>
+                        <td class="s3"></td>
+                        <td class="s3"></td>
+                        <td class="s3"></td>
+                        <td class="s3"></td>
+                        <td class="s3"></td>
+                        <td class="s3"></td>
+                        <td class="s3"></td>
+                        <td class="s3"></td>
+                        <td class="s3"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R1" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">2</div>
+                        </th>
+                        <td class="s0" dir="ltr"></td>
+                        <td class="s0" dir="ltr" colspan="4" rowspan="2">Resume</td>
+                        <td class="s2" colspan="6"></td>
+                        <td class="s5" colspan="3" rowspan="11"></td>
+                        <td class="s4"></td><td class="s4"></td>
+                        <td class="s5" colspan="13"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R2" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">3</div>
+                        </th>
+                        <td class="s0" dir="ltr"></td>
+                        <td class="s6" dir="ltr" colspan="6" rowspan="2">2022-11-01</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s8" dir="ltr" rowspan="2">Year</td>
+                        <td class="s9" dir="ltr" rowspan="2">Month</td>
+                        <td class="s9" dir="ltr" colspan="11" rowspan="2">Education ・ Work history (write separately)</td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R3" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">4</div>
+                        </th>
+                        <td class="s1" dir="ltr"></td>
+                        <td class="s10" dir="ltr" colspan="4"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R4" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">5</div>
+                        </th>
+                        <td class="s11" dir="ltr"></td>
+                        <td class="s12" dir="ltr" rowspan="2">Phonetic</td>
+                        <td class="s13" dir="ltr" colspan="9" rowspan="2"> [pɔlo] [danˈjɛl]</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2018</td>
+                        <td class="s15" dir="ltr" rowspan="2">11</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> Freelance web developer, Left</td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R5" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">6</div>
+                        </th>
+                        <td class="s11" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R6" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">7</div>
+                        </th>
+                        <td class="s17" dir="ltr"></td>
+                        <td class="s18" dir="ltr" rowspan="6">Identity</td>
+                        <td class="s19" dir="ltr" colspan="9" rowspan="6"> Polo Daniel</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2019</td>
+                        <td class="s15" dir="ltr" rowspan="2">6</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> Tiger Club ASD, Assistant Martial Arts Instructor, Left for ethical reasons</td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R7" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">8</div>
+                        </th>
+                        <td class="s17" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R8" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">9</div>
+                        </th>
+                        <td class="s17" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2019</td>
+                        <td class="s15" dir="ltr" rowspan="2">8</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> Restaurant pizzeria &quot;Vecchia Napoli&quot;, Left for health reasons</td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R9" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">10</div>
+                        </th>
+                        <td class="s17" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R10" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">11</div>
+                        </th>
+                        <td class="s17" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2021</td>
+                        <td class="s15" dir="ltr" rowspan="2">5</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> Ater Gorizia (Internship), Joined</td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R11" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">12</div>
+                        </th>
+                        <td class="s17" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R12" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">13</div>
+                        </th>
+                        <td class="s17" dir="ltr"></td>
+                        <td class="s18" dir="ltr" rowspan="2">Nationality</td>
+                        <td class="s20" dir="ltr" colspan="3" rowspan="2"> Italian</td>
+                        <td class="s18" dir="ltr" colspan="3" rowspan="2">Date of birth (age)</td>
+                        <td class="s21" dir="ltr" colspan="3" rowspan="2">1986-**-**（35）</td>
+                        <td class="s18" dir="ltr" rowspan="2">Gender</td>
+                        <td class="s22" dir="ltr" colspan="2" rowspan="2">
+                            <div style="width:115px;height:33px;">
+                                <img src="https://lh5.googleusercontent.com/dWLIe3xuoYRuu4bRM_JD6HYnCfB6U4f35UBjuVbluCaoB10UiBMXs2tWj3Nn_M37lLaNl5gtSxmouanX362Lyl3_uLQUnCt7tmN0LdsGWV6mQsp56asYUR_Y7kn-5UizjmjddUStmc7vSQYA-dlgqaSYYlGUi6-OX1SB5vo9UkJ4seF00ISmUOJCnJiz-Owk=w115-h33" style="width:inherit;height:inherit;object-fit:scale-down;object-position:center center;"/>
+                            </div>
+                        </td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2021</td>
+                        <td class="s15" dir="ltr" rowspan="2">6</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> Ater Gorizia (Internship), Finished</td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R13" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">14</div>
+                        </th>
+                        <td class="s17" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R14" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">15</div>
+                        </th>
+                        <td class="s11" dir="ltr"></td>
+                        <td class="s12" dir="ltr" rowspan="2">Phonetic</td>
+                        <td class="s13" dir="ltr" colspan="9" rowspan="2"> [ˈvikolo] [********] [********], **, ***** [****] [*******] UD ITALY</td>
+                        <td class="s23" dir="ltr" colspan="3">Phone</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s14" rowspan="2">2022</td>
+                        <td class="s15" rowspan="2">9</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> Euris spa (Internship), Joined</td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R15" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">16</div>
+                        </th>
+                        <td class="s11" dir="ltr"></td>
+                        <td class="s24" colspan="3" rowspan="2">(+**) ***-****-****</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R16" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">17</div>
+                        </th>
+                        <td class="s25" dir="ltr"></td>
+                        <td class="s26" dir="ltr" rowspan="4">Current address</td>
+                        <td class="s27" colspan="9" rowspan="2"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s14" rowspan="2">2022</td>
+                        <td class="s15" rowspan="2">10</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> Euris spa (Internship), Finished</td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R17" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">18</div>
+                        </th>
+                        <td class="s25" dir="ltr"></td>
+                        <td class="s23" dir="ltr" colspan="3">E-mail address</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R18" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">19</div>
+                        </th>
+                        <td class="s25" dir="ltr"></td>
+                        <td class="s20" dir="ltr" colspan="9" rowspan="2"> Vicolo ******** ********, **, ***** **** ******* UD ITALY</td>
+                        <td class="s28" dir="ltr" colspan="3" rowspan="2">daniel.polo.work@gmail.com</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s29" rowspan="2"></td>
+                        <td class="s30" rowspan="2"></td>
+                        <td class="s21" dir="ltr" colspan="11" rowspan="2">Over</td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R19" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">20</div>
+                        </th>
+                        <td class="s25" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R20" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">21</div>
+                        </th>
+                        <td class="s11" dir="ltr"></td>
+                        <td class="s12" dir="ltr" rowspan="2">Phonetic</td>
+                        <td class="s31" dir="ltr" colspan="9" rowspan="2"></td>
+                        <td class="s23" dir="ltr" colspan="3">Phone</td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                        <td class="s32" colspan="13"></td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R21" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">22</div>
+                        </th>
+                        <td class="s11" dir="ltr"></td>
+                        <td class="s33" dir="ltr" colspan="3" rowspan="2"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s8" dir="ltr" rowspan="2">Year</td>
+                        <td class="s9" dir="ltr" rowspan="2">Month</td>
+                        <td class="s9" dir="ltr" colspan="11" rowspan="2">Eligibility ・ Exemption ・ Qualification</td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R22" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">23</div>
+                        </th>
+                        <td class="s25" dir="ltr"></td>
+                        <td class="s26" dir="ltr" rowspan="4">Second address</td>
+                        <td class="s34"></td>
+                        <td class="s35" dir="ltr" colspan="8" rowspan="2">(Fill in only if you wish to contact someone other than your current address)</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R23" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">24</div>
+                        </th>
+                        <td class="s25" dir="ltr"></td>
+                        <td class="s34"></td>
+                        <td class="s23" dir="ltr" colspan="3">E-mail address</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2004</td>
+                        <td class="s15" dir="ltr" rowspan="2">5</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> High school extracurricular courses (1. PHP backend development; 2. ECDL)</td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R24" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">25</div>
+                        </th>
+                        <td class="s25" dir="ltr"></td>
+                        <td class="s20" dir="ltr" colspan="9" rowspan="2"> Ditto</td>
+                        <td class="s33" dir="ltr" colspan="3" rowspan="2"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 16px">
+                        <th id="616954004R25" style="height: 16px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 16px">26</div>
+                        </th>
+                        <td class="s25" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2005</td>
+                        <td class="s15" dir="ltr" rowspan="2">11</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> Type B driving licence</td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R26" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">27</div>
+                        </th>
+                        <td class="s4"></td>
+                        <td class="s36"></td>
+                        <td class="s36"></td>
+                        <td class="s36"></td>
+                        <td class="s36"></td>
+                        <td class="s36"></td>
+                        <td class="s36"></td>
+                        <td class="s36"></td>
+                        <td class="s36"></td>
+                        <td class="s36"></td>
+                        <td class="s36"></td>
+                        <td class="s36"></td>
+                        <td class="s36"></td>
+                        <td class="s36"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R27" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">28</div>
+                        </th>
+                        <td class="s37" dir="ltr"></td>
+                        <td class="s8" dir="ltr" rowspan="2">Year</td>
+                        <td class="s9" dir="ltr" rowspan="2">Month</td>
+                        <td class="s9" dir="ltr" colspan="11" rowspan="2">Education ・ Work history (write separately)</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2009</td>
+                        <td class="s15" dir="ltr" rowspan="2">10</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> Hazard Analysis and Critical Control Point Certificate</td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R28" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">29</div>
+                        </th>
+                        <td class="s37" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R29" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">30</div>
+                        </th>
+                        <td class="s38"></td>
+                        <td class="s39" rowspan="2"></td>
+                        <td class="s40" rowspan="2"></td>
+                        <td class="s15" dir="ltr" colspan="11" rowspan="2">Academic background</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2021</td>
+                        <td class="s15" dir="ltr" rowspan="2">7</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> 3D/2D CAD technician for automotive, graduation         </td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R30" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">31</div>
+                        </th>
+                        <td class="s38"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R31" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">32</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2000</td>
+                        <td class="s15" dir="ltr" rowspan="2">9</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> ISIS &quot;Galileo Galilei&quot;, Gorizia, Computer Science, Enrollment</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2022</td>
+                        <td class="s15" dir="ltr" rowspan="2">6</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> HPPS - General occupational safety: Generic-risk</td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R32" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">33</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R33" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">34</div>
+                        </th><td class="s38"></td>
+                        <td class="s14" rowspan="2">2007</td>
+                        <td class="s15" rowspan="2">7</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> ISIS &quot;Galileo Galilei&quot;, Gorizia, Computer Science, Graduation </td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2022</td>
+                        <td class="s15" dir="ltr" rowspan="2">6</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> HPPS - Specified occupational safety: Low-risk for video terminal workers </td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R34" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">35</div>
+                        </th>
+                        <td class="s38"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R35" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">36</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2007</td>
+                        <td class="s15" dir="ltr" rowspan="2">9</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> Università degli Studi di Udine &quot;Rizzi&quot;, Udine, Computer Science, Enrollment</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s41" dir="ltr" rowspan="2">2022</td>
+                        <td class="s21" dir="ltr" rowspan="2">10</td>
+                        <td class="s20" dir="ltr" colspan="11" rowspan="2"> Java backend developer, graduation</td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R36" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">37</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R37" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">38</div>
+                        </th>
+                        <td class="s38"></td>
+                        <td class="s14" rowspan="2">2010</td>
+                        <td class="s15" rowspan="2">2</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> Università degli Studi di Udine &quot;Rizzi&quot;, Udine, Computer Science, Abandoned              </td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                        <td class="s42" colspan="13"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R38" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">39</div>
+                        </th>
+                        <td class="s38"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s43" dir="ltr" colspan="9">Special skills, self-promotion, etc.</td>
+                        <td class="s43" dir="ltr" colspan="4">Commuting time</td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R39" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">40</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s39" rowspan="2"></td>
+                        <td class="s40" rowspan="2"></td>
+                        <td class="s15" dir="ltr" colspan="11" rowspan="2"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s44" dir="ltr" colspan="9" rowspan="7">Highly dedicated and productive striving to provide the best service possible. Very self-critical and proud of the commitment I put into the work. Always aim to give my best beyond company expectations and this skill has been best shown in all my previous jobs. Other strong points are leadership and tutoring, honed as a martial arts assistant instructor by teaching kids between 4 and 12 years old, where I have been admired for my empathy and kindness. <br>                                                                      </td>
+                        <td class="s21" dir="ltr" colspan="4" rowspan="2">Approximately 0h 20m</td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R40" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">41</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R41" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">42</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s14" rowspan="2"></td>
+                        <td class="s15" rowspan="2"></td>
+                        <td class="s15" dir="ltr" colspan="11" rowspan="2">Work history</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s43" dir="ltr" colspan="4">Dependents (excluding spouse)</td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R42" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">43</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s21" dir="ltr" colspan="4" rowspan="2">0 people</td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R43" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">44</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2002</td>
+                        <td class="s15" dir="ltr" rowspan="2">11</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> Restaurant pizzeria &quot;Al Pergolato&quot;, Joined</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R44" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">45</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s43" dir="ltr" colspan="2">Spouse</td>
+                        <td class="s43" dir="ltr" colspan="2">Obligations</td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R45" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">46</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2010</td>
+                        <td class="s15" dir="ltr" rowspan="2">5</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> Restaurant pizzeria &quot;Al Pergolato&quot;, Left for a better opportunity</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s45" dir="ltr" colspan="2" rowspan="2">
+                            <div style="width:115px;height:39px;">
+                                <img src="https://lh3.googleusercontent.com/q01bK3HE4Zhb-KgXhSJ1R8caLpfe2prqBfTLlvguHFLraIq1sW5OWHc_CtgLKB0uq5eTdmf2fo0GjzPeQfGq1BAeO0e5K3YU0kBeRZOTMuzIAGobDwn_e9JY80WZ-BidOLME3m3WWsQSWFptFCu5gYUevqhjaPpj4WNQCLS1r5COOt9H_NtmKx62KbgPntJi=w115-h39" style="width:inherit;height:inherit;object-fit:scale-down;object-position:center center;"/>
+                            </div>
+                        </td>
+                        <td class="s45" dir="ltr" colspan="2" rowspan="2">
+                            <div style="width:115px;height:39px;">
+                                <img src="https://lh4.googleusercontent.com/Cjwp7qdcaX4pBt-iBNbklGgncQztKh0IEpdjzSwn3WoXdrL_7-GkYqy7C44Uxi_C-cTrsKXeJf8q0egnnu8JK06_vL7ydL1pIH9gWInzCvCD6kciHoCD9ledBPC5HXfRmjwpM-I-Vq1B-Kq4xSHHPkZpmLGPQ8QIrzgZILojkBflkLOrBV4TZo4FI6wOVtXN=w115-h39" style="width:inherit;height:inherit;object-fit:scale-down;object-position:center center;"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R46" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">47</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s46" dir="ltr" colspan="9">For more information visit my website
+                            <span style="text-decoration:underline;-webkit-text-decoration-skip:none;text-decoration-skip-ink:none;color:#1155cc;">
+                                <a target="_blank" href="http://danielpolowork.github.io/">http://danielpolowork.github.io</a>
+                            </span>.
+                        </td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R47" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">48</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2010</td>
+                        <td class="s15" dir="ltr" rowspan="2">5</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> Bathing establishment PIPER srl (seasonal, summer), Joined</td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                        <td class="s42" colspan="13"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R48" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">49</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s9" dir="ltr" colspan="13" rowspan="2">Fill in the personal preference field (especially if you have any wishes regarding salary, working hours, etc.)</td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R49" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">50</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2011</td>
+                        <td class="s15" dir="ltr" rowspan="2">10</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> Officine Tecnosider srl, Joined</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R50" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">51</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                        <td class="s46" dir="ltr" colspan="13" rowspan="8">For personal needs I am looking for a &quot;full remote&quot; job, for any other desire and/or preference I adapt to the regulations of your company.</td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R51" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">52</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2011</td>
+                        <td class="s15" dir="ltr" rowspan="2">12</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> Officine Tecnosider srl, Left due to unsatisfactory contract</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R52" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">53</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R53" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">54</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2012</td>
+                        <td class="s15" dir="ltr" rowspan="2">9</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> Bathing establishment PIPER srl (seasonal, summer), Contract expired</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R54" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">55</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R55" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">56</div>
+                        </th>
+                        <td class="s38"></td>
+                        <td class="s14" rowspan="2">2012</td>
+                        <td class="s15" rowspan="2">9</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> Tiger Club ASD, Assistant Martial Arts Instructor, Joined</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R56" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">57</div>
+                        </th>
+                        <td class="s38"></td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R57" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">58</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s14" dir="ltr" rowspan="2">2014</td>
+                        <td class="s15" dir="ltr" rowspan="2">7</td>
+                        <td class="s16" dir="ltr" colspan="11" rowspan="2"> Restaurant pizzeria &quot;Vecchia Napoli&quot;, Joined</td>
+                        <td class="s4"></td>
+                        <td class="s7"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R58" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">59</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                        <td class="s47" dir="ltr"></td>
+                        <td class="s47" dir="ltr"></td>
+                        <td class="s47" dir="ltr"></td>
+                        <td class="s47" dir="ltr"></td>
+                        <td class="s47" dir="ltr"></td>
+                        <td class="s47" dir="ltr"></td>
+                        <td class="s47" dir="ltr"></td>
+                        <td class="s47" dir="ltr"></td>
+                        <td class="s47" dir="ltr"></td>
+                        <td class="s47" dir="ltr"></td>
+                        <td class="s47" dir="ltr"></td>
+                        <td class="s47" dir="ltr"></td>
+                        <td class="s47" dir="ltr"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R59" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">60</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s41" dir="ltr" rowspan="2">2015</td>
+                        <td class="s21" dir="ltr" rowspan="2">3</td>
+                        <td class="s20" dir="ltr" colspan="11" rowspan="2"> Freelance web developer, Joined</td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                        <td class="s48" dir="ltr" colspan="13" rowspan="2">I authorize the processing of information on this document, pursuant to of Legislative Decree 196 of 2003 June 30 and art. 13 GDPR (EU Regulation 2016/679) for the purposes of research and selection of personnel.</td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R60" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">61</div>
+                        </th>
+                        <td class="s38" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                    </tr>
+                    <tr style="height: 19px">
+                        <th id="616954004R61" style="height: 19px;" class="row-headers-background">
+                            <div class="row-header-wrapper" style="line-height: 19px">62</div>
+                        </th>
+                        <td class="s49" dir="ltr"></td>
+                        <td class="s49" dir="ltr"></td>
+                        <td class="s49" dir="ltr"></td>
+                        <td class="s49" dir="ltr"></td>
+                        <td class="s50" dir="ltr"></td>
+                        <td class="s50" dir="ltr"></td>
+                        <td class="s50" dir="ltr"></td>
+                        <td class="s50" dir="ltr"></td>
+                        <td class="s50" dir="ltr"></td>
+                        <td class="s50" dir="ltr"></td>
+                        <td class="s50" dir="ltr"></td>
+                        <td class="s50" dir="ltr"></td>
+                        <td class="s50" dir="ltr"></td>
+                        <td class="s50" dir="ltr"></td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                        <td class="s4"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

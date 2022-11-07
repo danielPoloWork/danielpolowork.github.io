@@ -190,6 +190,11 @@ p.nav-main-about.motto{
     color: rgb(186 211 198);
 }
 
+div.profile-div {
+    padding-top: 1rem;
+    padding-left: 36.36625rem;
+}
+
 div.nav-main-info {
     height: 100%;
     padding-top: 0rem;
@@ -213,7 +218,7 @@ p.nav-main-card-button {
 div.nav-main-info-skill {
     min-height: 17.8125rem;
     border-radius: 1.5625rem;
-    margin-top: 3.328125rem;;
+    /*margin-top: 3.328125rem;*/
     background-color: rgb(255 255 255);
 }
 

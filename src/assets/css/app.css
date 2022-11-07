@@ -1326,6 +1326,19 @@ div.nav-resume-title.scroll {
     overflow-y: auto;
 }
 
+div.body-div-left,
+div.body-div-right {
+    float:left;
+}
+
+div.body-div-left {
+    width: 31.525625rem;
+}
+
+div.body-div-right {
+    padding-left: 12.849625rem;
+}
+
 h1.nav-resume {
     font-weight: bold;
     font-size: 3.9375rem;

@@ -218,7 +218,7 @@ p.nav-main-card-button {
 div.nav-main-info-skill {
     min-height: 17.8125rem;
     border-radius: 1.5625rem;
-    /*margin-top: 3.328125rem;*/
+    padding-top: 3.328125rem;
     background-color: rgb(255 255 255);
 }
 
@@ -991,6 +991,11 @@ span.material-symbols-outlined.skills-list-icon {
 .jp-name {
     padding-top: 2rem;
     padding-left: 41.2065625rem;
+}
+
+div.certificate-profile-div {
+    padding-top: 1rem;
+    padding-left: 36.36625rem;
 }
 
 /* Repositories ******************************************************************************************************** REPOSITORIES */

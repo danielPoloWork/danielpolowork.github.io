@@ -27,6 +27,7 @@ $(document).ready(function () {
 
             $("#about-li").attr("class", "nav-top-bar active");
             $("#about-li").css("border-bottom-style", "solid");
+            $("#about-li").css("border-bottom-color", "rgb(108 119 100)");
 
             $("#certificate-li").attr("class", "nav-top-bar");
             $("#certificate-li").css("border-bottom-style", "none");
@@ -63,6 +64,7 @@ $(document).ready(function () {
 
             $("#certificate-li").attr("class", "nav-top-bar active");
             $("#certificate-li").css("border-bottom-style", "solid");
+            $("#certificate-li").css("border-bottom-color", "rgb(251 188 5)");
 
             $("#skill-li").attr("class", "nav-top-bar");
             $("#skill-li").css("border-bottom-style", "none");
@@ -99,6 +101,7 @@ $(document).ready(function () {
 
             $("#skill-li").attr("class", "nav-top-bar active");
             $("#skill-li").css("border-bottom-style", "solid");
+            $("#skill-li").css("border-bottom-color", "rgb(52 168 83)");
 
             $("#repository-li").attr("class", "nav-top-bar");
             $("#repository-li").css("border-bottom-style", "none");
@@ -135,6 +138,7 @@ $(document).ready(function () {
 
             $("#repository-li").attr("class", "nav-top-bar active");
             $("#repository-li").css("border-bottom-style", "solid");
+            $("#repository-li").css("border-bottom-color", "rgb(66 133 244)");
 
             $("#resume-li").attr("class", "nav-top-bar");
             $("#resume-li").css("border-bottom-style", "none");
@@ -171,6 +175,7 @@ $(document).ready(function () {
 
             $("#resume-li").attr("class", "nav-top-bar active");
             $("#resume-li").css("border-bottom-style", "solid");
+            $("#resume-li").css("border-bottom-color", "rgb(234 67 53)");
 
             $("#contact-li").attr("class", "nav-top-bar");
             $("#contact-li").css("border-bottom-style", "none");
@@ -207,6 +212,7 @@ $(document).ready(function () {
 
             $("#contact-li").attr("class", "nav-top-bar active");
             $("#contact-li").css("border-bottom-style", "solid");
+            $("#contact-li").css("border-bottom-color", "rgb(234 67 53)");
         }
     );
 
@@ -541,6 +547,7 @@ function openHard() {
 
     $("#skill-li").attr("class", "nav-top-bar active");
     $("#skill-li").css("border-bottom-style", "solid");
+    $("#skill-li").css("border-bottom-color", "rgb(52 168 83)");
 
     $("#repository-li").attr("class", "nav-top-bar");
     $("#repository-li").css("border-bottom-style", "none");
@@ -571,6 +578,7 @@ function openSoft() {
 
     $("#skill-li").attr("class", "nav-top-bar active");
     $("#skill-li").css("border-bottom-style", "solid");
+    $("#skill-li").css("border-bottom-color", "rgb(52 168 83)");
 
     $("#repository-li").attr("class", "nav-top-bar");
     $("#repository-li").css("border-bottom-style", "none");
@@ -598,6 +606,7 @@ function openEducation() {
 
     $("#certificate-li").attr("class", "nav-top-bar active");
     $("#certificate-li").css("border-bottom-style", "solid");
+    $("#certificate-li").css("border-bottom-color", "rgb(251 188 5)");
 
     $("#skill-li").attr("class", "nav-top-bar");
     $("#skill-li").css("border-bottom-style", "none");
@@ -628,6 +637,7 @@ function openCourses() {
 
     $("#certificate-li").attr("class", "nav-top-bar active");
     $("#certificate-li").css("border-bottom-style", "solid");
+    $("#certificate-li").css("border-bottom-color", "rgb(251 188 5)");
 
     $("#skill-li").attr("class", "nav-top-bar");
     $("#skill-li").css("border-bottom-style", "none");
@@ -664,6 +674,7 @@ function openRepositories() {
 
     $("#repository-li").attr("class", "nav-top-bar active");
     $("#repository-li").css("border-bottom-style", "solid");
+    $("#repository-li").css("border-bottom-color", "rgb(66 133 244)");
 
     $("#contact-li").attr("class", "nav-top-bar");
     $("#contact-li").css("border-bottom-style", "none");

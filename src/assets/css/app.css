@@ -54,6 +54,8 @@ div.brand {
 div.nav-top-bar {
     height: 3.4375rem;
     width: 40.375rem;
+    /*width: 44.314375rem;
+    width: 45.814375rem;*/
     padding-top: 0rem;
     padding-bottom: 0rem;
     padding-right: 0.96875rem;
@@ -70,11 +72,11 @@ ul.nav-top-bar {
 }
 
 li.nav-top-bar.is-active {
-    border-bottom-color: #4285F4;
+    border-bottom-color: rgb(108 119 100);
     border-bottom-style: solid;
 }
 li.nav-top-bar.active {
-    border-bottom-color: #4285F4;
+    border-bottom-color: rgb(108 119 100);
     border-bottom-style: solid;
 }
 

@@ -14,13 +14,13 @@
 /* --- Sans -------------------------------------------------------------- */
 @font-face {
   font-family: anthropicSans;
-  src: url(../../assets/fonts/sans-roman.woff2) format("woff2");
+  src: url(../../../assets/fonts/sans-roman.woff2) format("woff2");
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: anthropicSans;
-  src: url(../../assets/fonts/sans-italic.woff2) format("woff2");
+  src: url(../../../assets/fonts/sans-italic.woff2) format("woff2");
   font-display: swap;
   font-style: italic;
 }
@@ -36,13 +36,13 @@
 /* --- Serif ------------------------------------------------------------- */
 @font-face {
   font-family: anthropicSerif;
-  src: url(../../assets/fonts/serif-roman.woff2) format("woff2");
+  src: url(../../../assets/fonts/serif-roman.woff2) format("woff2");
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: anthropicSerif;
-  src: url(../../assets/fonts/serif-italic.woff2) format("woff2");
+  src: url(../../../assets/fonts/serif-italic.woff2) format("woff2");
   font-display: swap;
   font-style: italic;
 }
@@ -58,13 +58,13 @@
 /* --- Mono -------------------------------------------------------------- */
 @font-face {
   font-family: anthropicMono;
-  src: url(../../assets/fonts/mono-roman.woff2) format("woff2");
+  src: url(../../../assets/fonts/mono-roman.woff2) format("woff2");
   font-display: swap;
   font-style: normal;
 }
 @font-face {
   font-family: anthropicMono;
-  src: url(../../assets/fonts/mono-italic.woff2) format("woff2");
+  src: url(../../../assets/fonts/mono-italic.woff2) format("woff2");
   font-display: swap;
   font-style: italic;
 }

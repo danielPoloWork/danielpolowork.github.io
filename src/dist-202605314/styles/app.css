@@ -9,7 +9,7 @@
 /*  --font-sans: "Hanken Grotesk", "Noto Sans JP", "Noto Sans SC", system-ui, -apple-system, sans-serif;*/
 /*  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;*/
 /*}*/
-@import "./foundations/fonts.css";
+@import "foundations/fonts.css";
 
 :root {
   --font-display: anthropicSerif, "anthropicSerif Fallback", serif;

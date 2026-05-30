@@ -1,0 +1,78 @@
+/* =============================================================================
+ * Mycelium CODEX — Web Fonts (@font-face)
+ *
+ * Single source of truth for the Anthropic brand typefaces.
+ * Files live in apps/portal/src/assets/fonts/; url() paths are relative to
+ * THIS file (apps/portal/src/styles/foundation/), hence ../../assets/fonts/.
+ *
+ * The "* Fallback" faces carry metric overrides so the system fallback shown
+ * during font swap matches the web font's box, avoiding layout shift (CLS).
+ *
+ * Family names are wired into --font-* in tokens.css.
+ * ========================================================================== */
+
+/* --- Sans -------------------------------------------------------------- */
+@font-face {
+  font-family: anthropicSans;
+  src: url(../../assets/fonts/sans-roman.woff2) format("woff2");
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: anthropicSans;
+  src: url(../../assets/fonts/sans-italic.woff2) format("woff2");
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "anthropicSans Fallback";
+  src: local(Arial);
+  ascent-override: 92.99%;
+  descent-override: 24.13%;
+  line-gap-override: 0.0%;
+  size-adjust: 106.73%;
+}
+
+/* --- Serif ------------------------------------------------------------- */
+@font-face {
+  font-family: anthropicSerif;
+  src: url(../../assets/fonts/serif-roman.woff2) format("woff2");
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: anthropicSerif;
+  src: url(../../assets/fonts/serif-italic.woff2) format("woff2");
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "anthropicSerif Fallback";
+  src: local(Arial);
+  ascent-override: 96.05%;
+  descent-override: 24.92%;
+  line-gap-override: 0.0%;
+  size-adjust: 103.33%;
+}
+
+/* --- Mono -------------------------------------------------------------- */
+@font-face {
+  font-family: anthropicMono;
+  src: url(../../assets/fonts/mono-roman.woff2) format("woff2");
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: anthropicMono;
+  src: url(../../assets/fonts/mono-italic.woff2) format("woff2");
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "anthropicMono Fallback";
+  src: local(Arial);
+  ascent-override: 75.48%;
+  descent-override: 19.58%;
+  line-gap-override: 0.0%;
+  size-adjust: 131.49%;
+}

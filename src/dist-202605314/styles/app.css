@@ -177,6 +177,13 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height
 }
 .lang button.active { color: var(--on-accent); background: var(--accent); }
 
+.logo-circle {
+  width: 80px;      /* stessa larghezza e altezza */
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover; /* ritaglia bene se il logo non è quadrato */
+}
+
 /* theme toggle */
 .theme-toggle {
   width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border-strong);

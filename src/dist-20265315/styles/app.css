@@ -379,6 +379,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height
 .repo-main .rtags { font-family: var(--font-mono); font-size: 0.74rem; color: var(--muted); margin-top: 5px; }
 .repo-main .rdesc { color: var(--ink-soft); font-size: 0.95rem; margin-top: 7px; line-height: 1.5; }
 .repo .rlang { font-family: var(--font-mono); font-size: 0.74rem; color: var(--accent); border: 1px solid var(--border-strong); padding: 4px 10px; border-radius: 999px; white-space: nowrap; }
+.repo--soon { opacity: 0.72; cursor: default; }
+.repo--soon:hover { background: transparent; }
+.repo--soon .rico { background: var(--surface-2); color: var(--muted); }
+.repo--soon .rlang { color: var(--muted); }
 
 /* ---------- Contact ---------- */
 .contact { background: var(--bg-tint); border-top: 1px solid var(--border); }

@@ -1,0 +1,105 @@
+/* ============================================================
+   Daniel Polo — Single blog post
+   ?slug=<slug>  →  reads meta from posts/index.json and the body from
+   posts/<slug>/<lang>.md, renders markdown (marked) sanitised (DOMPurify),
+   and re-renders the body + meta when the language changes.
+   ============================================================ */
+(function () {
+  "use strict";
+
+  var titleEl = document.getElementById("articleTitle");
+  var dateEl = document.getElementById("articleDate");
+  var typeEl = document.getElementById("articleType");
+  var themesEl = document.getElementById("articleThemes");
+  var bodyEl = document.getElementById("articleBody");
+  var headEl = document.getElementById("articleHead");
+  if (!bodyEl) return;
+
+  var LANGS = { ja: 1, zh: 1, en: 1 };
+  function lang() {
+    var l = document.documentElement.getAttribute("lang");
+    if (!l) { try { l = localStorage.getItem("dp-lang"); } catch (e) {} }
+    return LANGS[l] ? l : "en";
+  }
+  function t(key) {
+    var L = window.I18N || {}, d = L[lang()] || L.en || {};
+    return d[key] != null ? d[key] : (L.en && L.en[key] != null ? L.en[key] : key);
+  }
+  function pick(f) {
+    if (f == null) return "";
+    if (typeof f === "string") return f;
+    return f[lang()] || f.en || f[Object.keys(f)[0]] || "";
+  }
+  function fmtDate(iso) {
+    try { return new Date(iso + "T00:00:00").toLocaleDateString(lang(), { year: "numeric", month: "long", day: "numeric" }); }
+    catch (e) { return iso; }
+  }
+  function param(name) {
+    var m = new RegExp("[?&]" + name + "=([^&]*)").exec(window.location.search);
+    return m ? decodeURIComponent(m[1].replace(/\+/g, " ")) : "";
+  }
+  function showError() {
+    if (headEl) headEl.style.display = "none";
+    bodyEl.innerHTML = '<div class="blog-state">' + t("blog.notFound") +
+      ' <a href="blog.html">' + t("blog.back") + "</a></div>";
+  }
+
+  var slug = param("slug");
+  var meta = null;
+
+  function renderMeta() {
+    if (!meta) return;
+    var title = pick(meta.title);
+    if (titleEl) titleEl.textContent = title;
+    if (title) document.title = title + " — Daniel Polo";
+    if (dateEl) dateEl.textContent = fmtDate(meta.date);
+    if (typeEl) { typeEl.textContent = t("blog.type." + meta.type); typeEl.setAttribute("data-type", meta.type); }
+    if (themesEl) {
+      themesEl.innerHTML = "";
+      (meta.themes || []).forEach(function (th) {
+        var s = document.createElement("span");
+        s.className = "ptheme";
+        s.textContent = th;
+        themesEl.appendChild(s);
+      });
+    }
+  }
+
+  function renderBody() {
+    if (!meta) return;
+    bodyEl.innerHTML = '<div class="blog-state">…</div>';
+    var l = lang();
+    fetchBody(l)
+      .catch(function () { return l === "en" ? Promise.reject() : fetchBody("en"); })
+      .then(function (md) {
+        var html = window.marked ? window.marked.parse(md) : md;
+        if (window.DOMPurify) html = window.DOMPurify.sanitize(html);
+        bodyEl.innerHTML = html;
+      })
+      .catch(function () { bodyEl.innerHTML = '<div class="blog-state">' + t("blog.empty") + "</div>"; });
+  }
+  function fetchBody(l) {
+    return fetch("posts/" + slug + "/" + l + ".md", { cache: "no-cache" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); });
+  }
+
+  function renderAll() { renderMeta(); renderBody(); }
+
+  if (window.marked) window.marked.setOptions({ gfm: true, breaks: false });
+
+  if (!slug) { showError(); return; }
+
+  fetch("posts/index.json", { cache: "no-cache" })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (data) {
+      var list = (data && data.posts) || [];
+      meta = list.filter(function (p) { return p.slug === slug; })[0] || null;
+      if (!meta) { showError(); return; }
+      renderAll();
+    })
+    .catch(showError);
+
+  document.querySelectorAll("#lang button").forEach(function (b) {
+    b.addEventListener("click", function () { setTimeout(renderAll, 0); });
+  });
+})();

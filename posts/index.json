@@ -1,0 +1,36 @@
+{
+  "posts": [
+    {
+      "slug": "ai-agent-orchestration",
+      "date": "2026-06-17",
+      "type": "deep-dive",
+      "themes": ["AI", "Software Development"],
+      "title": {
+        "en": "Orchestrating AI agents: patterns that survive production",
+        "ja": "AIエージェントのオーケストレーション：本番で生き残るパターン",
+        "zh": "编排 AI 智能体：能在生产环境中存活的模式"
+      },
+      "excerpt": {
+        "en": "Fan-out, pipelines, and adversarial verification — analysing how multi-agent designs hold up when real work hits them.",
+        "ja": "ファンアウト、パイプライン、敵対的検証 — 実務に晒されたときマルチエージェント設計がどう持ちこたえるかを分析します。",
+        "zh": "扇出、流水线与对抗式校验 — 分析多智能体设计在真实负载下的表现。"
+      }
+    },
+    {
+      "slug": "clean-architecture-revisited",
+      "date": "2026-06-10",
+      "type": "summary",
+      "themes": ["Software Development"],
+      "title": {
+        "en": "Clean architecture, revisited",
+        "ja": "クリーンアーキテクチャ再考",
+        "zh": "重新审视整洁架构"
+      },
+      "excerpt": {
+        "en": "A short summary of what actually matters: boundaries, dependency direction, and keeping the core free of frameworks.",
+        "ja": "本当に重要なことの短い要約：境界、依存方向、そしてコアをフレームワークから守ること。",
+        "zh": "对真正重要之处的简短摘要：边界、依赖方向，以及让核心远离框架。"
+      }
+    }
+  ]
+}

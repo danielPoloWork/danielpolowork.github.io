@@ -83,6 +83,35 @@ tags are inline-only; only the description is translated (one `repo.<name>.desc`
 language). Empty buckets fall back to a `.repo--soon` placeholder card. The Mycelium (08)
 and Challenge (09) sections are **not** managed by the sync — they're hand-authored.
 
+## Blog (client-side rendered, trilingual)
+
+Posts are Markdown in `posts/`, rendered **in the browser** with vendored `marked` +
+`DOMPurify` (no build step, no CI). Pages:
+
+- `blog.html` — list with search / type+theme filters / date sort (`blog.js` → `#postList`).
+- `post.html?slug=<slug>` — single post; `post.js` fetches the body and renders it.
+- The homepage shows the latest 3 in a preview band (`blog.js` → `#blogPreview`).
+
+Data model:
+- `posts/index.json` — the **hand-maintained manifest** (a browser can't list a dir, so
+  this is the source of truth for the list). One object per post: `slug`, `date`
+  (`YYYY-MM-DD`), `type` (`deep-dive|debate|critique|summary`), `themes` (free tags,
+  shown as-is, not translated), and `title`/`excerpt` as `{en,ja,zh}`.
+- `posts/<slug>/en.md`, `ja.md`, `zh.md` — the body per language (plain markdown, no
+  frontmatter). The language switcher re-renders the body; missing languages fall back to `en`.
+
+To add a post: create the three `.md` files + add one entry to `posts/index.json`, then
+commit. No command, no build.
+
+Blog UI strings live in `i18n.js` under `blog.*` / `blog.type.*` / `nav.blog` / `footer.home`
+(all three languages, like the rest of the chrome). Article + list styling is in
+`styles/blog.css` (loaded on `index.html`, `blog.html`, `post.html`). The vendored libs
+live in `scripts/vendor/` and, like all dist assets, move with the version-stamped folder.
+
+Comments are **scaffolded but inactive**: `post.html` has a `.comments` block with an HTML
+comment showing exactly how to drop in Giscus once GitHub Discussions + the giscus app are
+set up (the repo owner must do that and supply the IDs).
+
 ## Conventions
 
 - **Theming:** `main.js` toggles `data-theme="light|dark"` on `<html>`; `app.css`

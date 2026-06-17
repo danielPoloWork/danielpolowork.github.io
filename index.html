@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&family=Noto+Serif+SC:wght@500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="src/dist-20265315/styles/app.css" />
+<link rel="stylesheet" href="src/dist-20265315/styles/blog.css" />
 </head>
 <body>
 
@@ -25,6 +26,7 @@
     <a href="#work" data-i18n="nav.work">Work</a>
     <a href="#approach" data-i18n="nav.approach">Approach</a>
     <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+    <a href="blog.html" data-i18n="nav.blog">Blog</a>
     <a href="#contact" data-i18n="nav.contact">Contact</a>
   </div>
   <div class="nav-tools">
@@ -76,6 +78,21 @@
     <div class="stat reveal d1"><div class="num">~200<span class="unit">/d</span></div><div class="lab" data-i18n="stat.ops">Pick-and-place operations orchestrated daily</div></div>
     <div class="stat reveal d2"><div class="num">~20<span class="unit">K</span></div><div class="lab" data-i18n="stat.sku">SKUs managed in a fully-automated warehouse</div></div>
     <div class="stat reveal d3"><div class="num">~99<span class="unit">%</span></div><div class="lab" data-i18n="stat.cut">Drawing time removed via CAD automation</div></div>
+  </div>
+</section>
+
+<!-- ===================== BLOG PREVIEW ===================== -->
+<section class="section-pad" id="blog-preview" style="background:var(--bg-tint);border-block:1px solid var(--border)">
+  <div class="wrap">
+    <div class="section-head reveal" style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap">
+      <div>
+        <span class="eyebrow" data-i18n="blog.eyebrow">Blog</span>
+        <h2 data-i18n="blog.title">Notes on AI, software, and the craft</h2>
+      </div>
+      <a class="btn btn-ghost" href="blog.html"><span data-i18n="blog.viewall">View all posts</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="blog-preview-grid reveal" id="blogPreview"></div>
   </div>
 </section>
 
@@ -453,5 +470,6 @@
 
 <script src="src/dist-20265315/scripts/i18n.js"></script>
 <script src="src/dist-20265315/scripts/main.js"></script>
+<script src="src/dist-20265315/scripts/blog.js"></script>
 </body>
 </html>

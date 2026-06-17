@@ -13,7 +13,6 @@
   var previewEl = document.getElementById("blogPreview");
   if (!listEl && !previewEl) return;
 
-  var TYPE_ORDER = ["deep-dive", "debate", "critique", "summary"];
   var LANGS = { ja: 1, zh: 1, en: 1 };
 
   function lang() {
@@ -56,7 +55,6 @@
     latest.forEach(function (p) {
       var a = el("a", "bp-card");
       a.href = "post.html?slug=" + encodeURIComponent(p.slug);
-      a.appendChild(el("span", "ptype", esc(t("blog.type." + p.type)))).setAttribute("data-type", p.type);
       a.appendChild(el("h4", null, esc(pick(p.title))));
       a.appendChild(el("p", "bp-excerpt", esc(pick(p.excerpt))));
       a.appendChild(el("span", "pr-date", esc(fmtDate(p.date))));
@@ -65,8 +63,7 @@
   }
 
   /* ---------- Full list (blog.html) ---------- */
-  var state = { q: "", type: "", theme: "", sort: "newest" };
-  var controlsBuilt = false;
+  var state = { q: "", theme: "", sort: "newest" };
 
   function buildControls() {
     var bar = document.getElementById("blogControls");
@@ -79,18 +76,6 @@
     search.placeholder = t("blog.search");
     search.addEventListener("input", function () { state.q = search.value; renderList(); });
     bar.appendChild(search);
-
-    // type chips (only types present in the data)
-    var presentTypes = TYPE_ORDER.filter(function (ty) { return posts.some(function (p) { return p.type === ty; }); });
-    if (presentTypes.length) {
-      var tg = el("div", "filter-group");
-      tg.appendChild(el("span", "fg-label", esc(t("blog.filterType"))));
-      tg.appendChild(chip(t("blog.all"), state.type === "", function () { state.type = ""; renderList(); }));
-      presentTypes.forEach(function (ty) {
-        tg.appendChild(chip(t("blog.type." + ty), state.type === ty, function () { state.type = ty; renderList(); }));
-      });
-      bar.appendChild(tg);
-    }
 
     // theme chips (unique themes across posts)
     var themes = [];
@@ -127,7 +112,6 @@
 
     var q = state.q.trim().toLowerCase();
     var rows = posts.filter(function (p) {
-      if (state.type && p.type !== state.type) return false;
       if (state.theme && (p.themes || []).indexOf(state.theme) < 0) return false;
       if (q) {
         var hay = (pick(p.title) + " " + pick(p.excerpt) + " " + (p.themes || []).join(" ")).toLowerCase();
@@ -155,9 +139,6 @@
       main.appendChild(el("h4", null, esc(pick(p.title)) + " <span class=\"ext\">↗</span>"));
       main.appendChild(el("div", "pr-excerpt", esc(pick(p.excerpt))));
       var meta = el("div", "pr-meta");
-      var ty = el("span", "ptype", esc(t("blog.type." + p.type)));
-      ty.setAttribute("data-type", p.type);
-      meta.appendChild(ty);
       (p.themes || []).forEach(function (th) { meta.appendChild(el("span", "ptheme", esc(th))); });
       main.appendChild(meta);
 

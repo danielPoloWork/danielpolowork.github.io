@@ -1,9 +1,14 @@
 {
+  "sections": [
+    { "id": "deep-dive", "order": 1, "label": { "en": "Deep dive", "ja": "深掘り", "zh": "深入解析" } },
+    { "id": "debate",    "order": 2, "label": { "en": "Debate",    "ja": "ディベート", "zh": "辩论" } },
+    { "id": "critique",  "order": 3, "label": { "en": "Critique",  "ja": "批評", "zh": "评析" } },
+    { "id": "summary",   "order": 4, "label": { "en": "Summary",   "ja": "要約", "zh": "摘要" } }
+  ],
   "posts": [
     {
       "slug": "ai-agent-orchestration",
       "date": "2026-06-17",
-      "type": "deep-dive",
       "themes": ["AI", "Software Development"],
       "title": {
         "en": "Orchestrating AI agents: patterns that survive production",
@@ -19,7 +24,6 @@
     {
       "slug": "clean-architecture-revisited",
       "date": "2026-06-10",
-      "type": "summary",
       "themes": ["Software Development"],
       "title": {
         "en": "Clean architecture, revisited",

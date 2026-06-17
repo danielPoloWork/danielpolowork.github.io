@@ -92,19 +92,25 @@ Posts are Markdown in `posts/`, rendered **in the browser** with vendored `marke
 - `post.html?slug=<slug>` — single post; `post.js` fetches the body and renders it.
 - The homepage shows the latest 3 in a preview band (`blog.js` → `#blogPreview`).
 
-Data model:
-- `posts/index.json` — the **hand-maintained manifest** (a browser can't list a dir, so
-  this is the source of truth for the list). One object per post: `slug`, `date`
-  (`YYYY-MM-DD`), `type` (`deep-dive|debate|critique|summary`), `themes` (free tags,
-  shown as-is, not translated), and `title`/`excerpt` as `{en,ja,zh}`.
+Data model — `posts/index.json` is the **hand-maintained manifest** (a browser can't list a
+dir, so this is the single source of truth):
+- `sections[]` — the fixed article sections, each `{ id, order, label:{en,ja,zh} }`. Every
+  post is ONE article containing these four sections (Deep dive / Debate / Critique /
+  Summary); the localised `label`s are used as the section headings when authoring. There is
+  **no per-post "type" and no type filter** — the list filters by **theme** + search + date.
+- `posts[]` — one object per post: `slug`, `date` (`YYYY-MM-DD`), `themes` (free tags, shown
+  as-is, not translated), and `title`/`excerpt` as `{en,ja,zh}`.
 - `posts/<slug>/en.md`, `ja.md`, `zh.md` — the body per language (plain markdown, no
   frontmatter). The language switcher re-renders the body; missing languages fall back to `en`.
 
-To add a post: create the three `.md` files + add one entry to `posts/index.json`, then
-commit. No command, no build.
+To create a post (no build either way):
+- `/draft-from-raw` — read source files from `raw/`, synthesise a four-section article
+  (English architect voice + faithful JA/ZH translations), and update the manifest. This is
+  the main authoring path.
+- `/new-post` — scaffold a post by hand (same four-section structure) + update the manifest.
 
-Blog UI strings live in `i18n.js` under `blog.*` / `blog.type.*` / `nav.blog` / `footer.home`
-(all three languages, like the rest of the chrome). Article + list styling is in
+Blog UI strings live in `i18n.js` under `blog.*` / `nav.blog` / `footer.home` (all three
+languages, like the rest of the chrome). Article + list styling is in
 `styles/blog.css` (loaded on `index.html`, `blog.html`, `post.html`). The vendored libs
 live in `scripts/vendor/` and, like all dist assets, move with the version-stamped folder.
 

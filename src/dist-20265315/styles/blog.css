@@ -4,21 +4,6 @@
    Built on app.css design tokens; loaded only on blog.html / post.html.
    ============================================================ */
 
-/* ---------- Type accent colors (one per post type) ---------- */
-:root,
-[data-theme="light"] {
-  --type-deep-dive: #1769C4;   /* blue   */
-  --type-debate:    #109AAC;   /* teal   */
-  --type-critique:  #B4661C;   /* amber  */
-  --type-summary:   #2E8B6F;   /* green  */
-}
-[data-theme="dark"] {
-  --type-deep-dive: #4AA3EC;
-  --type-debate:    #2BCBDC;
-  --type-critique:  #E0A152;
-  --type-summary:   #5FC7A6;
-}
-
 /* ---------- Blog list header + controls ---------- */
 .blog-controls {
   display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
@@ -82,21 +67,7 @@
   white-space: nowrap; align-self: start; padding-top: 3px;
 }
 
-/* ---------- Type badge + theme chips (in rows / article) ---------- */
-.ptype {
-  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500;
-  display: inline-flex; align-items: center; gap: 6px;
-  padding: 3px 10px; border-radius: 999px;
-  border: 1px solid var(--border-strong); color: var(--ink-soft); white-space: nowrap;
-}
-.ptype::before {
-  content: ""; width: 7px; height: 7px; border-radius: 50%;
-  background: var(--type-color, var(--accent));
-}
-.ptype[data-type="deep-dive"] { --type-color: var(--type-deep-dive); }
-.ptype[data-type="debate"]    { --type-color: var(--type-debate); }
-.ptype[data-type="critique"]  { --type-color: var(--type-critique); }
-.ptype[data-type="summary"]   { --type-color: var(--type-summary); }
+/* ---------- Theme chips (in rows / article) ---------- */
 .ptheme {
   font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted);
   padding: 3px 9px; border-radius: 999px; background: var(--surface-2);

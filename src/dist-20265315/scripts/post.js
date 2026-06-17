@@ -9,7 +9,6 @@
 
   var titleEl = document.getElementById("articleTitle");
   var dateEl = document.getElementById("articleDate");
-  var typeEl = document.getElementById("articleType");
   var themesEl = document.getElementById("articleThemes");
   var bodyEl = document.getElementById("articleBody");
   var headEl = document.getElementById("articleHead");
@@ -53,7 +52,6 @@
     if (titleEl) titleEl.textContent = title;
     if (title) document.title = title + " — Daniel Polo";
     if (dateEl) dateEl.textContent = fmtDate(meta.date);
-    if (typeEl) { typeEl.textContent = t("blog.type." + meta.type); typeEl.setAttribute("data-type", meta.type); }
     if (themesEl) {
       themesEl.innerHTML = "";
       (meta.themes || []).forEach(function (th) {

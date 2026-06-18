@@ -20,6 +20,25 @@
       }
     },
     {
+      "slug": "open-knowledge-format",
+      "date": "2026-06-12",
+      "themes": [
+        "AI",
+        "Knowledge Management",
+        "Software Development"
+      ],
+      "title": {
+        "en": "The Format I Was Already Writing by Hand: Inside the Open Knowledge Format",
+        "ja": "私がすでに手で書いていたフォーマット：Open Knowledge Format を読む",
+        "zh": "我早已在手写的那份标准：解读 Open Knowledge Format"
+      },
+      "excerpt": {
+        "en": "Google Cloud's Open Knowledge Format turns the LLM-wiki pattern into a portable spec: knowledge as markdown files in git, not rows behind a proprietary catalog. Having run the same pattern in Mycelium OS for three months before it had a name, I read OKF for what it gets right — files over databases for agents — and the semantic-interoperability problem it still defers.",
+        "ja": "Google Cloud の Open Knowledge Format は LLM ウィキのパターンを可搬な仕様へと形式化する——独自カタログの背後の行ではなく、git の中のマークダウンファイルとしての知識だ。名前を知る前に三か月間 Mycelium OS で同じパターンを運用していた私が、OKF が正しく捉えていること——エージェントにとってデータベースよりファイル——と、なお先送りにしている意味的相互運用性の問題を読み解く。",
+        "zh": "Google Cloud 的 Open Knowledge Format 把 LLM 维基模式形式化为一份可移植规范：知识是 git 中的 markdown 文件，而非专有目录背后的一行行记录。在它有名字之前，我已在 Mycelium OS 里运行了同一套模式三个月——我来读读 OKF 做对了什么（对智能体而言文件胜过数据库），以及它仍然往后推的那个语义互操作难题。"
+      }
+    },
+    {
       "slug": "clean-architecture-revisited",
       "date": "2026-06-02",
       "themes": [

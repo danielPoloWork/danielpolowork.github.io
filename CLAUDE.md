@@ -32,15 +32,27 @@ or compile.
 
 The asset folder is named like `src/dist-20265315/` (see recent commits:
 `dist-2026.5.31-4`, `-5`, …). On each release the folder is renamed to a new version.
-`index.html` references it in **three places** that must all be updated together when
-the version changes:
+**This rename IS the cache-busting mechanism** — it forces browsers to refetch every
+asset, including the ones resolved at runtime (the Giscus theme CSS, loaded by `post.js`
+relative to the `app.css` link, and the `@font-face` files `@import`ed by `app.css`).
+The path is hardcoded in **`index.html`, `blog.html`, and `post.html`** — each references
+`app.css`, `blog.css`, `i18n.js`, `main.js` and (post.html) the vendored libs + `post.js`
+from this folder. All of these must move together when the version changes.
 
-- `<link rel="stylesheet" href="src/dist-<version>/styles/app.css" />` (in `<head>`)
-- `<script src="src/dist-<version>/scripts/i18n.js"></script>` (before `</body>`)
-- `<script src="src/dist-<version>/scripts/main.js"></script>` (before `</body>`)
+If a style or script change "doesn't show up," it's almost always stale cache because the
+version wasn't bumped — check that these paths point at the folder you actually edited.
 
-If a style or script change "doesn't show up," check that these paths point at the
-folder you actually edited.
+**Don't bump by hand — use the tooling:**
+
+- `node tools/bump-dist.mjs` renames `src/dist-<old>` → `src/dist-<new>` (date-stamped,
+  e.g. `dist-20260618-1`) and rewrites every reference in the three HTML files atomically.
+  `--dry-run` prints what it would do. It does not stage/commit — you do.
+- A **`pre-push` hook** (`tools/hooks/pre-push`) enforces this automatically: if the
+  commits you push change `src/dist/**` but the version wasn't bumped vs `origin/master`,
+  it runs the bump, commits it, and aborts the push — re-run the push to include it.
+  Because PRs are merged on GitHub (no local `git push origin master`), the bump must ride
+  **in the feature branch's PR**, which is exactly when this hook fires.
+  Activate once per clone: `git config core.hooksPath tools/hooks`.
 
 ### 2. i18n.js is the source of truth for user-visible text, not index.html
 

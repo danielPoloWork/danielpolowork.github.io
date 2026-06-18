@@ -1,0 +1,45 @@
+#!/bin/sh
+# ============================================================
+# pre-push — cache-bust guard for the version-stamped dist folder.
+#
+# If the commits being pushed change anything under src/dist/** but
+# the dist folder version was NOT bumped relative to origin/master,
+# this bumps it (tools/bump-dist.mjs), commits the bump, and aborts
+# the push. Re-run the push to include the bump commit.
+#
+# Active via:  git config core.hooksPath tools/hooks
+# (run once locally — see CLAUDE.md "Cache-busting").
+# ============================================================
+set -e
+
+# Need a master baseline to compare against (feature branches merge into it).
+if ! git rev-parse --verify -q origin/master >/dev/null; then
+  exit 0
+fi
+
+# Folder name on the branch (HEAD) vs on origin/master.
+distname() {
+  git ls-tree -d --name-only "$1" src 2>/dev/null | sed 's#^src/##' | grep '^dist-' || true
+}
+local_name=$(distname HEAD)
+remote_name=$(distname origin/master)
+
+# Any committed change under the dist-* folder between origin/master and HEAD?
+# (pathspec must be the glob — the folder is src/dist-<version>, not src/dist)
+if git diff --quiet origin/master HEAD -- 'src/dist-*' 2>/dev/null; then
+  exit 0   # nothing changed in dist — push freely
+fi
+
+# dist changed. If the version already differs, it's been bumped — allow.
+if [ -n "$local_name" ] && [ "$local_name" != "$remote_name" ]; then
+  exit 0
+fi
+
+echo "pre-push: src/dist changed but the version was not bumped."
+echo "pre-push: bumping now to avoid serving stale cached assets…"
+node tools/bump-dist.mjs
+git add -A
+git commit -m "chore: bump dist version (cache-bust)"
+echo ""
+echo "pre-push: created the bump commit above — run your push again to include it."
+exit 1

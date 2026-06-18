@@ -18,7 +18,8 @@ const posts = readdirSync(POSTS_DIR, { withFileTypes: true })
   .filter((p) => existsSync(p.file))
   .map((p) => {
     const meta = JSON.parse(readFileSync(p.file, "utf8"));
-    delete meta.slug; // slug is authoritative from the folder name
+    delete meta.slug;    // slug is authoritative from the folder name
+    delete meta.sources; // provenance is for the dedup guard only — keep it out of the public index
     return { slug: p.slug, ...meta };
   })
   .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0)); // date desc

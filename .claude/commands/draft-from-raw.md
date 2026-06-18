@@ -26,6 +26,20 @@ is extra authoring direction (see below).
   grounded in the sources. If `$ARGUMENTS` is empty, proceed with the defaults. For longer
   briefs, the user can instead keep notes in a `raw/` file and name it as a source.
 
+## 1.5 Duplicate guard (do this BEFORE drafting anything)
+Two checks, both must pass or you STOP and ask the user how to proceed — do not write any file:
+
+1. **Slug collision.** If `posts/<slug>/` already exists, STOP. Ask for a different slug
+   (or explicit confirmation to overwrite). Never silently overwrite an existing post.
+2. **Source already ingested.** Run `node tools/check-source.mjs <each raw source file>`.
+   It hashes each source and compares against the `sources[].hash` recorded in every existing
+   `posts/*/meta.json`. If it prints `DUPLICATE` (exit 1), the same source already became a
+   post (it names which slug) — STOP and tell the user; do not create a near-duplicate.
+   If it prints `OK` (exit 0), copy the printed `sha256:…` hashes — they go into the new
+   post's `meta.json` `sources` in §5.
+
+This is what makes re-ingestion safe even if a raw file is re-added under a different name.
+
 ## 2. Voice & quality bar (this is the point — do not phone it in)
 Write the **body in English**, in the voice of a **senior project architect delivering a
 conference talk** who is examining the raw sources live. Specifically:
@@ -66,11 +80,16 @@ Write `posts/<slug>/meta.json` — the per-post **source of truth**. Do NOT hand
 ```json
 { "date": "<date>", "themes": [...],
   "title":   { "en": "...", "ja": "...", "zh": "..." },
-  "excerpt": { "en": "...", "ja": "...", "zh": "..." } }
+  "excerpt": { "en": "...", "ja": "...", "zh": "..." },
+  "sources": [ { "file": "<raw filename>", "hash": "sha256:<from check-source.mjs>" } ] }
 ```
 - `title` — a strong title per language, localised. This is the single source of the
   displayed title (rendered by the page header); it must NOT also appear as an H1 in the body.
 - `excerpt` — one or two sentences per language capturing the hook (shown in the list + preview).
+- `sources` — one entry per raw file consumed, with the exact `sha256:…` printed by
+  `check-source.mjs` in §1.5. This is the dedup fingerprint; `reindex.mjs` strips it from the
+  public `index.json`, so it stays internal. **Required** — without it the guard can't catch
+  a future re-ingestion of the same source.
 - The `slug` is the folder name — do not put it inside `meta.json`.
 
 Then regenerate the aggregate the client reads: **`node tools/reindex.mjs`** (rebuilds
@@ -81,6 +100,7 @@ Then regenerate the aggregate the client reads: **`node tools/reindex.mjs`** (re
 - `node -e "JSON.parse(require('fs').readFileSync('posts/index.json','utf8'))"` → valid JSON,
   and the new slug appears in `posts[]`.
 - Confirm `posts/<slug>/meta.json` and the three `.md` files exist and contain all four sections.
+- Confirm `meta.json` `sources[]` has one `sha256:…` entry per consumed raw file (the dedup guard).
 
 ## 7. Clean up the consumed sources
 **Only after §4–6 have fully succeeded** (all three `.md` written + manifest valid),

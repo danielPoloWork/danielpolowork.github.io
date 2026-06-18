@@ -128,6 +128,16 @@ To create a post (no build either way):
   This is the main authoring path.
 - `/new-post` — scaffold a post by hand (same four-section structure) + update the manifest.
 
+**Duplicate guard.** Both commands STOP before writing if `posts/<slug>/` already exists (no
+silent overwrite). `/draft-from-raw` additionally runs `node tools/check-source.mjs <raw file…>`,
+which sha256-hashes each source and compares it against the `sources[].hash` recorded in every
+existing `meta.json`; a match means that source was already turned into a post, so it refuses to
+create a near-duplicate. Each post records its provenance in `meta.json` as
+`"sources": [{ "file", "hash" }]` — this is the fingerprint that survives a raw file being
+renamed and re-added. `reindex.mjs` strips `sources` from the public `index.json`, so it stays
+internal. (Posts created before this rule have no `sources`; they simply aren't dedup-protected
+retroactively.)
+
 Blog UI strings live in `i18n.js` under `blog.*` / `nav.blog` / `footer.home` (all three
 languages, like the rest of the chrome). Article + list styling is in
 `styles/blog.css` (loaded on `index.html`, `blog.html`, `post.html`). The vendored libs

@@ -8,5 +8,6 @@ trilingual blog post — an English article in a senior-architect-at-a-conferenc
 four sections (Deep dive · Debate · Critique · Summary), plus faithful JA/ZH translations —
 and registers it in `posts/index.json`.
 
-These raw inputs stay here (they are not published); only the generated `posts/<slug>/*.md`
-and the manifest entry become the live post.
+Raw inputs are never published. Once `/draft-from-raw` has successfully generated the post
+and updated the manifest, it **deletes the consumed source file(s)** from `raw/`, so this
+folder only ever holds material that hasn't been ingested yet. (`raw/README.md` is kept.)

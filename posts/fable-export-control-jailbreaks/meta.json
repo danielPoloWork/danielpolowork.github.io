@@ -1,0 +1,18 @@
+{
+  "date": "2026-06-12",
+  "themes": [
+    "AI",
+    "Cybersecurity",
+    "AI Safety"
+  ],
+  "title": {
+    "en": "A narrow jailbreak, a national shutdown: defense in depth on trial",
+    "ja": "狭いジェイルブレイクと国家規模の遮断：多層防御が裁かれる",
+    "zh": "一次狭窄的越狱，一场全国级的关停：纵深防御受审"
+  },
+  "excerpt": {
+    "en": "A US directive pulled Fable 5 and Mythos 5 over one narrow jailbreak. Reading Anthropic's statement as an incident report: uplift, the assume-breach threat model, and whether defense in depth actually holds for LLMs.",
+    "ja": "米国の指令が、たった一つの狭いジェイルブレイクを理由にFable 5とMythos 5を停止させた。Anthropicの声明をインシデント報告書として読み解く — 上乗せ、侵害前提の脅威モデル、そして多層防御はLLMで本当に持ちこたえるのか。",
+    "zh": "一道美国指令因一次狭窄越狱而下架了 Fable 5 与 Mythos 5。把 Anthropic 的声明当作事故报告来读：增益、假定攻破的威胁模型，以及纵深防御对 LLM 是否真的站得住。"
+  }
+}

@@ -16,8 +16,8 @@ truth for the list. Every post is one article with four sections; there is no pe
 
 ## Steps
 1. Create `posts/<slug>/en.md`, `ja.md`, `zh.md`. Scaffold the four-section template, with
-   the headings taken from `posts/index.json` → `sections[]` (ordered by `order`), localised
-   per file (`label.en` / `.ja` / `.zh`):
+   the headings taken from `posts/sections.json` → `sections[]` (ordered by `order`),
+   localised per file (`label.en` / `.ja` / `.zh`):
    ```
    # <Title>
 
@@ -30,10 +30,11 @@ truth for the list. Every post is one article with four sections; there is no pe
    ```
    (Leave placeholder prose under each heading for the author to fill, or write it if the
    user provides content.)
-2. Read `posts/index.json`; append (or update if the slug exists) an entry in `posts[]`:
-   `{ slug, date, themes, title:{en,ja,zh}, excerpt:{en,ja,zh} }`. Keep `posts[]` sorted by
-   `date` descending. Leave `sections[]` untouched.
-3. Verify `posts/index.json` is valid JSON and the three `.md` files exist.
-4. Report the created files + manifest entry. Comments remain the inactive Giscus scaffold.
+2. Write `posts/<slug>/meta.json` (the per-post source of truth — do NOT hand-edit the
+   generated `posts/index.json`): `{ date, themes, title:{en,ja,zh}, excerpt:{en,ja,zh} }`.
+   The `slug` is the folder name, not a field.
+3. Regenerate the aggregate: `node tools/reindex.mjs` (rebuilds `posts/index.json`).
+4. Verify `posts/index.json` is valid JSON (new slug present) and the `meta.json` + three
+   `.md` files exist. Report the created files. Comments remain the inactive Giscus scaffold.
 
 Do **not** commit or push unless the user asks.

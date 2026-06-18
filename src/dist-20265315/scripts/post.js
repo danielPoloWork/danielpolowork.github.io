@@ -1,6 +1,6 @@
 /* ============================================================
    Daniel Polo — Single blog post
-   ?slug=<slug>  →  reads meta from posts/index.json and the body from
+   ?slug=<slug>  →  reads meta from posts/<slug>/meta.json and the body from
    posts/<slug>/<lang>.md, renders markdown (marked) sanitised (DOMPurify),
    and re-renders the body + meta when the language changes.
    ============================================================ */
@@ -87,11 +87,10 @@
 
   if (!slug) { showError(); return; }
 
-  fetch("posts/index.json", { cache: "no-cache" })
+  fetch("posts/" + slug + "/meta.json", { cache: "no-cache" })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (data) {
-      var list = (data && data.posts) || [];
-      meta = list.filter(function (p) { return p.slug === slug; })[0] || null;
+      meta = data || null;
       if (!meta) { showError(); return; }
       renderAll();
     })

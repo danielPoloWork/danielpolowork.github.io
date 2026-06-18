@@ -1,0 +1,17 @@
+{
+  "date": "2026-06-01",
+  "themes": [
+    "AI",
+    "Software Development"
+  ],
+  "title": {
+    "en": "Orchestrating AI agents: patterns that survive production",
+    "ja": "AIエージェントのオーケストレーション：本番で生き残るパターン",
+    "zh": "编排 AI 智能体：能在生产环境中存活的模式"
+  },
+  "excerpt": {
+    "en": "Fan-out, pipelines, and adversarial verification — analysing how multi-agent designs hold up when real work hits them.",
+    "ja": "ファンアウト、パイプライン、敵対的検証 — 実務に晒されたときマルチエージェント設計がどう持ちこたえるかを分析します。",
+    "zh": "扇出、流水线与对抗式校验 — 分析多智能体设计在真实负载下的表现。"
+  }
+}

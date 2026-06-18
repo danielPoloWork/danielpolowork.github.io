@@ -1,30 +1,30 @@
 {
-  "sections": [
-    { "id": "deep-dive", "order": 1, "label": { "en": "Deep dive", "ja": "深掘り", "zh": "深入解析" } },
-    { "id": "debate",    "order": 2, "label": { "en": "Debate",    "ja": "ディベート", "zh": "辩论" } },
-    { "id": "critique",  "order": 3, "label": { "en": "Critique",  "ja": "批評", "zh": "评析" } },
-    { "id": "summary",   "order": 4, "label": { "en": "Summary",   "ja": "要約", "zh": "摘要" } }
-  ],
   "posts": [
     {
-      "slug": "ai-agent-orchestration",
-      "date": "2026-06-17",
-      "themes": ["AI", "Software Development"],
+      "slug": "fable-export-control-jailbreaks",
+      "date": "2026-06-12",
+      "themes": [
+        "AI",
+        "Cybersecurity",
+        "AI Safety"
+      ],
       "title": {
-        "en": "Orchestrating AI agents: patterns that survive production",
-        "ja": "AIエージェントのオーケストレーション：本番で生き残るパターン",
-        "zh": "编排 AI 智能体：能在生产环境中存活的模式"
+        "en": "A narrow jailbreak, a national shutdown: defense in depth on trial",
+        "ja": "狭いジェイルブレイクと国家規模の遮断：多層防御が裁かれる",
+        "zh": "一次狭窄的越狱，一场全国级的关停：纵深防御受审"
       },
       "excerpt": {
-        "en": "Fan-out, pipelines, and adversarial verification — analysing how multi-agent designs hold up when real work hits them.",
-        "ja": "ファンアウト、パイプライン、敵対的検証 — 実務に晒されたときマルチエージェント設計がどう持ちこたえるかを分析します。",
-        "zh": "扇出、流水线与对抗式校验 — 分析多智能体设计在真实负载下的表现。"
+        "en": "A US directive pulled Fable 5 and Mythos 5 over one narrow jailbreak. Reading Anthropic's statement as an incident report: uplift, the assume-breach threat model, and whether defense in depth actually holds for LLMs.",
+        "ja": "米国の指令が、たった一つの狭いジェイルブレイクを理由にFable 5とMythos 5を停止させた。Anthropicの声明をインシデント報告書として読み解く — 上乗せ、侵害前提の脅威モデル、そして多層防御はLLMで本当に持ちこたえるのか。",
+        "zh": "一道美国指令因一次狭窄越狱而下架了 Fable 5 与 Mythos 5。把 Anthropic 的声明当作事故报告来读：增益、假定攻破的威胁模型，以及纵深防御对 LLM 是否真的站得住。"
       }
     },
     {
       "slug": "clean-architecture-revisited",
-      "date": "2026-06-10",
-      "themes": ["Software Development"],
+      "date": "2026-06-02",
+      "themes": [
+        "Software Development"
+      ],
       "title": {
         "en": "Clean architecture, revisited",
         "ja": "クリーンアーキテクチャ再考",
@@ -34,6 +34,24 @@
         "en": "A short summary of what actually matters: boundaries, dependency direction, and keeping the core free of frameworks.",
         "ja": "本当に重要なことの短い要約：境界、依存方向、そしてコアをフレームワークから守ること。",
         "zh": "对真正重要之处的简短摘要：边界、依赖方向，以及让核心远离框架。"
+      }
+    },
+    {
+      "slug": "ai-agent-orchestration",
+      "date": "2026-06-01",
+      "themes": [
+        "AI",
+        "Software Development"
+      ],
+      "title": {
+        "en": "Orchestrating AI agents: patterns that survive production",
+        "ja": "AIエージェントのオーケストレーション：本番で生き残るパターン",
+        "zh": "编排 AI 智能体：能在生产环境中存活的模式"
+      },
+      "excerpt": {
+        "en": "Fan-out, pipelines, and adversarial verification — analysing how multi-agent designs hold up when real work hits them.",
+        "ja": "ファンアウト、パイプライン、敵対的検証 — 実務に晒されたときマルチエージェント設計がどう持ちこたえるかを分析します。",
+        "zh": "扇出、流水线与对抗式校验 — 分析多智能体设计在真实负载下的表现。"
       }
     }
   ]

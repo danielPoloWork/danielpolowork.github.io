@@ -1,0 +1,16 @@
+{
+  "date": "2026-06-02",
+  "themes": [
+    "Software Development"
+  ],
+  "title": {
+    "en": "Clean architecture, revisited",
+    "ja": "クリーンアーキテクチャ再考",
+    "zh": "重新审视整洁架构"
+  },
+  "excerpt": {
+    "en": "A short summary of what actually matters: boundaries, dependency direction, and keeping the core free of frameworks.",
+    "ja": "本当に重要なことの短い要約：境界、依存方向、そしてコアをフレームワークから守ること。",
+    "zh": "对真正重要之处的简短摘要：边界、依赖方向，以及让核心远离框架。"
+  }
+}

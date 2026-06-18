@@ -24,8 +24,9 @@ distname() {
 local_name=$(distname HEAD)
 remote_name=$(distname origin/master)
 
-# Any committed change under src/dist between origin/master and HEAD?
-if git diff --quiet origin/master HEAD -- src/dist 2>/dev/null; then
+# Any committed change under the dist-* folder between origin/master and HEAD?
+# (pathspec must be the glob — the folder is src/dist-<version>, not src/dist)
+if git diff --quiet origin/master HEAD -- 'src/dist-*' 2>/dev/null; then
   exit 0   # nothing changed in dist — push freely
 fi
 

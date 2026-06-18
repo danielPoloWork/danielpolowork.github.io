@@ -15,6 +15,8 @@ truth for the list. Every post is one article with four sections; there is no pe
   two faithfully and show them for approval.
 
 ## Steps
+0. **Slug collision check (before writing anything).** If `posts/<slug>/` already exists,
+   STOP and ask for a different slug — never silently overwrite an existing post.
 1. Create `posts/<slug>/en.md`, `ja.md`, `zh.md`. Scaffold the four-section template, with
    the headings taken from `posts/sections.json` → `sections[]` (ordered by `order`),
    localised per file (`label.en` / `.ja` / `.zh`). Do NOT put a `# <Title>` at the top —

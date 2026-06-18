@@ -61,6 +61,18 @@
         themesEl.appendChild(s);
       });
     }
+    renderShare(title);
+  }
+
+  // Build the X / LinkedIn share links from the post URL + localised title.
+  function renderShare(title) {
+    var url = location.href.split("#")[0];
+    var x = document.getElementById("shareX");
+    var li = document.getElementById("shareLi");
+    if (x) x.href = "https://twitter.com/intent/tweet?text=" +
+      encodeURIComponent(title) + "&url=" + encodeURIComponent(url);
+    if (li) li.href = "https://www.linkedin.com/sharing/share-offsite/?url=" +
+      encodeURIComponent(url);
   }
 
   function renderBody() {

@@ -1,5 +1,3 @@
-# A narrow jailbreak, a national shutdown: defense in depth on trial
-
 On June 12, 2026, the US government invoked national security authorities to order Anthropic to cut off all access to Fable 5 and Mythos 5 — for every customer, worldwide — on the strength of a single, narrow jailbreak. I want to read Anthropic's public statement on that directive the way a security team reads an incident report: not for the apology, but for what it tells us about the threat model. The piece sits at the intersection of three fields I care about — frontier-model safety engineering, offensive/defensive cybersecurity, and the law that now governs deployment. The only source I have in hand is Anthropic's own account of the order, and that asymmetry matters; I'll keep it in view throughout.
 
 ## Deep dive

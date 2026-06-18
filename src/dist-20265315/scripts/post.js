@@ -70,11 +70,17 @@
     fetchBody(l)
       .catch(function () { return l === "en" ? Promise.reject() : fetchBody("en"); })
       .then(function (md) {
+        md = stripLeadingH1(md);
         var html = window.marked ? window.marked.parse(md) : md;
         if (window.DOMPurify) html = window.DOMPurify.sanitize(html);
         bodyEl.innerHTML = html;
       })
       .catch(function () { bodyEl.innerHTML = '<div class="blog-state">' + t("blog.empty") + "</div>"; });
+  }
+  // The article title is owned by the page header (#articleTitle, from meta.json),
+  // so drop a leading H1 in the markdown body to avoid showing the title twice.
+  function stripLeadingH1(md) {
+    return String(md).replace(/^﻿?\s*#\s+.*(?:\r?\n)+/, "");
   }
   function fetchBody(l) {
     return fetch("posts/" + slug + "/" + l + ".md", { cache: "no-cache" })
@@ -87,6 +93,18 @@
   var GISCUS_LANG = { en: "en", ja: "ja", zh: "zh-CN" };
   function giscusLang() { return GISCUS_LANG[lang()] || "en"; }
   function giscusTheme() { return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light"; }
+  // Resolve the absolute URL of our custom Giscus theme (sits next to app.css,
+  // so it tracks the version-stamped dist folder automatically). Giscus needs a
+  // full https URL; on localhost/file it can't be reached from the https iframe,
+  // so fall back to the built-in preset there.
+  function giscusThemeUrl() {
+    var name = giscusTheme();
+    var h = location.hostname;
+    if (location.protocol !== "https:" || h === "localhost" || h === "127.0.0.1" || h === "") return name;
+    var link = document.querySelector('link[href*="/styles/app.css"]');
+    if (!link) return name;
+    try { return new URL("giscus-" + name + ".css", link.href).href; } catch (e) { return name; }
+  }
   function postToGiscus(message) {
     var f = document.querySelector("iframe.giscus-frame");
     if (f && f.contentWindow) f.contentWindow.postMessage({ giscus: message }, "https://giscus.app");
@@ -104,10 +122,10 @@
       "data-mapping": "specific",
       "data-term": slug,            // one discussion thread per post (language-independent)
       "data-strict": "1",
-      "data-reactions-enabled": "1",
+      "data-reactions-enabled": "0",
       "data-emit-metadata": "0",
       "data-input-position": "top",
-      "data-theme": giscusTheme(),
+      "data-theme": giscusThemeUrl(),
       "data-lang": giscusLang(),
       "data-loading": "lazy"
     };
@@ -117,7 +135,7 @@
     host.appendChild(s);
     // keep Giscus theme + language in sync with the site's toggle / language switch
     new MutationObserver(function () {
-      postToGiscus({ setConfig: { theme: giscusTheme(), lang: giscusLang() } });
+      postToGiscus({ setConfig: { theme: giscusThemeUrl(), lang: giscusLang() } });
     }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme", "lang"] });
   }
 

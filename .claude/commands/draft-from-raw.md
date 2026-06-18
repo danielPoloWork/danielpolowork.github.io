@@ -43,7 +43,9 @@ Use this exact shape (the four section headings come from `posts/sections.json` 
 ordered by `order`; use each section's localised `label` as the `##` heading in that
 language):
 
-1. `# <Title>` — sharp, specific, original (not "An overview of X").
+1. **No title heading.** Do NOT start the body with a `# <Title>` — the title lives in
+   `meta.json` and is rendered by the page header. The body opens with the theme framing
+   below. (A leading H1 is stripped at render time anyway, so it would just be dead text.)
 2. **Theme framing** — a short lead (2–4 sentences) placing the piece in the field
    (AI / software development / the progress of the discipline) and naming the sources examined.
 3. `## Deep dive` — analyse and connect the ideas across the sources.
@@ -66,7 +68,8 @@ Write `posts/<slug>/meta.json` — the per-post **source of truth**. Do NOT hand
   "title":   { "en": "...", "ja": "...", "zh": "..." },
   "excerpt": { "en": "...", "ja": "...", "zh": "..." } }
 ```
-- `title` — a strong title per language (the H1, localised).
+- `title` — a strong title per language, localised. This is the single source of the
+  displayed title (rendered by the page header); it must NOT also appear as an H1 in the body.
 - `excerpt` — one or two sentences per language capturing the hook (shown in the list + preview).
 - The `slug` is the folder name — do not put it inside `meta.json`.
 

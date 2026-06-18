@@ -114,6 +114,11 @@ main .btn,
 main .gsc-comment-box-tabs .btn {
   border-radius: 10px;
 }
+/* markdown-hint footer: match the selected tab / textarea bg, drop the border */
+main .gsc-comment-box-textarea-extras {
+  background: var(--color-canvas-default) !important;
+  border: 0 !important;
+}
 
 /* ---- remove reactions / emoji ---- */
 .gsc-reactions,

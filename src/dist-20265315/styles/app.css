@@ -394,7 +394,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height
 /* ---------- Footer ---------- */
 .footer { border-top: 1px solid var(--border); padding: 40px 0; }
 .footer-grid { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-.footer .brand img { width: 28px; height: 28px; }
+.footer .brand img { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
 .footer .brand-name { font-size: 1rem; }
 .footer-note { color: var(--muted); font-size: 0.82rem; }
 .footer-links { display: flex; gap: 20px; }

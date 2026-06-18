@@ -18,8 +18,10 @@ if ! git rev-parse --verify -q origin/master >/dev/null; then
 fi
 
 # Folder name on the branch (HEAD) vs on origin/master.
+# NOTE: the trailing slash on `src/` is required — `git ls-tree ... src`
+# lists the `src` entry itself, `src/` lists its children.
 distname() {
-  git ls-tree -d --name-only "$1" src 2>/dev/null | sed 's#^src/##' | grep '^dist-' || true
+  git ls-tree -d --name-only "$1" src/ 2>/dev/null | sed 's#^src/##' | grep '^dist-' || true
 }
 local_name=$(distname HEAD)
 remote_name=$(distname origin/master)

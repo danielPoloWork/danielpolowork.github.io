@@ -35,6 +35,6 @@ truth for the list. Every post is one article with four sections; there is no pe
    The `slug` is the folder name, not a field.
 3. Regenerate the aggregate: `node tools/reindex.mjs` (rebuilds `posts/index.json`).
 4. Verify `posts/index.json` is valid JSON (new slug present) and the `meta.json` + three
-   `.md` files exist. Report the created files. Comments remain the inactive Giscus scaffold.
+   `.md` files exist. Report the created files. Comments are handled site-wide by Giscus.
 
 Do **not** commit or push unless the user asks.

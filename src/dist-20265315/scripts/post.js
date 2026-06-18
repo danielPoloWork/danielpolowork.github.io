@@ -83,6 +83,44 @@
 
   function renderAll() { renderMeta(); renderBody(); }
 
+  /* ---------- Comments (Giscus) ---------- */
+  var GISCUS_LANG = { en: "en", ja: "ja", zh: "zh-CN" };
+  function giscusLang() { return GISCUS_LANG[lang()] || "en"; }
+  function giscusTheme() { return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light"; }
+  function postToGiscus(message) {
+    var f = document.querySelector("iframe.giscus-frame");
+    if (f && f.contentWindow) f.contentWindow.postMessage({ giscus: message }, "https://giscus.app");
+  }
+  function mountGiscus() {
+    var host = document.getElementById("giscus");
+    if (!host) return;
+    var s = document.createElement("script");
+    s.src = "https://giscus.app/client.js";
+    var attrs = {
+      "data-repo": "danielPoloWork/danielpolowork.github.io",
+      "data-repo-id": "R_kgDOISEilQ",
+      "data-category": "Blog",
+      "data-category-id": "DIC_kwDOISEilc4C_Xpm",
+      "data-mapping": "specific",
+      "data-term": slug,            // one discussion thread per post (language-independent)
+      "data-strict": "1",
+      "data-reactions-enabled": "1",
+      "data-emit-metadata": "0",
+      "data-input-position": "top",
+      "data-theme": giscusTheme(),
+      "data-lang": giscusLang(),
+      "data-loading": "lazy"
+    };
+    Object.keys(attrs).forEach(function (k) { s.setAttribute(k, attrs[k]); });
+    s.crossOrigin = "anonymous";
+    s.async = true;
+    host.appendChild(s);
+    // keep Giscus theme + language in sync with the site's toggle / language switch
+    new MutationObserver(function () {
+      postToGiscus({ setConfig: { theme: giscusTheme(), lang: giscusLang() } });
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme", "lang"] });
+  }
+
   if (window.marked) window.marked.setOptions({ gfm: true, breaks: false });
 
   if (!slug) { showError(); return; }
@@ -93,6 +131,7 @@
       meta = data || null;
       if (!meta) { showError(); return; }
       renderAll();
+      mountGiscus();
     })
     .catch(showError);
 

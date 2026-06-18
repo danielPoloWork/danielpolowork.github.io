@@ -88,6 +88,6 @@ that were not used for this post; if any earlier step failed, delete nothing.
 ## 8. Report
 Report: the slug, the files written, the manifest entry, the themes chosen, which raw
 sources were **used and then deleted**, and any **extra guidance** (`$ARGUMENTS`) applied.
-Note that comments remain the inactive Giscus scaffold.
+Comments are handled site-wide by Giscus (keyed by slug) — no per-post setup needed.
 
 Do **not** commit or push unless the user asks.

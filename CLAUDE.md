@@ -121,9 +121,12 @@ languages, like the rest of the chrome). Article + list styling is in
 `styles/blog.css` (loaded on `index.html`, `blog.html`, `post.html`). The vendored libs
 live in `scripts/vendor/` and, like all dist assets, move with the version-stamped folder.
 
-Comments are **scaffolded but inactive**: `post.html` has a `.comments` block with an HTML
-comment showing exactly how to drop in Giscus once GitHub Discussions + the giscus app are
-set up (the repo owner must do that and supply the IDs).
+Comments use **Giscus** (GitHub Discussions, GitHub login). `post.js` (`mountGiscus()`)
+injects the widget into `#giscus` in `post.html` with `data-mapping="specific"` and
+`data-term` = the post slug — one thread per post, language-independent — and keeps Giscus'
+language and light/dark theme synced to the site via `postMessage` (a `MutationObserver` on
+`<html>`). Repo/category IDs live in `mountGiscus()`. Requires Discussions enabled + the
+giscus app installed on the repo (already done).
 
 ## Conventions
 

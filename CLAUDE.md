@@ -124,9 +124,14 @@ live in `scripts/vendor/` and, like all dist assets, move with the version-stamp
 Comments use **Giscus** (GitHub Discussions, GitHub login). `post.js` (`mountGiscus()`)
 injects the widget into `#giscus` in `post.html` with `data-mapping="specific"` and
 `data-term` = the post slug — one thread per post, language-independent — and keeps Giscus'
-language and light/dark theme synced to the site via `postMessage` (a `MutationObserver` on
-`<html>`). Repo/category IDs live in `mountGiscus()`. Requires Discussions enabled + the
-giscus app installed on the repo (already done).
+language and theme synced to the site via `postMessage` (a `MutationObserver` on `<html>`).
+Reactions are **disabled** (`data-reactions-enabled="0"`). The theme is **not** a Giscus
+preset: `giscusThemeUrl()` passes the absolute URL of `styles/giscus-light.css` /
+`giscus-dark.css` (custom themes mapped to the site's `app.css` tokens; resolved next to
+`app.css` so they track the version-stamped dist folder). Over non-https/localhost it falls
+back to the `light`/`dark` presets (the https Giscus iframe can't load a localhost stylesheet).
+Repo/category IDs live in `mountGiscus()`. Requires Discussions enabled + the giscus app
+installed on the repo (already done).
 
 ## Conventions
 

@@ -17,10 +17,10 @@ truth for the list. Every post is one article with four sections; there is no pe
 ## Steps
 1. Create `posts/<slug>/en.md`, `ja.md`, `zh.md`. Scaffold the four-section template, with
    the headings taken from `posts/sections.json` → `sections[]` (ordered by `order`),
-   localised per file (`label.en` / `.ja` / `.zh`):
+   localised per file (`label.en` / `.ja` / `.zh`). Do NOT put a `# <Title>` at the top —
+   the title lives in `meta.json` and is rendered by the page header (a leading H1 is
+   stripped at render time). The body opens directly with the theme framing lead:
    ```
-   # <Title>
-
    <theme framing lead>
 
    ## Deep dive

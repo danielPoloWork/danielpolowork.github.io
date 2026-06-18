@@ -1,0 +1,125 @@
+/* ============================================================
+   Giscus custom theme — LIGHT, matched to Daniel Polo's site palette
+   (mirrors the :root / [data-theme="light"] tokens in app.css)
+   Passed to Giscus as a data-theme URL by post.js.
+   ============================================================ */
+main {
+  /* prettylights syntax (GitHub light defaults — readable on warm paper) */
+  --color-prettylights-syntax-comment: #6e7781;
+  --color-prettylights-syntax-constant: #0550ae;
+  --color-prettylights-syntax-entity: #8250df;
+  --color-prettylights-syntax-storage-modifier-import: #24292f;
+  --color-prettylights-syntax-entity-tag: #116329;
+  --color-prettylights-syntax-keyword: #cf222e;
+  --color-prettylights-syntax-string: #0a3069;
+  --color-prettylights-syntax-variable: #953800;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #82071e;
+  --color-prettylights-syntax-invalid-illegal-text: #f6f8fa;
+  --color-prettylights-syntax-invalid-illegal-bg: #82071e;
+  --color-prettylights-syntax-carriage-return-text: #f6f8fa;
+  --color-prettylights-syntax-carriage-return-bg: #cf222e;
+  --color-prettylights-syntax-string-regexp: #116329;
+  --color-prettylights-syntax-markup-list: #3b2300;
+  --color-prettylights-syntax-markup-heading: #0550ae;
+  --color-prettylights-syntax-markup-italic: #24292f;
+  --color-prettylights-syntax-markup-bold: #24292f;
+  --color-prettylights-syntax-markup-deleted-text: #82071e;
+  --color-prettylights-syntax-markup-deleted-bg: #ffebe9;
+  --color-prettylights-syntax-markup-inserted-text: #116329;
+  --color-prettylights-syntax-markup-inserted-bg: #dafbe1;
+  --color-prettylights-syntax-markup-changed-text: #953800;
+  --color-prettylights-syntax-markup-changed-bg: #ffd8b5;
+  --color-prettylights-syntax-markup-ignored-text: #eaeef2;
+  --color-prettylights-syntax-markup-ignored-bg: #0550ae;
+  --color-prettylights-syntax-meta-diff-range: #8250df;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #8c959f;
+
+  /* buttons — secondary */
+  --color-btn-text: #1B1A17;                       /* --ink */
+  --color-btn-bg: #F4F2EA;                          /* --surface-2 */
+  --color-btn-border: #D2CDBC;                      /* --border-strong */
+  --color-btn-shadow: 0 1px 2px rgba(27,26,23,0.05);
+  --color-btn-inset-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+  --color-btn-hover-bg: #ECE9DF;                    /* --bg-tint */
+  --color-btn-hover-border: #1769C4;               /* --accent */
+  --color-btn-active-bg: #E2DECF;                   /* --border */
+  --color-btn-active-border: #1769C4;
+  --color-btn-selected-bg: #ECE9DF;
+
+  /* buttons — primary (the "Comment" submit) */
+  --color-btn-primary-text: #FBFAF5;               /* --on-accent */
+  --color-btn-primary-bg: #1769C4;                 /* --accent */
+  --color-btn-primary-border: rgba(17,82,143,0.4);
+  --color-btn-primary-hover-bg: #11528F;           /* --accent-strong */
+  --color-btn-primary-hover-border: rgba(17,82,143,0.5);
+  --color-btn-primary-selected-bg: #11528F;
+  --color-btn-primary-disabled-text: rgba(251,250,245,0.8);
+  --color-btn-primary-disabled-bg: #9cc3e8;
+  --color-btn-primary-disabled-border: transparent;
+
+  --color-action-list-item-default-hover-bg: rgba(210,205,188,0.4);
+  --color-segmented-control-bg: rgba(210,205,188,0.35);
+  --color-segmented-control-button-bg: #FBFAF5;
+  --color-segmented-control-button-selected-border: #D2CDBC;
+
+  /* foreground */
+  --color-fg-default: #1B1A17;                      /* --ink */
+  --color-fg-muted: #46443D;                        /* --ink-soft */
+  --color-fg-subtle: #807C71;                       /* --muted */
+  --color-fg-on-emphasis: #FBFAF5;
+
+  /* canvas / surfaces */
+  --color-canvas-default: #FBFAF5;                  /* --surface */
+  --color-canvas-overlay: #FBFAF5;
+  --color-canvas-inset: #F4F2EA;                    /* --surface-2 */
+  --color-canvas-subtle: #F4F2EA;
+
+  /* borders */
+  --color-border-default: #D2CDBC;                  /* --border-strong */
+  --color-border-muted: #E2DECF;                    /* --border */
+  --color-neutral-muted: rgba(128,124,113,0.18);    /* --muted @ low alpha */
+  --color-neutral-subtle: rgba(128,124,113,0.08);
+
+  /* accent (links, focus, mentions) */
+  --color-accent-fg: #1769C4;                       /* --accent */
+  --color-accent-emphasis: #1769C4;
+  --color-accent-muted: rgba(23,105,196,0.4);
+  --color-accent-subtle: #E5EEF8;                   /* --accent-soft */
+
+  /* status */
+  --color-success-fg: #109AAC;                      /* --accent-2 */
+  --color-success-emphasis: #109AAC;
+  --color-attention-fg: #9a6700;
+  --color-attention-muted: rgba(212,167,44,0.4);
+  --color-attention-subtle: #fff8c5;
+  --color-danger-fg: #cf222e;
+  --color-danger-muted: rgba(255,129,130,0.4);
+  --color-danger-subtle: #ffebe9;
+
+  --color-primer-shadow-inset: inset 0 1px 0 rgba(210,205,188,0.2);
+  --color-scale-gray-1: #ECE9DF;
+  --color-scale-blue-1: #E5EEF8;
+
+  color-scheme: light;
+}
+
+/* ---- site styling touches ---- */
+main .gsc-comment-box,
+main .gsc-comment > .gsc-comment-content,
+main .gsc-reply > .gsc-comment-content,
+main .gsc-comment-box-textarea {
+  border-radius: 14px;
+}
+main .btn,
+main .gsc-comment-box-tabs .btn {
+  border-radius: 10px;
+}
+
+/* ---- remove reactions / emoji ---- */
+.gsc-reactions,
+.gsc-comment-reactions,
+.gsc-direct-reaction-buttons,
+.gsc-reactions-popover,
+.gsc-comment-author-avatar + .gsc-comment-reactions {
+  display: none !important;
+}

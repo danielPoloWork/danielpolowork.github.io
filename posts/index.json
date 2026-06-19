@@ -39,6 +39,26 @@
       }
     },
     {
+      "slug": "public-record-trust-and-fear",
+      "date": "2026-06-12",
+      "themes": [
+        "AI",
+        "AI policy",
+        "society",
+        "AI safety"
+      ],
+      "title": {
+        "en": "Trust and Fear: Reading the First Anthropic Public Record",
+        "ja": "信頼と恐れ ―― 最初の Anthropic Public Record を読む",
+        "zh": "信任与恐惧：解读首份 Anthropic Public Record"
+      },
+      "excerpt": {
+        "en": "A survey of ~52,000 Americans finds a public that wants AI to cure disease yet fears it will take their jobs, trusts AI companies least of any institution (15%), and grows less afraid the more it actually uses the technology.",
+        "ja": "約 52,000 人のアメリカ人を対象とした調査が描くのは、AI に病の治療を望みながら職の喪失を恐れ、AI 企業をどの機関より信頼せず(15%)、実際に使うほど恐れが薄れていく大衆だ。",
+        "zh": "一项覆盖约 52,000 名美国人的调查发现：公众既希望 AI 治病、又怕它夺走工作，对 AI 企业的信任低于任何机构（15%），而越是真正使用这项技术，恐惧就越淡。"
+      }
+    },
+    {
       "slug": "fable-mythos-capability-and-restraint",
       "date": "2026-06-09",
       "themes": [

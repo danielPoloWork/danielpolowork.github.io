@@ -63,54 +63,67 @@
   }
 
   /* ---------- Full list (blog.html) ---------- */
-  var state = { q: "", theme: "", sort: "newest" };
+  var PAGE_SIZE = 10;            // X posts per page before the paginator kicks in
+  var state = { q: "", topic: "", sort: "newest", page: 1 };
+  var chipsWrap = null;          // cached so chip clicks don't rebuild (and don't steal focus)
 
+  // Controls are built once per load / language switch — NOT on every keystroke, so the
+  // search field keeps focus while typing. Filter/sort/chip changes only re-render the list.
   function buildControls() {
     var bar = document.getElementById("blogControls");
     if (!bar) return;
     bar.innerHTML = "";
+    chipsWrap = null;
 
     var search = el("input", "blog-search");
     search.type = "search";
     search.value = state.q;
     search.placeholder = t("blog.search");
-    search.addEventListener("input", function () { state.q = search.value; renderList(); });
+    search.addEventListener("input", function () { state.q = search.value; state.page = 1; renderList(); });
     bar.appendChild(search);
 
-    // theme chips (unique themes across posts)
-    var themes = [];
-    posts.forEach(function (p) { (p.themes || []).forEach(function (th) { if (themes.indexOf(th) < 0) themes.push(th); }); });
-    if (themes.length) {
+    // topic chips (unique topics across posts; the data field stays `themes`)
+    var topics = [];
+    posts.forEach(function (p) { (p.themes || []).forEach(function (th) { if (topics.indexOf(th) < 0) topics.push(th); }); });
+    if (topics.length) {
       var hg = el("div", "filter-group");
-      hg.appendChild(el("span", "fg-label", esc(t("blog.filterTheme"))));
-      hg.appendChild(chip(t("blog.all"), state.theme === "", function () { state.theme = ""; renderList(); }));
-      themes.sort().forEach(function (th) {
-        hg.appendChild(chip(th, state.theme === th, function () { state.theme = th; renderList(); }));
-      });
+      hg.appendChild(el("span", "fg-label", esc(t("blog.filterTopic"))));
+      addChip(hg, t("blog.all"), "");
+      topics.sort().forEach(function (th) { addChip(hg, th, th); });
       bar.appendChild(hg);
+      chipsWrap = hg;
     }
 
     var sort = el("select", "blog-sort");
     sort.innerHTML = '<option value="newest">' + esc(t("blog.sortNewest")) + '</option><option value="oldest">' + esc(t("blog.sortOldest")) + "</option>";
     sort.value = state.sort;
-    sort.addEventListener("change", function () { state.sort = sort.value; renderList(); });
+    sort.addEventListener("change", function () { state.sort = sort.value; state.page = 1; renderList(); });
     bar.appendChild(sort);
   }
 
-  function chip(label, active, onClick) {
-    var b = el("button", "chip" + (active ? " active" : ""), esc(label));
+  function addChip(wrap, label, value) {
+    var b = el("button", "chip" + (state.topic === value ? " active" : ""), esc(label));
     b.type = "button";
-    b.addEventListener("click", onClick);
-    return b;
+    b.setAttribute("data-topic", value);
+    b.addEventListener("click", function () {
+      state.topic = value; state.page = 1;
+      refreshChips(); renderList();
+    });
+    wrap.appendChild(b);
   }
 
-  function renderList() {
-    if (!listEl) return;
-    buildControls();
+  function refreshChips() {
+    if (!chipsWrap) return;
+    var bs = chipsWrap.querySelectorAll(".chip");
+    for (var i = 0; i < bs.length; i++) {
+      bs[i].className = bs[i].getAttribute("data-topic") === state.topic ? "chip active" : "chip";
+    }
+  }
 
+  function filteredRows() {
     var q = state.q.trim().toLowerCase();
     var rows = posts.filter(function (p) {
-      if (state.theme && (p.themes || []).indexOf(state.theme) < 0) return false;
+      if (state.topic && (p.themes || []).indexOf(state.topic) < 0) return false;
       if (q) {
         var hay = (pick(p.title) + " " + pick(p.excerpt) + " " + (p.themes || []).join(" ")).toLowerCase();
         if (hay.indexOf(q) < 0) return false;
@@ -121,13 +134,26 @@
       if (a.date === b.date) return 0;
       return (state.sort === "oldest" ? (a.date < b.date) : (a.date > b.date)) ? -1 : 1;
     });
+    return rows;
+  }
+
+  function renderList() {
+    if (!listEl) return;
+
+    var rows = filteredRows();
+    var pages = Math.max(1, Math.ceil(rows.length / PAGE_SIZE));
+    if (state.page > pages) state.page = pages;
+    if (state.page < 1) state.page = 1;
+    var start = (state.page - 1) * PAGE_SIZE;
+    var pageRows = rows.slice(start, start + PAGE_SIZE);
 
     listEl.innerHTML = "";
     if (!rows.length) {
       listEl.appendChild(el("div", "blog-state", esc(t("blog.empty"))));
+      renderPager(1);
       return;
     }
-    rows.forEach(function (p) {
+    pageRows.forEach(function (p) {
       var a = el("a", "post-row");
       a.href = "post.html?slug=" + encodeURIComponent(p.slug);
 
@@ -145,9 +171,59 @@
       a.appendChild(date);
       listEl.appendChild(a);
     });
+    renderPager(pages);
   }
 
-  function draw() { renderList(); renderPreview(); }
+  // Compact page window: 1 … (cur-1) cur (cur+1) … last
+  function pageWindow(cur, total) {
+    if (total <= 7) {
+      var all = [];
+      for (var i = 1; i <= total; i++) all.push(i);
+      return all;
+    }
+    var out = [1];
+    var lo = Math.max(2, cur - 1), hi = Math.min(total - 1, cur + 1);
+    if (lo > 2) out.push("…");
+    for (var j = lo; j <= hi; j++) out.push(j);
+    if (hi < total - 1) out.push("…");
+    out.push(total);
+    return out;
+  }
+
+  function goTo(page) {
+    state.page = page;
+    renderList();
+    var top = document.getElementById("top");
+    if (top && top.scrollIntoView) top.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function renderPager(pages) {
+    var pager = document.getElementById("blogPager");
+    if (!pager) return;
+    pager.innerHTML = "";
+    if (pages <= 1) return;     // single page → no paginator
+
+    var prev = el("button", "pg-btn" + (state.page <= 1 ? " disabled" : ""), esc(t("blog.prev")));
+    prev.type = "button";
+    if (state.page > 1) prev.addEventListener("click", function () { goTo(state.page - 1); });
+    pager.appendChild(prev);
+
+    pageWindow(state.page, pages).forEach(function (n) {
+      if (n === "…") { pager.appendChild(el("span", "pg-gap", "…")); return; }
+      var b = el("button", "pg-num" + (n === state.page ? " active" : ""), String(n));
+      b.type = "button";
+      b.setAttribute("aria-current", n === state.page ? "page" : "false");
+      b.addEventListener("click", function () { goTo(n); });
+      pager.appendChild(b);
+    });
+
+    var next = el("button", "pg-btn" + (state.page >= pages ? " disabled" : ""), esc(t("blog.next")));
+    next.type = "button";
+    if (state.page < pages) next.addEventListener("click", function () { goTo(state.page + 1); });
+    pager.appendChild(next);
+  }
+
+  function draw() { buildControls(); renderList(); renderPreview(); }
 
   /* ---------- Load + language switching ---------- */
   fetch("posts/index.json", { cache: "no-cache" })

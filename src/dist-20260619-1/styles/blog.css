@@ -69,6 +69,29 @@
   white-space: nowrap; align-self: start; padding-top: 3px;
 }
 
+/* ---------- Paginator ---------- */
+.blog-pager {
+  display: flex; flex-wrap: wrap; gap: 7px; align-items: center;
+  justify-content: center; margin: 26px 0 4px;
+}
+.blog-pager:empty { display: none; }
+.pg-btn, .pg-num {
+  font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-soft);
+  background: var(--surface); border: 1px solid var(--border-strong);
+  border-radius: 999px; padding: 7px 14px; cursor: pointer;
+  transition: all 0.18s ease; white-space: nowrap; min-width: 40px; text-align: center;
+}
+.pg-num { padding: 7px 0; }
+.pg-btn:not(.disabled):hover, .pg-num:hover { border-color: var(--accent); color: var(--accent); }
+.pg-num.active {
+  background: var(--accent); border-color: var(--accent); color: var(--on-accent); cursor: default;
+}
+.pg-btn.disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }
+.pg-gap {
+  font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted);
+  padding: 0 4px; user-select: none;
+}
+
 /* ---------- Theme chips (in rows / article) ---------- */
 .ptheme {
   font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted);

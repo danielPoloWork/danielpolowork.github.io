@@ -377,7 +377,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height
 .repo-main h4 .ext { opacity: 0; transition: opacity 0.2s ease; color: var(--accent); }
 .repo:hover .ext { opacity: 1; }
 .repo-main .rtags { font-family: var(--font-mono); font-size: 0.74rem; color: var(--muted); margin-top: 5px; }
-.repo-main .rdesc { color: var(--ink-soft); font-size: 0.95rem; margin-top: 7px; line-height: 1.5; }
+.repo-main .rdesc { color: var(--ink-soft); font-size: 0.95rem; margin-top: 7px; line-height: 1.5; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden; }
 .repo .rlang { font-family: var(--font-mono); font-size: 0.74rem; color: var(--accent); border: 1px solid var(--border-strong); padding: 4px 10px; border-radius: 999px; white-space: nowrap; }
 .repo--soon { opacity: 0.72; cursor: default; }
 .repo--soon:hover { background: transparent; }

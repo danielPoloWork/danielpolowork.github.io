@@ -12,7 +12,7 @@ Use the `gh` CLI (already authenticated as `danielPoloWork`):
 
 ```
 gh repo list danielPoloWork --no-archived --source --limit 200 \
-  --json name,description,url,primaryLanguage,repositoryTopics,stargazerCount,pushedAt,homepage
+  --json name,description,url,primaryLanguage,repositoryTopics,stargazerCount,pushedAt,homepageUrl
 ```
 
 Keep only repos whose `name` starts with one of these prefixes (skip forks/archived):
@@ -52,7 +52,7 @@ For each matched repo, build: **title**, **tags**, **rlang badge**, **3-language
    - **description.ja / .zh** = your own faithful translations of the EN sentence.
    Show the drafted EN/JA/ZH copy and only proceed once approved.
 
-Link target = `homepage` if set, else `url`. Sort cards by `.portfolio.json` `order`
+Link target = `homepageUrl` if set, else `url`. Sort cards by `.portfolio.json` `order`
 (if present), then `stargazerCount` desc, then `pushedAt` desc.
 
 ## 3. Write the cards (idempotent, between markers)

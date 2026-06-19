@@ -39,6 +39,26 @@
       }
     },
     {
+      "slug": "fable-mythos-capability-and-restraint",
+      "date": "2026-06-09",
+      "themes": [
+        "AI",
+        "software development",
+        "life sciences",
+        "AI safety"
+      ],
+      "title": {
+        "en": "Capability and Restraint: Reading the Fable 5 / Mythos 5 Launch",
+        "ja": "能力と抑制 ―― Fable 5 / Mythos 5 ローンチを読む",
+        "zh": "能力与克制：解读 Fable 5 / Mythos 5 的发布"
+      },
+      "excerpt": {
+        "en": "Fable 5 and Mythos 5 are one frontier model sold as two products, separated only by a layer of safeguards. A three-days-later suspension turns the launch into a live test of whether precautionary blocking is principled or improvised.",
+        "ja": "Fable 5 と Mythos 5 は、二つの製品として売られる単一のフロンティアモデルであり、両者を隔てるのはセーフガードの層だけだ。三日後の停止は、予防的ブロックが原則か場当たりかを問う生きた試験になる。",
+        "zh": "Fable 5 与 Mythos 5 是作为两款产品出售的单一前沿模型，将二者分隔的只是一层安全防护。三天之后的暂停，把这次发布变成了一场检验预防性封锁究竟出于原则还是临场应付的活体试验。"
+      }
+    },
+    {
       "slug": "clean-architecture-revisited",
       "date": "2026-06-02",
       "themes": [

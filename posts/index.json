@@ -254,6 +254,26 @@
       }
     },
     {
+      "slug": "mistral-physics-ai",
+      "date": "2026-05-27",
+      "themes": [
+        "AI",
+        "machine learning",
+        "engineering",
+        "manufacturing"
+      ],
+      "title": {
+        "en": "Physics, Made Affordable: Mistral's Physics AI and the Verification Tail",
+        "ja": "手の届く物理へ ―― Mistral の Physics AI と検証の尾",
+        "zh": "让物理变得负担得起：Mistral 的 Physics AI 与那条验证的尾巴"
+      },
+      "excerpt": {
+        "en": "Mistral's physics AI predicts full physical fields in seconds where CFD/FEM solvers took cluster-hours — but it doesn't make new physics, it makes old physics affordable. It's the engineering instance of the pattern running through the field: cheap approximation plus a verification tail, parasitic on the very solvers it accelerates, most trustworthy interpolating known designs and least trustworthy at the novel corners exploration most wants.",
+        "ja": "Mistral の physics AI は、CFD/FEM ソルバーがクラスタ時間かかったところで、完全な物理場を数秒で予測する――だが新しい物理を作るのではなく、古い物理を手の届くものにする。それは分野を貫くパターンの工学版だ――速い近似プラス検証の尾、加速する当のソルバーに寄生し、既知の設計を補間するとき最も信頼でき、探索が最も望む新規の隅で最も信頼できない。",
+        "zh": "Mistral 的 physics AI 在 CFD/FEM 求解器要花集群数小时之处、数秒内预测出完整的物理场——但它不造新物理，而是让旧物理变得负担得起。它是贯穿整个领域那条模式的工程版——快速近似外加一条验证的尾巴，寄生于它所加速的那些求解器，在插值已知设计时最可信，在探索最想要的新颖角落里最不可信。"
+      }
+    },
+    {
       "slug": "co-scientist-cellular-aging",
       "date": "2026-05-19",
       "themes": [

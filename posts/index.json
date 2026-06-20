@@ -109,6 +109,27 @@
       }
     },
     {
+      "slug": "unreal-engine-5-8",
+      "path": "2026/unreal-engine-5-8",
+      "date": "2026-06-11",
+      "themes": [
+        "game development",
+        "real-time rendering",
+        "AI"
+      ],
+      "vendor": "Epic Games",
+      "title": {
+        "en": "Unreal Engine 5.8: A Maturity Ledger, Not a Feature List",
+        "ja": "Unreal Engine 5.8 ―― 機能一覧ではなく成熟度の台帳",
+        "zh": "Unreal Engine 5.8：一本成熟度账本，而非功能清单"
+      },
+      "excerpt": {
+        "en": "Read as a release of maturity labels, UE 5.8 graduates a strong slate to Production-Ready (MegaLights, Movie Render Graph, Dataflow) while staging its headline work — Mesh Terrain, webcam full-body MetaHuman capture, the MCP/LLM plugin — at Experimental. The sharper read for a professional studio: because 5.8 is the last UE5 major before UE6, the experimental headliners are forward spikes whose real home is the next engine, not foundations for a shipping title.",
+        "ja": "成熟度ラベルのリリースとして読めば、UE 5.8 は強力な一群を Production-Ready へ昇格させる(MegaLights、Movie Render Graph、Dataflow)一方、目玉の仕事 ―― Mesh Terrain、ウェブカメラでの全身 MetaHuman キャプチャ、MCP/LLM プラグイン ―― を Experimental に置く。プロのスタジオへのより鋭い読み ―― 5.8 が UE6 前の最後の UE5 メジャーである以上、実験的な目玉は、出荷タイトルの基盤ではなく、本当の住処が次のエンジンである前向きのスパイクだ。",
+        "zh": "作为一次成熟度标签的发布来读，UE 5.8 把一批强力功能晋级到 Production-Ready（MegaLights、Movie Render Graph、Dataflow），同时把头条工作——Mesh Terrain、网络摄像头全身 MetaHuman 捕捉、MCP/LLM 插件——安置在 Experimental。对专业工作室更锐利的读法：由于 5.8 是 UE6 之前最后一个 UE5 大版本，实验性的头条功能是前瞻探针，其真正归宿是下一个引擎，而非交付作品的地基。"
+      }
+    },
+    {
       "slug": "diffusiongemma-rtx-local-ai",
       "path": "2026/diffusiongemma-rtx-local-ai",
       "date": "2026-06-10",

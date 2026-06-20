@@ -214,6 +214,26 @@
       }
     },
     {
+      "slug": "co-scientist-cellular-aging",
+      "date": "2026-05-19",
+      "themes": [
+        "life sciences",
+        "AI agents",
+        "science",
+        "AI"
+      ],
+      "title": {
+        "en": "Twenty Hypotheses, Two Hits: Reading Co-Scientist's Cellular-Aging Case Study",
+        "ja": "二十の仮説、二つの当たり ―― Co-Scientist の細胞老化事例を読む",
+        "zh": "二十个假设，两个命中：解读 Co-Scientist 的细胞老化案例"
+      },
+      "excerpt": {
+        "en": "A short case study of a lab using Co-Scientist to reverse cellular aging accidentally supplies the number the big announcements omit: 20+ hypotheses proposed, 'a couple' validated. That ~10% hit rate isn't a weakness — it's the thesis. The value isn't accuracy; it's the economics of cheap wrongness, with the human as the wet-lab precision filter.",
+        "ja": "細胞の老化を逆転させるために Co-Scientist を使う研究室の短い事例研究が、大きな告知が省く数字を偶然に供給する――20 以上の仮説を提案し、「いくつか」を裏づけた。その約 10% のヒット率は弱点ではない――テーゼだ。価値は正確さではなく、間違うことの安さの経済性であり、人間はウェットラボの精度フィルタである。",
+        "zh": "一则用 Co-Scientist 逆转细胞老化的实验室简短案例，无意间补上了大公告省略的数字——提出 20 多个假设，「证实了几个」。那约 10% 的命中率不是弱点——而是论题。价值不在准确，而在犯错之廉价的经济学，而人类是那道湿实验室的精度过滤器。"
+      }
+    },
+    {
       "slug": "co-scientist-multi-agent",
       "date": "2026-05-19",
       "themes": [

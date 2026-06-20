@@ -2,6 +2,7 @@
   "posts": [
     {
       "slug": "ai-control-insider-threat",
+      "path": "2026/ai-control-insider-threat",
       "date": "2026-06-18",
       "themes": [
         "AI safety",
@@ -22,6 +23,7 @@
     },
     {
       "slug": "fable-export-control-jailbreaks",
+      "path": "2026/fable-export-control-jailbreaks",
       "date": "2026-06-12",
       "themes": [
         "AI",
@@ -41,6 +43,7 @@
     },
     {
       "slug": "open-knowledge-format",
+      "path": "2026/open-knowledge-format",
       "date": "2026-06-12",
       "themes": [
         "AI",
@@ -60,6 +63,7 @@
     },
     {
       "slug": "public-record-trust-and-fear",
+      "path": "2026/public-record-trust-and-fear",
       "date": "2026-06-12",
       "themes": [
         "AI",
@@ -80,6 +84,7 @@
     },
     {
       "slug": "multi-agent-safety-funding-call",
+      "path": "2026/multi-agent-safety-funding-call",
       "date": "2026-06-11",
       "themes": [
         "AI safety",
@@ -100,6 +105,7 @@
     },
     {
       "slug": "diffusiongemma-text-diffusion",
+      "path": "2026/diffusiongemma-text-diffusion",
       "date": "2026-06-10",
       "themes": [
         "AI",
@@ -120,6 +126,7 @@
     },
     {
       "slug": "fable-mythos-capability-and-restraint",
+      "path": "2026/fable-mythos-capability-and-restraint",
       "date": "2026-06-09",
       "themes": [
         "AI",
@@ -140,6 +147,7 @@
     },
     {
       "slug": "gemini-live-translate",
+      "path": "2026/gemini-live-translate",
       "date": "2026-06-09",
       "themes": [
         "AI",
@@ -160,6 +168,7 @@
     },
     {
       "slug": "gemma-4-12b-encoder-free",
+      "path": "2026/gemma-4-12b-encoder-free",
       "date": "2026-06-03",
       "themes": [
         "AI",
@@ -180,6 +189,7 @@
     },
     {
       "slug": "clean-architecture-revisited",
+      "path": "2026/clean-architecture-revisited",
       "date": "2026-06-02",
       "themes": [
         "Software Development"
@@ -197,6 +207,7 @@
     },
     {
       "slug": "ai-agent-orchestration",
+      "path": "2026/ai-agent-orchestration",
       "date": "2026-06-01",
       "themes": [
         "AI",
@@ -215,6 +226,7 @@
     },
     {
       "slug": "mistral-search-toolkit",
+      "path": "2026/mistral-search-toolkit",
       "date": "2026-05-28",
       "themes": [
         "software development",
@@ -235,6 +247,7 @@
     },
     {
       "slug": "mistral-vibe-agent",
+      "path": "2026/mistral-vibe-agent",
       "date": "2026-05-28",
       "themes": [
         "AI agents",
@@ -255,6 +268,7 @@
     },
     {
       "slug": "mistral-physics-ai",
+      "path": "2026/mistral-physics-ai",
       "date": "2026-05-27",
       "themes": [
         "AI",
@@ -275,6 +289,7 @@
     },
     {
       "slug": "co-scientist-cellular-aging",
+      "path": "2026/co-scientist-cellular-aging",
       "date": "2026-05-19",
       "themes": [
         "life sciences",
@@ -295,6 +310,7 @@
     },
     {
       "slug": "co-scientist-multi-agent",
+      "path": "2026/co-scientist-multi-agent",
       "date": "2026-05-19",
       "themes": [
         "AI agents",
@@ -315,6 +331,7 @@
     },
     {
       "slug": "gemini-3-5-flash-action",
+      "path": "2026/gemini-3-5-flash-action",
       "date": "2026-05-19",
       "themes": [
         "AI",
@@ -335,6 +352,7 @@
     },
     {
       "slug": "gemini-for-science",
+      "path": "2026/gemini-for-science",
       "date": "2026-05-19",
       "themes": [
         "AI",
@@ -355,6 +373,7 @@
     },
     {
       "slug": "gpt-5-5-instant",
+      "path": "2026/gpt-5-5-instant",
       "date": "2026-05-05",
       "themes": [
         "AI",

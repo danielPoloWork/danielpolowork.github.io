@@ -1,6 +1,26 @@
 {
   "posts": [
     {
+      "slug": "ai-control-insider-threat",
+      "date": "2026-06-18",
+      "themes": [
+        "AI safety",
+        "security",
+        "AI",
+        "software development"
+      ],
+      "title": {
+        "en": "The Agent as Insider Threat: Reading DeepMind's AI Control Roadmap",
+        "ja": "内部脅威としてのエージェント ―― DeepMind の AI Control Roadmap を読む",
+        "zh": "作为内部威胁的智能体：解读 DeepMind 的 AI 控制路线图"
+      },
+      "excerpt": {
+        "en": "DeepMind's AI Control Roadmap tells you to treat the AI you built as a potential insider threat. Its best idea is indexing security posture to capability; its most important finding — that most flagged agent behavior is overeagerness, not malice — quietly subverts the adversarial frame the whole plan is built on.",
+        "ja": "DeepMind の AI Control Roadmap は、自ら構築した AI を潜在的な内部脅威として扱えと説く。最良の着想はセキュリティ姿勢を能力に応じて指標化することだ。だが最重要の発見――フラグの立つ振る舞いの大半は悪意ではなく過剰な熱意である――は、計画全体が築かれた敵対的枠組みを静かに覆す。",
+        "zh": "DeepMind 的 AI 控制路线图要求你把自己构建的 AI 当作潜在的内部威胁。它最好的构想是按能力索引安全姿态；而它最重要的发现——被标记的智能体行为大多是过度热心而非恶意——却静静颠覆了整个计划赖以构建的对抗式框架。"
+      }
+    },
+    {
       "slug": "fable-export-control-jailbreaks",
       "date": "2026-06-12",
       "themes": [

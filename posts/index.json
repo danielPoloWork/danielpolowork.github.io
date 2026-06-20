@@ -172,6 +172,26 @@
         "ja": "ファンアウト、パイプライン、敵対的検証 — 実務に晒されたときマルチエージェント設計がどう持ちこたえるかを分析します。",
         "zh": "扇出、流水线与对抗式校验 — 分析多智能体设计在真实负载下的表现。"
       }
+    },
+    {
+      "slug": "gemini-3-5-flash-action",
+      "date": "2026-05-19",
+      "themes": [
+        "AI",
+        "AI agents",
+        "software development",
+        "AI safety"
+      ],
+      "title": {
+        "en": "Selling Action, Not Intelligence: Reading the Gemini 3.5 Flash Launch",
+        "ja": "知能ではなく行動を売る ―― Gemini 3.5 Flash ローンチを読む",
+        "zh": "兜售行动，而非智能：解读 Gemini 3.5 Flash 的发布"
+      },
+      "excerpt": {
+        "en": "Gemini 3.5 leads with Flash, not Pro — and quantifies its value in developer-days and auditor-weeks. The frontier has turned from selling cognition to selling execution. The benchmarks are directionally credible but marketing-grade, and 'under supervision' cannot scale to a 24/7 subagent fleet.",
+        "ja": "Gemini 3.5 は Pro ではなく Flash で先導し、その価値を開発者の数日・監査人の数週間で定量化する。フロンティアは認知を売ることから実行を売ることへ転じた。ベンチマークは方向としては信じられるがマーケティング水準であり、「監督下に」は 24 時間稼働のサブエージェント艦隊へはスケールしない。",
+        "zh": "Gemini 3.5 以 Flash 而非 Pro 领衔，并用开发者的数天、审计师的数周来量化其价值。前沿已从兜售认知转向兜售执行。基准在方向上可信却是营销级，而「于监督之下」无法扩展到一支 24/7 的子智能体舰队。"
+      }
     }
   ]
 }

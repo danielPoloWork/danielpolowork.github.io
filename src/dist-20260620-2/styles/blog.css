@@ -80,6 +80,10 @@
 .tf-opt-label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tf-count { font-size: 0.7rem; color: var(--muted); flex: none; font-variant-numeric: tabular-nums; }
 .tf-opt:hover .tf-count, .tf-opt:focus .tf-count, .tf-opt.active .tf-count { color: var(--accent); }
+/* zero-count under the current cross-filter — not selectable, dimmed (overrides :hover) */
+.tf-opt:disabled { opacity: 0.4; cursor: default; }
+.tf-opt:disabled:hover, .tf-opt:disabled:focus { background: transparent; color: var(--ink-soft); }
+.tf-opt:disabled .tf-count { color: var(--muted); }
 
 /* ---------- Post list ---------- */
 .post-list {

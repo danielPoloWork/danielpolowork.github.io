@@ -66,17 +66,22 @@
   var PAGE_SIZE = 10;            // X posts per page before the paginator kicks in
   var state = { q: "", topic: "", vendor: "", sort: "newest", page: 1 };  // topic/vendor = normalised keys ("" = all)
 
-  // Facets (themes + maker) are derived from the posts. Themes are FREE tags that drift in casing
+  // Facets (themes + maker) derived from posts. Themes are FREE tags that drift in casing
   // ("AI safety" vs "AI Safety") and pile up a long singleton tail, so we group case-insensitively
-  // into ONE entry per value, count posts per value, and display the dominant casing — self-healing
-  // as posts are added. state.<facet> holds the normalised key; matching is case-insensitive.
+  // into ONE entry per value and show the dominant casing — self-healing as posts are added. Counts
+  // are CROSS-FILTERED: each dropdown's numbers reflect the OTHER active filters + the search.
   function norm(v) { return String(v == null ? "" : v).trim().toLowerCase(); }
   function themesOf(p) { return p.themes || []; }
   function vendorOf(p) { return p.vendor ? [p.vendor] : []; }
 
-  function facetModel(valuesOf) {
+  var FACETS = [
+    { key: "topic",  labelKey: "blog.filterTopic", valuesOf: themesOf },
+    { key: "vendor", labelKey: "blog.filterMaker", valuesOf: vendorOf }
+  ];
+
+  function facetModel(list, valuesOf) {
     var map = {};
-    posts.forEach(function (p) {
+    list.forEach(function (p) {
       var seen = {};
       valuesOf(p).forEach(function (raw) {
         var k = norm(raw);
@@ -101,14 +106,60 @@
     return t("blog.all");
   }
 
+  /* ---- predicates shared by the list and the cross-filtered counts ---- */
+  function matchSearch(p) {
+    var q = state.q.trim().toLowerCase();
+    if (!q) return true;
+    var hay = (pick(p.title) + " " + pick(p.excerpt) + " " + (p.themes || []).join(" ") + " " + (p.vendor || "")).toLowerCase();
+    return hay.indexOf(q) >= 0;
+  }
+  function matchFacet(p, key) {
+    var sel = state[key];
+    if (!sel) return true;
+    if (key === "vendor") return norm(p.vendor) === sel;
+    return themesOf(p).some(function (th) { return norm(th) === sel; });   // "topic"
+  }
+  // Posts passing the search + every facet EXCEPT `key` — the set its option counts are taken over.
+  function subsetExcept(key) {
+    return posts.filter(function (p) {
+      if (!matchSearch(p)) return false;
+      for (var i = 0; i < FACETS.length; i++) { var f = FACETS[i].key; if (f !== key && !matchFacet(p, f)) return false; }
+      return true;
+    });
+  }
+
   // Close every open facet dropdown except `keep` (one open at a time + outside-click close).
   function closeFacets(keep) {
     var open = document.querySelectorAll(".topic-filter.open");
     for (var i = 0; i < open.length; i++) if (open[i] !== keep && open[i]._close) open[i]._close();
   }
+  function enabledOpts(menu) {
+    return Array.prototype.slice.call(menu.querySelectorAll(".tf-opt")).filter(function (o) { return !o.disabled; });
+  }
 
-  // Controls are built once per load / language switch — NOT on every keystroke, so the
-  // search field keeps focus while typing. Filter/sort changes only re-render the list.
+  // Recompute cross-filtered counts for every facet and update its menu IN PLACE — no rebuild, so
+  // the search field keeps focus. "All" shows the subset size; a zero-count option is disabled
+  // unless it is "All" or the current selection (so you can always switch back).
+  function refreshFacets() {
+    FACETS.forEach(function (f) {
+      var wrap = document.querySelector('.topic-filter[data-facet="' + f.key + '"]');
+      if (!wrap) return;
+      var subset = subsetExcept(f.key), counts = {};
+      facetModel(subset, f.valuesOf).forEach(function (r) { counts[r.key] = r.count; });
+      var opts = wrap.querySelectorAll(".tf-opt");
+      for (var i = 0; i < opts.length; i++) {
+        var o = opts[i], k = o.getAttribute("data-key"), sel = state[f.key] === k;
+        var n = k === "" ? subset.length : (counts[k] || 0);
+        var cs = o.querySelector(".tf-count"); if (cs) cs.textContent = n;
+        o.disabled = (n === 0 && k !== "" && !sel);
+        o.className = "tf-opt" + (sel ? " active" : "");
+        o.setAttribute("aria-selected", sel ? "true" : "false");
+      }
+    });
+  }
+
+  // Controls are built once per load / language switch — NOT on every keystroke, so the search
+  // field keeps focus while typing. Filter/search changes refresh the cross-filtered counts in place.
   function buildControls() {
     var bar = document.getElementById("blogControls");
     if (!bar) return;
@@ -118,33 +169,35 @@
     search.type = "search";
     search.value = state.q;
     search.placeholder = t("blog.search");
-    search.addEventListener("input", function () { state.q = search.value; state.page = 1; renderList(); });
+    search.addEventListener("input", function () { state.q = search.value; state.page = 1; renderList(); refreshFacets(); });
     bar.appendChild(search);
 
-    var topics = facetModel(themesOf);
-    if (topics.length) bar.appendChild(buildFacetFilter({ stateKey: "topic", labelKey: "blog.filterTopic", rows: topics }));
-
-    var makers = facetModel(vendorOf);
-    if (makers.length) bar.appendChild(buildFacetFilter({ stateKey: "vendor", labelKey: "blog.filterMaker", rows: makers }));
+    FACETS.forEach(function (f) {
+      var universe = facetModel(posts, f.valuesOf);   // stable option list (every value)
+      if (universe.length) bar.appendChild(buildFacetFilter(f, universe));
+    });
 
     var sort = el("select", "blog-sort");
     sort.innerHTML = '<option value="newest">' + esc(t("blog.sortNewest")) + '</option><option value="oldest">' + esc(t("blog.sortOldest")) + "</option>";
     sort.value = state.sort;
     sort.addEventListener("change", function () { state.sort = sort.value; state.page = 1; renderList(); });
     bar.appendChild(sort);
+
+    refreshFacets();   // initial counts (honours any pre-existing filter, e.g. after a language switch)
   }
 
-  // Compact single-select dropdown for one facet (with per-value post counts), replacing the flat
-  // chip wall. Keyboard (Arrow/Enter/Esc) + outside-click close (via the document listener) included.
-  function buildFacetFilter(cfg) {
-    var rows = cfg.rows, key = cfg.stateKey;
+  // Compact single-select dropdown for one facet. The option list is the full universe (stable);
+  // counts + disabled state are filled by refreshFacets. Keyboard (Arrow/Enter/Esc) + outside-click.
+  function buildFacetFilter(f, rows) {
+    var key = f.key;
     var wrap = el("div", "topic-filter");
+    wrap.setAttribute("data-facet", key);
 
     var btn = el("button", "topic-btn");
     btn.type = "button";
     btn.setAttribute("aria-haspopup", "listbox");
     btn.setAttribute("aria-expanded", "false");
-    btn.innerHTML = '<span class="tf-label">' + esc(t(cfg.labelKey)) + '</span>' +
+    btn.innerHTML = '<span class="tf-label">' + esc(t(f.labelKey)) + '</span>' +
       '<span class="tf-value">' + esc(facetLabel(rows, state[key])) + '</span>' +
       '<svg class="tf-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
     wrap.appendChild(btn);
@@ -159,38 +212,33 @@
     function close() { menu.hidden = true; btn.setAttribute("aria-expanded", "false"); wrap.className = "topic-filter"; }
     wrap._close = close;   // reached by closeFacets + the document-level outside-click handler
 
-    function addOption(optKey, label, count) {
-      var sel = state[key] === optKey;
-      var o = el("button", "tf-opt" + (sel ? " active" : ""));
+    function addOption(optKey, label) {
+      var o = el("button", "tf-opt");
       o.type = "button";
       o.setAttribute("role", "option");
-      o.setAttribute("aria-selected", sel ? "true" : "false");
-      o.innerHTML = '<span class="tf-opt-label">' + esc(label) + '</span><span class="tf-count">' + count + '</span>';
+      o.setAttribute("data-key", optKey);
+      o.innerHTML = '<span class="tf-opt-label">' + esc(label) + '</span><span class="tf-count"></span>';
       o.addEventListener("click", function () {
+        if (o.disabled) return;
         state[key] = optKey; state.page = 1;
-        close(); setValue();
-        var opts = menu.querySelectorAll(".tf-opt");
-        for (var i = 0; i < opts.length; i++) { opts[i].className = "tf-opt"; opts[i].setAttribute("aria-selected", "false"); }
-        o.className = "tf-opt active"; o.setAttribute("aria-selected", "true");
-        renderList(); btn.focus();
+        close(); setValue(); renderList(); refreshFacets(); btn.focus();
       });
       menu.appendChild(o);
     }
 
-    addOption("", t("blog.all"), posts.length);
-    rows.forEach(function (r) { addOption(r.key, r.label, r.count); });
+    addOption("", t("blog.all"));
+    rows.forEach(function (r) { addOption(r.key, r.label); });
 
     btn.addEventListener("click", function () { menu.hidden ? open() : close(); });
     btn.addEventListener("keydown", function (e) {
       if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") {
         e.preventDefault(); open();
-        var f = menu.querySelector(".tf-opt.active") || menu.querySelector(".tf-opt");
-        if (f) f.focus();
+        var first = menu.querySelector(".tf-opt.active") || enabledOpts(menu)[0];
+        if (first) first.focus();
       }
     });
     menu.addEventListener("keydown", function (e) {
-      var opts = Array.prototype.slice.call(menu.querySelectorAll(".tf-opt"));
-      var i = opts.indexOf(document.activeElement);
+      var opts = enabledOpts(menu), i = opts.indexOf(document.activeElement);
       if (e.key === "ArrowDown") { e.preventDefault(); (opts[i + 1] || opts[0]).focus(); }
       else if (e.key === "ArrowUp") { e.preventDefault(); (opts[i - 1] || opts[opts.length - 1]).focus(); }
       else if (e.key === "Escape") { e.preventDefault(); close(); btn.focus(); }
@@ -200,15 +248,8 @@
   }
 
   function filteredRows() {
-    var q = state.q.trim().toLowerCase();
     var rows = posts.filter(function (p) {
-      if (state.topic && !themesOf(p).some(function (th) { return norm(th) === state.topic; })) return false;
-      if (state.vendor && norm(p.vendor) !== state.vendor) return false;
-      if (q) {
-        var hay = (pick(p.title) + " " + pick(p.excerpt) + " " + (p.themes || []).join(" ") + " " + (p.vendor || "")).toLowerCase();
-        if (hay.indexOf(q) < 0) return false;
-      }
-      return true;
+      return matchSearch(p) && matchFacet(p, "topic") && matchFacet(p, "vendor");
     });
     rows.sort(function (a, b) {
       if (a.date === b.date) return 0;

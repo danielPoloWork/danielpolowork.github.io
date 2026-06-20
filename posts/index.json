@@ -99,6 +99,26 @@
       }
     },
     {
+      "slug": "gemma-4-12b-encoder-free",
+      "date": "2026-06-03",
+      "themes": [
+        "AI",
+        "software development",
+        "machine learning",
+        "edge computing"
+      ],
+      "title": {
+        "en": "Deleting the Encoders: What Gemma 4 12B's Unified Architecture Costs and Buys",
+        "ja": "エンコーダを消す ―― Gemma 4 12B の統合アーキテクチャが手放すものと手に入れるもの",
+        "zh": "删掉编码器：Gemma 4 12B 的统一架构舍弃了什么、换来了什么"
+      },
+      "excerpt": {
+        "en": "Gemma 4 12B throws out the multimodal encoder playbook — vision collapses to a single matrix multiply, audio's encoder is gone entirely. From a developer's seat, the real story isn't the benchmarks; it's a precision-for-deployability trade that puts a capable multimodal agent on a 16GB laptop.",
+        "ja": "Gemma 4 12B はマルチモーダルエンコーダの定石を投げ捨てる――視覚は単一の行列積へ畳み込まれ、音声エンコーダは丸ごと消える。開発者の席から見れば、本筋はベンチマークではない。有能なマルチモーダルエージェントを 16GB のラップトップに載せる、精度と配備可能性のトレードだ。",
+        "zh": "Gemma 4 12B 抛弃了多模态编码器的套路——视觉折叠为单次矩阵乘法，音频编码器被整个删除。从开发者的座位上看，真正的故事不是基准，而是一笔以精度换可部署性的权衡，它把一个有能力的多模态智能体装进了一台 16GB 的笔记本。"
+      }
+    },
+    {
       "slug": "clean-architecture-revisited",
       "date": "2026-06-02",
       "themes": [

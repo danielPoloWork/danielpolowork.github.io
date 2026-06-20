@@ -236,7 +236,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 500; line-height
   position: absolute; bottom: 14px; right: -6px; z-index: 2;
   display: inline-flex; align-items: center; gap: 7px;
   background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
-  padding: 7px 13px; font-size: 0.78rem; font-weight: 600; box-shadow: var(--shadow-md); white-space: nowrap;
+  padding: 7px 13px; font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+  color: var(--ink-soft); box-shadow: var(--shadow-md); white-space: nowrap;
 }
 .hero-photo .dot { width: 8px; height: 8px; border-radius: 50%; background: #2bb673; box-shadow: 0 0 0 3px rgba(43,182,115,0.2); }
 

@@ -1,6 +1,12 @@
 {
   "date": "2026-05-28",
-  "themes": ["software development", "enterprise", "AI", "AI agents"],
+  "themes": [
+    "software development",
+    "enterprise",
+    "AI",
+    "AI agents"
+  ],
+  "vendor": "Mistral",
   "title": {
     "en": "The Product Is the Data Contract: Mistral's Search Toolkit",
     "ja": "製品はデータ契約である ―― Mistral の Search Toolkit",
@@ -12,6 +18,9 @@
     "zh": "Mistral 的 Search Toolkit 不是一个更好的检索器——它是一份数据契约。它把摄取、检索、评估统一到 Vespa 之上的一个接口下，赌的是三件工具之间的接缝、而非排序算法，才是杀死企业搜索的元凶。被低估的要石是同居的评估；陷阱在于，模块化只在适配器边界所允许的范围内才成立。"
   },
   "sources": [
-    { "file": "Introducing Search Toolkit.md", "hash": "sha256:fd9466921393ea19f0f38cdd54fcad0a1d61f0c3690584e9287d224acaa34fa1" }
+    {
+      "file": "Introducing Search Toolkit.md",
+      "hash": "sha256:fd9466921393ea19f0f38cdd54fcad0a1d61f0c3690584e9287d224acaa34fa1"
+    }
   ]
 }

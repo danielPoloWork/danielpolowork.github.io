@@ -1,6 +1,12 @@
 {
   "date": "2026-05-19",
-  "themes": ["AI", "AI agents", "software development", "AI safety"],
+  "themes": [
+    "AI",
+    "AI agents",
+    "software development",
+    "AI safety"
+  ],
+  "vendor": "Google",
   "title": {
     "en": "Selling Action, Not Intelligence: Reading the Gemini 3.5 Flash Launch",
     "ja": "知能ではなく行動を売る ―― Gemini 3.5 Flash ローンチを読む",
@@ -12,6 +18,9 @@
     "zh": "Gemini 3.5 以 Flash 而非 Pro 领衔，并用开发者的数天、审计师的数周来量化其价值。前沿已从兜售认知转向兜售执行。基准在方向上可信却是营销级，而「于监督之下」无法扩展到一支 24/7 的子智能体舰队。"
   },
   "sources": [
-    { "file": "Gemini 3.5_ frontier intelligence with action.md", "hash": "sha256:9eec246802c250288ada0ba90ee6852a86f837b7df83c98951f1785be1ad44de" }
+    {
+      "file": "Gemini 3.5_ frontier intelligence with action.md",
+      "hash": "sha256:9eec246802c250288ada0ba90ee6852a86f837b7df83c98951f1785be1ad44de"
+    }
   ]
 }

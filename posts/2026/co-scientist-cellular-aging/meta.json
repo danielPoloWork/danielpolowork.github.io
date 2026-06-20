@@ -1,6 +1,12 @@
 {
   "date": "2026-05-19",
-  "themes": ["life sciences", "AI agents", "science", "AI"],
+  "themes": [
+    "life sciences",
+    "AI agents",
+    "science",
+    "AI"
+  ],
+  "vendor": "Google",
   "title": {
     "en": "Twenty Hypotheses, Two Hits: Reading Co-Scientist's Cellular-Aging Case Study",
     "ja": "二十の仮説、二つの当たり ―― Co-Scientist の細胞老化事例を読む",
@@ -12,6 +18,9 @@
     "zh": "一则用 Co-Scientist 逆转细胞老化的实验室简短案例，无意间补上了大公告省略的数字——提出 20 多个假设，「证实了几个」。那约 10% 的命中率不是弱点——而是论题。价值不在准确，而在犯错之廉价的经济学，而人类是那道湿实验室的精度过滤器。"
   },
   "sources": [
-    { "file": "Co-Scientist.md", "hash": "sha256:50c2ed5358d52dde57cde5a67e23ad411c1e24d7aa2c40994273d0bdba3592c9" }
+    {
+      "file": "Co-Scientist.md",
+      "hash": "sha256:50c2ed5358d52dde57cde5a67e23ad411c1e24d7aa2c40994273d0bdba3592c9"
+    }
   ]
 }

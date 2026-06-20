@@ -1,6 +1,12 @@
 {
   "date": "2026-06-03",
-  "themes": ["AI", "software development", "machine learning", "edge computing"],
+  "themes": [
+    "AI",
+    "software development",
+    "machine learning",
+    "edge computing"
+  ],
+  "vendor": "Google",
   "title": {
     "en": "Deleting the Encoders: What Gemma 4 12B's Unified Architecture Costs and Buys",
     "ja": "エンコーダを消す ―― Gemma 4 12B の統合アーキテクチャが手放すものと手に入れるもの",
@@ -12,6 +18,9 @@
     "zh": "Gemma 4 12B 抛弃了多模态编码器的套路——视觉折叠为单次矩阵乘法，音频编码器被整个删除。从开发者的座位上看，真正的故事不是基准，而是一笔以精度换可部署性的权衡，它把一个有能力的多模态智能体装进了一台 16GB 的笔记本。"
   },
   "sources": [
-    { "file": "Introducing Gemma 4 12B_ a unified, encoder-free multimodal model.md", "hash": "sha256:20accf58d071791c43d6955381148d01482485b2f5afb10bba4e793ee6d09608" }
+    {
+      "file": "Introducing Gemma 4 12B_ a unified, encoder-free multimodal model.md",
+      "hash": "sha256:20accf58d071791c43d6955381148d01482485b2f5afb10bba4e793ee6d09608"
+    }
   ]
 }

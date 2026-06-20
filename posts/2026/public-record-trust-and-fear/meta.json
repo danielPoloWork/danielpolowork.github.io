@@ -1,6 +1,12 @@
 {
   "date": "2026-06-12",
-  "themes": ["AI", "AI policy", "society", "AI safety"],
+  "themes": [
+    "AI",
+    "AI policy",
+    "society",
+    "AI safety"
+  ],
+  "vendor": "Anthropic",
   "title": {
     "en": "Trust and Fear: Reading the First Anthropic Public Record",
     "ja": "信頼と恐れ ―― 最初の Anthropic Public Record を読む",
@@ -12,6 +18,9 @@
     "zh": "一项覆盖约 52,000 名美国人的调查发现：公众既希望 AI 治病、又怕它夺走工作，对 AI 企业的信任低于任何机构（15%），而越是真正使用这项技术，恐惧就越淡。"
   },
   "sources": [
-    { "file": "Results from first Anthropic Public Record.md", "hash": "sha256:592d88a70d81e9a76357999d625350c1cc7cce7cae30fb36cee7bd2f0670fd5d" }
+    {
+      "file": "Results from first Anthropic Public Record.md",
+      "hash": "sha256:592d88a70d81e9a76357999d625350c1cc7cce7cae30fb36cee7bd2f0670fd5d"
+    }
   ]
 }

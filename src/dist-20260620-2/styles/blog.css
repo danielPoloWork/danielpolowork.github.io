@@ -21,26 +21,54 @@
   outline: none; border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
-.filter-group { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; }
-.filter-group .fg-label {
-  font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted);
-  text-transform: uppercase; letter-spacing: 0.04em; margin-right: 2px;
-}
-.chip {
-  font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-soft);
-  background: var(--surface); border: 1px solid var(--border-strong);
-  padding: 5px 12px; border-radius: 999px; cursor: pointer;
-  transition: all 0.18s ease; white-space: nowrap;
-}
-.chip:hover { border-color: var(--accent); color: var(--accent); }
-.chip.active {
-  background: var(--accent); border-color: var(--accent); color: var(--on-accent);
-}
 .blog-sort {
   font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-soft);
   background: var(--surface); border: 1px solid var(--border-strong);
   border-radius: 999px; padding: 6px 12px; cursor: pointer; margin-left: auto;
 }
+
+/* ---------- Topic filter (compact single-select dropdown) ---------- */
+.topic-filter { position: relative; }
+.topic-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-soft);
+  background: var(--surface); border: 1px solid var(--border-strong);
+  border-radius: 999px; padding: 6px 12px; cursor: pointer;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+.topic-btn:hover, .topic-filter.open .topic-btn { border-color: var(--accent); }
+.topic-filter.open .topic-btn { box-shadow: 0 0 0 3px var(--accent-soft); }
+.tf-label {
+  font-size: 0.72rem; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+.tf-value { color: var(--ink); white-space: nowrap; max-width: 11rem; overflow: hidden; text-overflow: ellipsis; }
+.tf-caret { width: 14px; height: 14px; flex: none; color: var(--muted); transition: transform 0.18s ease; }
+.topic-filter.open .tf-caret { transform: rotate(180deg); }
+
+.topic-menu {
+  position: absolute; top: calc(100% + 6px); left: 0; z-index: 30;
+  min-width: 220px; max-width: min(300px, 84vw); max-height: 340px; overflow-y: auto;
+  background: var(--surface); border: 1px solid var(--border-strong);
+  border-radius: 14px; padding: 6px; box-shadow: var(--shadow-md);
+}
+.topic-menu[hidden] { display: none; }
+.tf-opt {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  width: 100%; text-align: left; cursor: pointer;
+  font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-soft);
+  background: transparent; border: 0; border-radius: 9px; padding: 7px 10px;
+  transition: background-color 0.14s ease, color 0.14s ease;
+}
+.tf-opt:hover, .tf-opt:focus { background: var(--accent-soft); color: var(--accent); outline: none; }
+.tf-opt.active { background: var(--accent-soft); color: var(--accent); }
+.tf-opt-label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tf-count { font-size: 0.7rem; color: var(--muted); flex: none; font-variant-numeric: tabular-nums; }
+.tf-opt:hover .tf-count, .tf-opt:focus .tf-count, .tf-opt.active .tf-count { color: var(--accent); }
+/* zero-count under the current cross-filter — not selectable, dimmed (overrides :hover) */
+.tf-opt:disabled { opacity: 0.4; cursor: default; }
+.tf-opt:disabled:hover, .tf-opt:disabled:focus { background: transparent; color: var(--ink-soft); }
+.tf-opt:disabled .tf-count { color: var(--muted); }
 
 /* ---------- Post list ---------- */
 .post-list {

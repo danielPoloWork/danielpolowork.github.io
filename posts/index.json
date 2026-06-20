@@ -10,6 +10,7 @@
         "AI",
         "software development"
       ],
+      "vendor": "Google",
       "title": {
         "en": "The Agent as Insider Threat: Reading DeepMind's AI Control Roadmap",
         "ja": "内部脅威としてのエージェント ―― DeepMind の AI Control Roadmap を読む",
@@ -30,6 +31,7 @@
         "Cybersecurity",
         "AI Safety"
       ],
+      "vendor": "Anthropic",
       "title": {
         "en": "A narrow jailbreak, a national shutdown: defense in depth on trial",
         "ja": "狭いジェイルブレイクと国家規模の遮断：多層防御が裁かれる",
@@ -50,6 +52,7 @@
         "Knowledge Management",
         "Software Development"
       ],
+      "vendor": "Google",
       "title": {
         "en": "The Format I Was Already Writing by Hand: Inside the Open Knowledge Format",
         "ja": "私がすでに手で書いていたフォーマット：Open Knowledge Format を読む",
@@ -71,6 +74,7 @@
         "society",
         "AI safety"
       ],
+      "vendor": "Anthropic",
       "title": {
         "en": "Trust and Fear: Reading the First Anthropic Public Record",
         "ja": "信頼と恐れ ―― 最初の Anthropic Public Record を読む",
@@ -92,6 +96,7 @@
         "AI",
         "research"
       ],
+      "vendor": "Google",
       "title": {
         "en": "From Psychology to Epidemiology: DeepMind's $10M Multi-Agent Safety Call",
         "ja": "心理学から疫学へ ―― DeepMind の 1,000 万ドル・マルチエージェント安全性公募",
@@ -113,6 +118,7 @@
         "software development",
         "edge computing"
       ],
+      "vendor": "Google",
       "title": {
         "en": "Two Decoders for Two Computers: Reading DiffusionGemma's 4x Claim",
         "ja": "二台のコンピュータに二つのデコーダ ―― DiffusionGemma の「4 倍」を読む",
@@ -134,6 +140,7 @@
         "life sciences",
         "AI safety"
       ],
+      "vendor": "Anthropic",
       "title": {
         "en": "Capability and Restraint: Reading the Fable 5 / Mythos 5 Launch",
         "ja": "能力と抑制 ―― Fable 5 / Mythos 5 ローンチを読む",
@@ -155,6 +162,7 @@
         "accessibility",
         "enterprise"
       ],
+      "vendor": "Google",
       "title": {
         "en": "Automating the Interpreter's Lag: Gemini 3.5 Live Translate",
         "ja": "通訳者の遅れを自動化する ―― Gemini 3.5 Live Translate",
@@ -176,6 +184,7 @@
         "machine learning",
         "edge computing"
       ],
+      "vendor": "Google",
       "title": {
         "en": "Deleting the Encoders: What Gemma 4 12B's Unified Architecture Costs and Buys",
         "ja": "エンコーダを消す ―― Gemma 4 12B の統合アーキテクチャが手放すものと手に入れるもの",
@@ -234,6 +243,7 @@
         "AI",
         "AI agents"
       ],
+      "vendor": "Mistral",
       "title": {
         "en": "The Product Is the Data Contract: Mistral's Search Toolkit",
         "ja": "製品はデータ契約である ―― Mistral の Search Toolkit",
@@ -255,6 +265,7 @@
         "enterprise",
         "productivity"
       ],
+      "vendor": "Mistral",
       "title": {
         "en": "The Agent Interface Has Standardized: Reading Mistral's Vibe",
         "ja": "エージェントのインターフェースは標準化した ―― Mistral の Vibe を読む",
@@ -276,6 +287,7 @@
         "engineering",
         "manufacturing"
       ],
+      "vendor": "Mistral",
       "title": {
         "en": "Physics, Made Affordable: Mistral's Physics AI and the Verification Tail",
         "ja": "手の届く物理へ ―― Mistral の Physics AI と検証の尾",
@@ -297,6 +309,7 @@
         "science",
         "AI"
       ],
+      "vendor": "Google",
       "title": {
         "en": "Twenty Hypotheses, Two Hits: Reading Co-Scientist's Cellular-Aging Case Study",
         "ja": "二十の仮説、二つの当たり ―― Co-Scientist の細胞老化事例を読む",
@@ -318,6 +331,7 @@
         "life sciences",
         "AI safety"
       ],
+      "vendor": "Google",
       "title": {
         "en": "Self-Play for Science: Inside Co-Scientist's Multi-Agent Architecture",
         "ja": "科学のための自己対戦 ―― Co-Scientist のマルチエージェント・アーキテクチャの内側",
@@ -339,6 +353,7 @@
         "software development",
         "AI safety"
       ],
+      "vendor": "Google",
       "title": {
         "en": "Selling Action, Not Intelligence: Reading the Gemini 3.5 Flash Launch",
         "ja": "知能ではなく行動を売る ―― Gemini 3.5 Flash ローンチを読む",
@@ -360,6 +375,7 @@
         "science",
         "life sciences"
       ],
+      "vendor": "Google",
       "title": {
         "en": "Automating the Hypothesis: Gemini for Science and the Inversion of Creative Labor",
         "ja": "仮説を自動化する ―― Gemini for Science と創造的労働の反転",
@@ -381,6 +397,7 @@
         "privacy",
         "enterprise"
       ],
+      "vendor": "OpenAI",
       "title": {
         "en": "Sharper, Shorter, Yours: The Three-Way Tension in GPT-5.5 Instant",
         "ja": "より鋭く、より短く、あなた向けに ―― GPT-5.5 Instant の三つ巴の緊張",

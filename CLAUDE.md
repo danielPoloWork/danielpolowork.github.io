@@ -107,8 +107,10 @@ Posts are Markdown in `posts/`, rendered **in the browser** with vendored `marke
 Data model — metadata is **co-located per post**, and `posts/index.json` is a **generated
 aggregate** (a browser can't list a dir, so the client reads one file):
 - `posts/<YYYY>/<slug>/meta.json` — the per-post **source of truth**: `{ date (YYYY-MM-DD),
-  themes (free tags, shown as-is, not translated), title:{en,ja,zh}, excerpt:{en,ja,zh} }`.
-  Posts are filed under a **year folder** (`<YYYY>` = the post's date year). The `slug` is the
+  themes (free tags, shown as-is, not translated), vendor (optional), title:{en,ja,zh},
+  excerpt:{en,ja,zh} }`. `vendor` is the AI lab/company the post is mainly about (e.g. `Google`,
+  `Anthropic`, `OpenAI`, `Mistral`) — it powers the blog's **Maker** filter; omit it for
+  vendor-agnostic posts. Posts are filed under a **year folder** (`<YYYY>` = the post's date year). The `slug` is the
   post folder name (not a field) and stays the **public id** — the `?slug=` URL and the Giscus
   thread key never include the year, so the slug must be unique across all years. `reindex.mjs`
   records the on-disk location as `path` (`<YYYY>/<slug>`) in the index, and `post.js` resolves
@@ -118,7 +120,8 @@ aggregate** (a browser can't list a dir, so the client reads one file):
   Summary). The language switcher re-renders the body; missing languages fall back to `en`.
 - `posts/sections.json` — the four section definitions `{ id, order, label:{en,ja,zh} }`,
   used by the authoring commands as the localised section headings. There is **no per-post
-  "type" and no type filter** — the list filters by **theme** + search + date.
+  "type" and no type filter** — the list filters by **theme** + **maker** (compact dropdowns,
+  built case-insensitively from `themes` / `vendor` with per-value counts) + search + date.
 - `posts/index.json` — **generated, do not hand-edit**: `{ posts: [...] }` sorted by date
   desc, built from every `meta.json` by **`node tools/reindex.mjs`** (which walks `posts/<YYYY>/<slug>/`
   two levels deep, writes each entry's `slug` + `path`, and **fails on a duplicate slug across

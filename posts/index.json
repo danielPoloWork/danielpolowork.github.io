@@ -79,6 +79,26 @@
       }
     },
     {
+      "slug": "diffusiongemma-text-diffusion",
+      "date": "2026-06-10",
+      "themes": [
+        "AI",
+        "machine learning",
+        "software development",
+        "edge computing"
+      ],
+      "title": {
+        "en": "Two Decoders for Two Computers: Reading DiffusionGemma's 4x Claim",
+        "ja": "二台のコンピュータに二つのデコーダ ―― DiffusionGemma の「4 倍」を読む",
+        "zh": "为两台计算机准备两个解码器：解读 DiffusionGemma 的「4 倍」"
+      },
+      "excerpt": {
+        "en": "DiffusionGemma generates 256 tokens in parallel instead of one at a time, claiming 4x faster output. The headline number is the least interesting part: the real story is which bottleneck it moves, why the win inverts in the cloud, and a bidirectional-attention capability autoregression structurally cannot match.",
+        "ja": "DiffusionGemma は一度に一トークンではなく 256 トークンを並列生成し、4 倍速い出力をうたう。だが見出しの数字は最も退屈な部分だ。本筋は、どのボトルネックを動かすのか、なぜその勝利がクラウドで反転するのか、そして自己回帰が構造的に並びえない双方向アテンションの能力である。",
+        "zh": "DiffusionGemma 并行生成 256 个 token，而非一次一个，宣称输出快 4 倍。但那个头条数字是最无趣的部分：真正的故事是它挪动的是哪道瓶颈、为何这一胜利在云端反转，以及一项自回归从结构上无法企及的双向注意力能力。"
+      }
+    },
+    {
       "slug": "fable-mythos-capability-and-restraint",
       "date": "2026-06-09",
       "themes": [

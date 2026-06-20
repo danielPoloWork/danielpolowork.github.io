@@ -11,3 +11,5 @@ and registers it in `posts/index.json`.
 Raw inputs are never published. Once `/draft-from-raw` has successfully generated the post
 and updated the manifest, it **deletes the consumed source file(s)** from `raw/`, so this
 folder only ever holds material that hasn't been ingested yet. (`raw/README.md` is kept.)
+
+❯ **`/draft-from-raw e valuta anche il confronto dei seguenti argomenti se necessario:`**

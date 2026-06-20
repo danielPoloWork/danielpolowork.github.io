@@ -214,6 +214,26 @@
       }
     },
     {
+      "slug": "mistral-search-toolkit",
+      "date": "2026-05-28",
+      "themes": [
+        "software development",
+        "enterprise",
+        "AI",
+        "AI agents"
+      ],
+      "title": {
+        "en": "The Product Is the Data Contract: Mistral's Search Toolkit",
+        "ja": "製品はデータ契約である ―― Mistral の Search Toolkit",
+        "zh": "产品即数据契约：Mistral 的 Search Toolkit"
+      },
+      "excerpt": {
+        "en": "Mistral's Search Toolkit isn't a better retriever — it's a data contract. It unifies ingestion, retrieval, and evaluation under one interface on Vespa, betting that the seam between three tools, not the ranking algorithm, is what kills enterprise search. The underrated keystone is co-located evaluation; the catch is that modularity holds only as far as the adapter boundary allows.",
+        "ja": "Mistral の Search Toolkit はより良いリトリーバーではない――データ契約だ。それは取り込み・検索・評価を Vespa 上の一つのインターフェースに統一し、ランキングアルゴリズムではなく三つのツールの間の継ぎ目こそがエンタープライズ検索を殺すのだと賭ける。過小評価された要石は同居した評価であり、落とし穴は、モジュール性がアダプタ境界の許す範囲でしか成り立たないことだ。",
+        "zh": "Mistral 的 Search Toolkit 不是一个更好的检索器——它是一份数据契约。它把摄取、检索、评估统一到 Vespa 之上的一个接口下，赌的是三件工具之间的接缝、而非排序算法，才是杀死企业搜索的元凶。被低估的要石是同居的评估；陷阱在于，模块化只在适配器边界所允许的范围内才成立。"
+      }
+    },
+    {
       "slug": "co-scientist-cellular-aging",
       "date": "2026-05-19",
       "themes": [

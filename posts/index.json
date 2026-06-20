@@ -79,6 +79,26 @@
       }
     },
     {
+      "slug": "multi-agent-safety-funding-call",
+      "date": "2026-06-11",
+      "themes": [
+        "AI safety",
+        "AI agents",
+        "AI",
+        "research"
+      ],
+      "title": {
+        "en": "From Psychology to Epidemiology: DeepMind's $10M Multi-Agent Safety Call",
+        "ja": "心理学から疫学へ ―― DeepMind の 1,000 万ドル・マルチエージェント安全性公募",
+        "zh": "从心理学到流行病学：DeepMind 的 1,000 万美元多智能体安全公募"
+      },
+      "excerpt": {
+        "en": "DeepMind's $10M funding call quietly concedes that single-model safety doesn't survive a world of millions of interacting agents. The shift is from a psychology question (is this mind aligned?) to an epidemiology one (is this population stable?) — and the unnamed precedent behind it all is the flash crash.",
+        "ja": "DeepMind の 1,000 万ドルの助成公募は、単一モデルの安全性が何百万ものエージェントが相互作用する世界を生き延びないと静かに認める。問いは心理学（この心はアライメントされているか）から疫学（この個体群は安定か）へ移る――そのすべての背後にある名指しされない先例は、フラッシュクラッシュだ。",
+        "zh": "DeepMind 的 1,000 万美元资助公募，静静地承认单模型安全无法在一个数百万智能体彼此交互的世界里幸存。问题从心理学（这个心智对齐了吗）转向流行病学（这个种群稳定吗）——而这一切背后那个未被点名的先例，就是闪崩。"
+      }
+    },
+    {
       "slug": "diffusiongemma-text-diffusion",
       "date": "2026-06-10",
       "themes": [

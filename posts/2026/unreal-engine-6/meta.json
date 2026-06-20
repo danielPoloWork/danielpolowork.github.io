@@ -1,0 +1,25 @@
+{
+  "date": "2026-06-11",
+  "themes": [
+    "game development",
+    "real-time rendering",
+    "AI"
+  ],
+  "vendor": "Epic Games",
+  "title": {
+    "en": "Unreal Engine 6: The Engine That Ships a Programming Model",
+    "ja": "Unreal Engine 6 ―― プログラミングモデルを出荷するエンジン",
+    "zh": "Unreal Engine 6：一款交付「编程模型」的引擎"
+  },
+  "excerpt": {
+    "en": "UE6's headline isn't a renderer — it's Verse, a transactional language, and Scene Graph, the gameplay framework built on it. I read Epic's roadmap as a bet on how games get written: software transactional memory that promises free distributed scaling and trivial persistence, but liberates and constrains in equal measure — and ships incrementally while Verse is still single-threaded. For a UE5 studio: keep shipping, prototype Verse in parallel, don't mistake 'the future is transactional' for 'rewrite today'.",
+    "ja": "UE6 の目玉はレンダラーではない ―― トランザクショナル言語 Verse と、その上に築かれたゲームプレイフレームワーク Scene Graph だ。私は Epic のロードマップを、ゲームの書き方への賭けとして読む ―― 無料の分散スケーリングと些細な永続化を約束するソフトウェアトランザクショナルメモリ。だがそれは同じだけ解放し制約もし、Verse がなおシングルスレッドのまま段階的に出荷される。UE5 スタジオへ ―― 出荷を続け、Verse を並行してプロトタイプし、「未来はトランザクショナルだ」を「今日書き直せ」と取り違えないこと。",
+    "zh": "UE6 的头条不是渲染器 ―― 而是事务式语言 Verse，以及建立在其上的游戏玩法框架 Scene Graph。我把 Epic 的路线图读作一场关于游戏如何被书写的押注 ―― 承诺免费分布式扩展与微不足道之持久化的软件事务内存。但它在解放的同时也同等地约束，且在 Verse 仍是单线程时便逐步交付。对 UE5 工作室 ―― 继续交付，并行为 Verse 做原型，别把「未来是事务式的」误读成「今天就重写」。"
+  },
+  "sources": [
+    {
+      "file": "The road to Unreal Engine 6. Read about our plans and timeline.md",
+      "hash": "sha256:0f6cace4e816f045b28566dbb412c5522a4d6faa3a18de9a0d5f0d5b12b5366e"
+    }
+  ]
+}

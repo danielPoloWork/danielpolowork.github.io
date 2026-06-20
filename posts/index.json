@@ -139,6 +139,26 @@
       }
     },
     {
+      "slug": "gemini-live-translate",
+      "date": "2026-06-09",
+      "themes": [
+        "AI",
+        "software development",
+        "accessibility",
+        "enterprise"
+      ],
+      "title": {
+        "en": "Automating the Interpreter's Lag: Gemini 3.5 Live Translate",
+        "ja": "通訳者の遅れを自動化する ―― Gemini 3.5 Live Translate",
+        "zh": "把传译员的时差自动化：Gemini 3.5 Live Translate"
+      },
+      "excerpt": {
+        "en": "Gemini 3.5 Live Translate abandons turn-based translation for continuous speech that stays a few seconds behind the speaker — adopting the décalage strategy of human UN interpreters, and inheriting its hardest failure mode in the verb-final languages the demos quietly avoid.",
+        "ja": "Gemini 3.5 Live Translate はターン制の翻訳を捨て、話者の数秒後ろに留まる連続音声を採る――人間の国連通訳者のデカラージュ戦略を採用し、デモが静かに避ける動詞末尾の言語で、その最も難しい失敗モードを継承する。",
+        "zh": "Gemini 3.5 Live Translate 放弃逐轮翻译，转向落在说话者身后几秒的连续语音——采用人类联合国传译员的 décalage 策略，并在演示悄然回避的动词居末语言里继承了它最难的失败模式。"
+      }
+    },
+    {
       "slug": "gemma-4-12b-encoder-free",
       "date": "2026-06-03",
       "themes": [

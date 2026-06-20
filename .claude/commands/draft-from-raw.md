@@ -14,7 +14,10 @@ is extra authoring direction (see below).
 - **sources** — which files in `raw/` to use for THIS post (the folder is flat; the user
   names the files, e.g. `raw/transformer-scaling.pdf`, `raw/notes.md`). Read each one
   (text, markdown, and PDFs are supported). Do not invent material that is not in them.
-- **slug** — kebab-case, unique → becomes `posts/<slug>/`.
+- **slug** — kebab-case → becomes the post folder `posts/<YYYY>/<slug>/`, where `YYYY` is the
+  year of the post's **date**. The slug stays the **public identifier** (the `?slug=` URL and the
+  Giscus thread key); the year folder is internal organisation only, so the slug must be unique
+  across **all** years.
 - **date** — `YYYY-MM-DD` (ask the user; the runtime forbids `new Date()`, so never guess).
 - **themes** — free tags from the blog's domain (AI, software development, and the broader
   world of building and advancing the field). Infer 1–3 from the sources and confirm.
@@ -29,11 +32,12 @@ is extra authoring direction (see below).
 ## 1.5 Duplicate guard (do this BEFORE drafting anything)
 Two checks, both must pass or you STOP and ask the user how to proceed — do not write any file:
 
-1. **Slug collision.** If `posts/<slug>/` already exists, STOP. Ask for a different slug
-   (or explicit confirmation to overwrite). Never silently overwrite an existing post.
+1. **Slug collision.** If `posts/<YYYY>/<slug>/` already exists — or the slug is already used
+   under **any** year (`posts/*/<slug>/`) — STOP. Ask for a different slug (or explicit
+   confirmation to overwrite). Never silently overwrite an existing post; slugs are unique across years.
 2. **Source already ingested.** Run `node tools/check-source.mjs <each raw source file>`.
    It hashes each source and compares against the `sources[].hash` recorded in every existing
-   `posts/*/meta.json`. If it prints `DUPLICATE` (exit 1), the same source already became a
+   `posts/*/*/meta.json`. If it prints `DUPLICATE` (exit 1), the same source already became a
    post (it names which slug) — STOP and tell the user; do not create a near-duplicate.
    If it prints `OK` (exit 0), copy the printed `sha256:…` hashes — they go into the new
    post's `meta.json` `sources` in §5.
@@ -68,14 +72,14 @@ language):
 6. `## Summary` — a concise overview capturing the main ideas at a glance.
 
 ## 4. Write the files
-- `posts/<slug>/en.md` — the article in English (the structure above; headings in English).
-- `posts/<slug>/ja.md` and `posts/<slug>/zh.md` — **faithful translations** of the English
+- `posts/<YYYY>/<slug>/en.md` — the article in English (the structure above; headings in English).
+- `posts/<YYYY>/<slug>/ja.md` and `posts/<YYYY>/<slug>/zh.md` — **faithful translations** of the English
   article (same structure; section headings from `sections[].label.ja` / `.zh`). Keep the
   architect voice; translate meaning, not word-for-word.
 - Plain markdown only — no YAML frontmatter (metadata lives in `meta.json`).
 
 ## 5. Write metadata + regenerate the index
-Write `posts/<slug>/meta.json` — the per-post **source of truth**. Do NOT hand-edit
+Write `posts/<YYYY>/<slug>/meta.json` — the per-post **source of truth**. Do NOT hand-edit
 `posts/index.json`; it is generated.
 ```json
 { "date": "<date>", "themes": [...],
@@ -90,16 +94,19 @@ Write `posts/<slug>/meta.json` — the per-post **source of truth**. Do NOT hand
   `check-source.mjs` in §1.5. This is the dedup fingerprint; `reindex.mjs` strips it from the
   public `index.json`, so it stays internal. **Required** — without it the guard can't catch
   a future re-ingestion of the same source.
-- The `slug` is the folder name — do not put it inside `meta.json`.
+- The `slug` is the post folder name and `path` (`<YYYY>/<slug>`) is its on-disk location —
+  do **not** put either inside `meta.json`; `reindex.mjs` derives both and writes `slug` + `path`
+  into the public index (the client resolves the year folder from `path`, so it never hits the URL).
 
 Then regenerate the aggregate the client reads: **`node tools/reindex.mjs`** (rebuilds
-`posts/index.json` = `{ posts: [...] }`, sorted by date desc, from every `meta.json`).
+`posts/index.json` = `{ posts: [...] }`, sorted by date desc, from every `meta.json`; it walks
+`posts/<YYYY>/<slug>/` two levels deep and fails on a duplicate slug across years).
 
 ## 6. Verify
 - `node tools/reindex.mjs` ran without error.
 - `node -e "JSON.parse(require('fs').readFileSync('posts/index.json','utf8'))"` → valid JSON,
-  and the new slug appears in `posts[]`.
-- Confirm `posts/<slug>/meta.json` and the three `.md` files exist and contain all four sections.
+  and the new slug appears in `posts[]` with `path` = `<YYYY>/<slug>`.
+- Confirm `posts/<YYYY>/<slug>/meta.json` and the three `.md` files exist and contain all four sections.
 - Confirm `meta.json` `sources[]` has one `sha256:…` entry per consumed raw file (the dedup guard).
 
 ## 7. Clean up the consumed sources

@@ -27,19 +27,24 @@ if (files.length === 0) {
 
 const POSTS = "posts";
 
-// Index every known source hash from existing posts: hash -> [slugs].
+// Index every known source hash from existing posts: hash -> [paths].
+// Posts live at posts/<group>/<slug>/meta.json (group is the year folder), so walk two levels.
 const known = new Map();
-for (const d of readdirSync(POSTS, { withFileTypes: true })) {
-  if (!d.isDirectory()) continue;
-  const metaPath = join(POSTS, d.name, "meta.json");
-  if (!existsSync(metaPath)) continue;
-  let meta;
-  try { meta = JSON.parse(readFileSync(metaPath, "utf8")); } catch { continue; }
-  const srcs = Array.isArray(meta.sources) ? meta.sources : [];
-  for (const s of srcs) {
-    if (!s || !s.hash) continue;
-    if (!known.has(s.hash)) known.set(s.hash, []);
-    known.get(s.hash).push(d.name);
+for (const group of readdirSync(POSTS, { withFileTypes: true })) {
+  if (!group.isDirectory()) continue;            // skip index.json, sections.json
+  const groupDir = join(POSTS, group.name);
+  for (const d of readdirSync(groupDir, { withFileTypes: true })) {
+    if (!d.isDirectory()) continue;
+    const metaPath = join(groupDir, d.name, "meta.json");
+    if (!existsSync(metaPath)) continue;
+    let meta;
+    try { meta = JSON.parse(readFileSync(metaPath, "utf8")); } catch { continue; }
+    const srcs = Array.isArray(meta.sources) ? meta.sources : [];
+    for (const s of srcs) {
+      if (!s || !s.hash) continue;
+      if (!known.has(s.hash)) known.set(s.hash, []);
+      known.get(s.hash).push(`${group.name}/${d.name}`);
+    }
   }
 }
 

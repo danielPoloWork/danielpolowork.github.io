@@ -106,19 +106,25 @@ Posts are Markdown in `posts/`, rendered **in the browser** with vendored `marke
 
 Data model — metadata is **co-located per post**, and `posts/index.json` is a **generated
 aggregate** (a browser can't list a dir, so the client reads one file):
-- `posts/<slug>/meta.json` — the per-post **source of truth**: `{ date (YYYY-MM-DD),
+- `posts/<YYYY>/<slug>/meta.json` — the per-post **source of truth**: `{ date (YYYY-MM-DD),
   themes (free tags, shown as-is, not translated), title:{en,ja,zh}, excerpt:{en,ja,zh} }`.
-  The `slug` is the folder name (not a field). `post.js` fetches this file directly.
-- `posts/<slug>/en.md`, `ja.md`, `zh.md` — the body per language (plain markdown, no
+  Posts are filed under a **year folder** (`<YYYY>` = the post's date year). The `slug` is the
+  post folder name (not a field) and stays the **public id** — the `?slug=` URL and the Giscus
+  thread key never include the year, so the slug must be unique across all years. `reindex.mjs`
+  records the on-disk location as `path` (`<YYYY>/<slug>`) in the index, and `post.js` resolves
+  the post from that index entry (it no longer fetches `meta.json` directly).
+- `posts/<YYYY>/<slug>/en.md`, `ja.md`, `zh.md` — the body per language (plain markdown, no
   frontmatter). Every post is ONE article with four sections (Deep dive / Debate / Critique /
   Summary). The language switcher re-renders the body; missing languages fall back to `en`.
 - `posts/sections.json` — the four section definitions `{ id, order, label:{en,ja,zh} }`,
   used by the authoring commands as the localised section headings. There is **no per-post
   "type" and no type filter** — the list filters by **theme** + search + date.
 - `posts/index.json` — **generated, do not hand-edit**: `{ posts: [...] }` sorted by date
-  desc, built from every `meta.json` by **`node tools/reindex.mjs`**. `blog.js` (list +
-  homepage preview) reads this single aggregate. Re-run reindex after editing any `meta.json`
-  by hand (the `/draft-from-raw` and `/new-post` commands run it for you).
+  desc, built from every `meta.json` by **`node tools/reindex.mjs`** (which walks `posts/<YYYY>/<slug>/`
+  two levels deep, writes each entry's `slug` + `path`, and **fails on a duplicate slug across
+  years**). Both `blog.js` (list + homepage preview) and `post.js` (single post) read this single
+  aggregate. Re-run reindex after editing any `meta.json` by hand (the `/draft-from-raw` and
+  `/new-post` commands run it for you).
 
 To create a post (no build either way):
 - `/draft-from-raw [extra guidance]` — read source files from `raw/`, synthesise a
@@ -128,8 +134,8 @@ To create a post (no build either way):
   This is the main authoring path.
 - `/new-post` — scaffold a post by hand (same four-section structure) + update the manifest.
 
-**Duplicate guard.** Both commands STOP before writing if `posts/<slug>/` already exists (no
-silent overwrite). `/draft-from-raw` additionally runs `node tools/check-source.mjs <raw file…>`,
+**Duplicate guard.** Both commands STOP before writing if `posts/<YYYY>/<slug>/` already exists —
+or the slug is used under any year (`posts/*/<slug>/`) — (no silent overwrite). `/draft-from-raw` additionally runs `node tools/check-source.mjs <raw file…>`,
 which sha256-hashes each source and compares it against the `sources[].hash` recorded in every
 existing `meta.json`; a match means that source was already turned into a post, so it refuses to
 create a near-duplicate. Each post records its provenance in `meta.json` as

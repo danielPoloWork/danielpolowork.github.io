@@ -1,7 +1,9 @@
 /* ============================================================
    Daniel Polo — Single blog post
-   ?slug=<slug>  →  reads meta from posts/<slug>/meta.json and the body from
-   posts/<slug>/<lang>.md, renders markdown (marked) sanitised (DOMPurify),
+   ?slug=<slug>  →  looks the post up in posts/index.json (which carries its meta
+   and its on-disk `path`, e.g. "2026/<slug>"), then reads the body from
+   posts/<path>/<lang>.md. The year folder is internal: the URL and the Giscus
+   thread key stay the bare slug. Renders markdown (marked) sanitised (DOMPurify),
    and re-renders the body + meta when the language changes.
    ============================================================ */
 (function () {
@@ -45,6 +47,7 @@
 
   var slug = param("slug");
   var meta = null;
+  var base = null;   // "posts/<path>/" resolved from the index (path includes the year folder)
 
   function renderMeta() {
     if (!meta) return;
@@ -95,7 +98,7 @@
     return String(md).replace(/^﻿?\s*#\s+.*(?:\r?\n)+/, "");
   }
   function fetchBody(l) {
-    return fetch("posts/" + slug + "/" + l + ".md", { cache: "no-cache" })
+    return fetch(base + l + ".md", { cache: "no-cache" })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); });
   }
 
@@ -155,11 +158,18 @@
 
   if (!slug) { showError(); return; }
 
-  fetch("posts/" + slug + "/meta.json", { cache: "no-cache" })
+  // Resolve the post via the generated index: the entry carries the meta (title/date/
+  // themes/excerpt) AND its on-disk `path` (e.g. "2026/<slug>"). The year folder thus
+  // stays internal — the URL and the Giscus `data-term` remain the bare slug.
+  fetch("posts/index.json", { cache: "no-cache" })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (data) {
-      meta = data || null;
-      if (!meta) { showError(); return; }
+      var list = (data && data.posts) || [];
+      var entry = null;
+      for (var i = 0; i < list.length; i++) { if (list[i].slug === slug) { entry = list[i]; break; } }
+      if (!entry) { showError(); return; }
+      meta = entry;
+      base = "posts/" + (entry.path || entry.slug) + "/";  // fallback to bare slug if path absent
       renderAll();
       mountGiscus();
     })

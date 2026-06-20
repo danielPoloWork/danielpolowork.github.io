@@ -1,0 +1,17 @@
+{
+  "date": "2026-05-19",
+  "themes": ["AI agents", "science", "life sciences", "AI safety"],
+  "title": {
+    "en": "Self-Play for Science: Inside Co-Scientist's Multi-Agent Architecture",
+    "ja": "科学のための自己対戦 ―― Co-Scientist のマルチエージェント・アーキテクチャの内側",
+    "zh": "为科学而生的自我对弈：深入 Co-Scientist 的多智能体架构"
+  },
+  "excerpt": {
+    "en": "Co-Scientist is AlphaGo pointed at hypothesis space: six Gemini agents ranking ideas through an Elo tournament, with most of the compute spent on verification — because a debate reward optimizes for 'persuasive to Gemini,' not 'true.' It simulates a scientific institution, not a mind, and its dual-use edge (zoonotic virulence) gets a paragraph where it needed a pillar.",
+    "ja": "Co-Scientist は仮説空間に向けられた AlphaGo だ――六つの Gemini エージェントが Elo トーナメントで着想を順位づけ、計算の大半を検証に費やす。討論報酬は「真」ではなく「Gemini にとって説得的」を最適化するからだ。それは心ではなく科学的制度をシミュレートし、そのデュアルユースの縁（動物由来病原性）は柱を要したところで一段落しか得ていない。",
+    "zh": "Co-Scientist 是对准假设空间的 AlphaGo——六个 Gemini 智能体通过 Elo 锦标赛为构想排名，而计算的大半花在验证上，因为辩论奖励优化的是「对 Gemini 有说服力」，而非「真」。它模拟的是一个科学制度而非一颗心智，而它双重用途的边缘（动物源性毒力）在本该是柱子之处只得到一段。"
+  },
+  "sources": [
+    { "file": "Co-Scientist_ A multi-agent AI partner to accelerate research.md", "hash": "sha256:31fdb4deb1b726cf2d81fceb3405861f5696efba33d910c97027a06a2754c4fd" }
+  ]
+}

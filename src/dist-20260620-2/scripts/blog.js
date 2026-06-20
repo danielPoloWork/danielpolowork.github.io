@@ -64,16 +64,49 @@
 
   /* ---------- Full list (blog.html) ---------- */
   var PAGE_SIZE = 10;            // X posts per page before the paginator kicks in
-  var state = { q: "", topic: "", sort: "newest", page: 1 };
-  var chipsWrap = null;          // cached so chip clicks don't rebuild (and don't steal focus)
+  var state = { q: "", topic: "", sort: "newest", page: 1 };  // topic = normalised theme key ("" = all)
+  var topicOpen = false;         // dropdown open state (persists across list re-renders)
+
+  // Themes are FREE tags: they drift in casing ("AI safety" vs "AI Safety") and pile up a long
+  // singleton tail. Group them case-insensitively into ONE entry per theme, count posts per
+  // theme, and display the dominant casing — so the filter stays clean and self-heals as posts
+  // are added. (state.topic holds the normalised key; matching is case-insensitive.)
+  function norm(th) { return String(th == null ? "" : th).trim().toLowerCase(); }
+
+  function topicModel() {
+    var map = {};
+    posts.forEach(function (p) {
+      var seen = {};
+      (p.themes || []).forEach(function (th) {
+        var k = norm(th);
+        if (!k || seen[k]) return;          // count each post once per theme
+        seen[k] = 1;
+        if (!map[k]) map[k] = { count: 0, variants: {} };
+        map[k].count++;
+        map[k].variants[th] = (map[k].variants[th] || 0) + 1;
+      });
+    });
+    return Object.keys(map).map(function (k) {
+      var m = map[k], label = k, best = -1;
+      Object.keys(m.variants).forEach(function (v) { if (m.variants[v] > best) { best = m.variants[v]; label = v; } });
+      return { key: k, label: label, count: m.count };
+    }).sort(function (a, b) { return b.count - a.count || (a.label.toLowerCase() < b.label.toLowerCase() ? -1 : 1); });
+  }
+
+  // Display label for the current selection (themes are not translated; "All" is localised).
+  function topicLabel() {
+    if (!state.topic) return t("blog.all");
+    var rows = topicModel();
+    for (var i = 0; i < rows.length; i++) if (rows[i].key === state.topic) return rows[i].label;
+    return t("blog.all");
+  }
 
   // Controls are built once per load / language switch — NOT on every keystroke, so the
-  // search field keeps focus while typing. Filter/sort/chip changes only re-render the list.
+  // search field keeps focus while typing. Filter/sort changes only re-render the list.
   function buildControls() {
     var bar = document.getElementById("blogControls");
     if (!bar) return;
     bar.innerHTML = "";
-    chipsWrap = null;
 
     var search = el("input", "blog-search");
     search.type = "search";
@@ -82,17 +115,7 @@
     search.addEventListener("input", function () { state.q = search.value; state.page = 1; renderList(); });
     bar.appendChild(search);
 
-    // topic chips (unique topics across posts; the data field stays `themes`)
-    var topics = [];
-    posts.forEach(function (p) { (p.themes || []).forEach(function (th) { if (topics.indexOf(th) < 0) topics.push(th); }); });
-    if (topics.length) {
-      var hg = el("div", "filter-group");
-      hg.appendChild(el("span", "fg-label", esc(t("blog.filterTopic"))));
-      addChip(hg, t("blog.all"), "");
-      topics.sort().forEach(function (th) { addChip(hg, th, th); });
-      bar.appendChild(hg);
-      chipsWrap = hg;
-    }
+    bar.appendChild(buildTopicFilter());
 
     var sort = el("select", "blog-sort");
     sort.innerHTML = '<option value="newest">' + esc(t("blog.sortNewest")) + '</option><option value="oldest">' + esc(t("blog.sortOldest")) + "</option>";
@@ -101,29 +124,74 @@
     bar.appendChild(sort);
   }
 
-  function addChip(wrap, label, value) {
-    var b = el("button", "chip" + (state.topic === value ? " active" : ""), esc(label));
-    b.type = "button";
-    b.setAttribute("data-topic", value);
-    b.addEventListener("click", function () {
-      state.topic = value; state.page = 1;
-      refreshChips(); renderList();
-    });
-    wrap.appendChild(b);
-  }
+  // Compact single-select dropdown of every theme (with per-theme post counts), replacing the
+  // flat chip wall. Outside-click / Escape close is handled here + a single document listener.
+  function buildTopicFilter() {
+    var wrap = el("div", "topic-filter");
 
-  function refreshChips() {
-    if (!chipsWrap) return;
-    var bs = chipsWrap.querySelectorAll(".chip");
-    for (var i = 0; i < bs.length; i++) {
-      bs[i].className = bs[i].getAttribute("data-topic") === state.topic ? "chip active" : "chip";
+    var btn = el("button", "topic-btn");
+    btn.type = "button";
+    btn.setAttribute("aria-haspopup", "listbox");
+    btn.setAttribute("aria-expanded", "false");
+    btn.innerHTML = '<span class="tf-label">' + esc(t("blog.filterTopic")) + '</span>' +
+      '<span class="tf-value">' + esc(topicLabel()) + '</span>' +
+      '<svg class="tf-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
+    wrap.appendChild(btn);
+
+    var menu = el("div", "topic-menu");
+    menu.setAttribute("role", "listbox");
+    menu.hidden = true;
+    wrap.appendChild(menu);
+
+    function setValue() { var v = wrap.querySelector(".tf-value"); if (v) v.textContent = topicLabel(); }
+    function open() { menu.hidden = false; topicOpen = true; btn.setAttribute("aria-expanded", "true"); wrap.className = "topic-filter open"; }
+    function close() { menu.hidden = true; topicOpen = false; btn.setAttribute("aria-expanded", "false"); wrap.className = "topic-filter"; }
+    wrap._close = close;   // reached by the document-level outside-click handler
+
+    function addOption(key, label, count) {
+      var sel = state.topic === key;
+      var o = el("button", "tf-opt" + (sel ? " active" : ""));
+      o.type = "button";
+      o.setAttribute("role", "option");
+      o.setAttribute("aria-selected", sel ? "true" : "false");
+      o.innerHTML = '<span class="tf-opt-label">' + esc(label) + '</span><span class="tf-count">' + count + '</span>';
+      o.addEventListener("click", function () {
+        state.topic = key; state.page = 1;
+        close(); setValue();
+        var opts = menu.querySelectorAll(".tf-opt");
+        for (var i = 0; i < opts.length; i++) { opts[i].className = "tf-opt"; opts[i].setAttribute("aria-selected", "false"); }
+        o.className = "tf-opt active"; o.setAttribute("aria-selected", "true");
+        renderList(); btn.focus();
+      });
+      menu.appendChild(o);
     }
+
+    addOption("", t("blog.all"), posts.length);
+    topicModel().forEach(function (r) { addOption(r.key, r.label, r.count); });
+
+    btn.addEventListener("click", function () { menu.hidden ? open() : close(); });
+    btn.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") {
+        e.preventDefault(); open();
+        var f = menu.querySelector(".tf-opt.active") || menu.querySelector(".tf-opt");
+        if (f) f.focus();
+      }
+    });
+    menu.addEventListener("keydown", function (e) {
+      var opts = Array.prototype.slice.call(menu.querySelectorAll(".tf-opt"));
+      var i = opts.indexOf(document.activeElement);
+      if (e.key === "ArrowDown") { e.preventDefault(); (opts[i + 1] || opts[0]).focus(); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); (opts[i - 1] || opts[opts.length - 1]).focus(); }
+      else if (e.key === "Escape") { e.preventDefault(); close(); btn.focus(); }
+    });
+
+    return wrap;
   }
 
   function filteredRows() {
     var q = state.q.trim().toLowerCase();
     var rows = posts.filter(function (p) {
-      if (state.topic && (p.themes || []).indexOf(state.topic) < 0) return false;
+      if (state.topic && !(p.themes || []).some(function (th) { return norm(th) === state.topic; })) return false;
       if (q) {
         var hay = (pick(p.title) + " " + pick(p.excerpt) + " " + (p.themes || []).join(" ")).toLowerCase();
         if (hay.indexOf(q) < 0) return false;
@@ -235,5 +303,13 @@
 
   document.querySelectorAll("#lang button").forEach(function (b) {
     b.addEventListener("click", function () { setTimeout(draw, 0); });
+  });
+
+  // One document-level listener (not re-bound per control rebuild) closes the topic dropdown
+  // on any click outside it.
+  document.addEventListener("click", function (e) {
+    if (!topicOpen) return;
+    var wrap = document.querySelector(".topic-filter");
+    if (wrap && !wrap.contains(e.target) && wrap._close) wrap._close();
   });
 })();

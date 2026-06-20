@@ -21,21 +21,6 @@
   outline: none; border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
-.filter-group { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; }
-.filter-group .fg-label {
-  font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted);
-  text-transform: uppercase; letter-spacing: 0.04em; margin-right: 2px;
-}
-.chip {
-  font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-soft);
-  background: var(--surface); border: 1px solid var(--border-strong);
-  padding: 5px 12px; border-radius: 999px; cursor: pointer;
-  transition: all 0.18s ease; white-space: nowrap;
-}
-.chip:hover { border-color: var(--accent); color: var(--accent); }
-.chip.active {
-  background: var(--accent); border-color: var(--accent); color: var(--on-accent);
-}
 .blog-sort {
   font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-soft);
   background: var(--surface); border: 1px solid var(--border-strong);

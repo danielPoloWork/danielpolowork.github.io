@@ -1,0 +1,25 @@
+{
+  "date": "2026-06-10",
+  "themes": [
+    "AI",
+    "GPU computing",
+    "edge computing"
+  ],
+  "vendor": "NVIDIA",
+  "title": {
+    "en": "Moving the Bottleneck: Why DiffusionGemma's Parallel Text Wakes Up the GPU",
+    "ja": "ボトルネックを動かす ―― DiffusionGemma の並列テキストはなぜ GPU を目覚めさせるのか",
+    "zh": "挪动瓶颈：DiffusionGemma 的并行文本为何唤醒了 GPU"
+  },
+  "excerpt": {
+    "en": "DiffusionGemma denoises 256 tokens in parallel instead of typing one at a time — and that single change flips local inference from memory-bound to compute-bound, finally putting NVIDIA's idle Tensor Cores to work. The 4x speedup is real but explicitly single-user; the unproven part is whether parallel blocks hold the line on quality.",
+    "ja": "DiffusionGemma は一度に一トークンを打つのではなく 256 トークンを並列にノイズ除去する ―― そのたった一つの変更が、ローカル推論をメモリ律速から計算律速へひっくり返し、遊んでいた NVIDIA の Tensor Core をついに働かせる。4 倍の高速化は本物だが明示的にシングルユーザー限定であり、並列ブロックが品質を保てるかは未証明だ。",
+    "zh": "DiffusionGemma 并行地对 256 个 token 去噪，而非一次敲一个 —— 这一个改动就把本地推理从内存受限翻转为计算受限，终于让 NVIDIA 闲置的 Tensor Core 动了起来。4 倍提速是真的，但明确限于单用户；尚未证明的，是并行块能否守住质量。"
+  },
+  "sources": [
+    {
+      "file": "NVIDIA Accelerates Google DeepMind’s DiffusionGemma for Local AI.md",
+      "hash": "sha256:442d4756796295762461edad049b85b9ae622f2694beb586016636e2c158966c"
+    }
+  ]
+}

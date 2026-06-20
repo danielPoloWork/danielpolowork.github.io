@@ -1,0 +1,17 @@
+{
+  "date": "2026-05-28",
+  "themes": ["AI agents", "software development", "enterprise", "productivity"],
+  "title": {
+    "en": "The Agent Interface Has Standardized: Reading Mistral's Vibe",
+    "ja": "エージェントのインターフェースは標準化した ―― Mistral の Vibe を読む",
+    "zh": "智能体的界面已经标准化：解读 Mistral 的 Vibe"
+  },
+  "excerpt": {
+    "en": "Vibe renames Le Chat into a unified work-and-code agent — and its feature list (skills, subagents, session-scoped permissions, plan-then-execute, CLI/IDE parity) is now the de facto reference architecture of the coding agent. The sharper read: Code Mode is the safer mode because engineering already invented the review gate, while Work Mode acts on live systems behind only a plan sign-off.",
+    "ja": "Vibe は Le Chat を統一された業務・コードエージェントへ改名する――その機能リスト（スキル、サブエージェント、セッションスコープ権限、計画してから実行、CLI/IDE パリティ）はいまやコーディングエージェントの事実上の参照アーキテクチャだ。より鋭い読み――工学がすでにレビューゲートを発明したがゆえに Code モードがより安全で、Work モードは計画署名だけの背後でライブシステムに作用する。",
+    "zh": "Vibe 把 Le Chat 改名为一个统一的工作与代码智能体——而它的功能清单（技能、子智能体、会话作用域权限、先计划后执行、CLI/IDE 对等）如今是编码智能体的事实上的参考架构。更锐利的读法——Code 模式是更安全的那个，因为工程早已发明了审阅闸门，而 Work 模式只在计划签字的背后作用于活动系统。"
+  },
+  "sources": [
+    { "file": "Vibe gets to work..md", "hash": "sha256:6924c05aa710110a46bb52909ea15628dbaff6fcb2e2a13307000ec5313278ad" }
+  ]
+}

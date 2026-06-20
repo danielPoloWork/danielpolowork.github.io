@@ -1,6 +1,12 @@
 {
   "date": "2026-05-05",
-  "themes": ["AI", "AI safety", "privacy", "enterprise"],
+  "themes": [
+    "AI",
+    "AI safety",
+    "privacy",
+    "enterprise"
+  ],
+  "vendor": "OpenAI",
   "title": {
     "en": "Sharper, Shorter, Yours: The Three-Way Tension in GPT-5.5 Instant",
     "ja": "より鋭く、より短く、あなた向けに ―― GPT-5.5 Instant の三つ巴の緊張",
@@ -12,6 +18,9 @@
     "zh": "GPT-5.5 Instant 更新了被数亿人每天使用的默认模型——更事实（高风险提示上幻觉减少 52.5%）、更简洁、更个性化。但个性化为你优化、事实性为世界优化、简洁与完整相抵：这些被当作同时兑现的胜利来兜售，实则部分地是权衡。"
   },
   "sources": [
-    { "file": "GPT-5.5 Instant_ più intelligente, chiaro e personalizzato.md", "hash": "sha256:7938ad5233760834bfbe5e895c9fe57feaa4959da455c6190e4804aceaaf7883" }
+    {
+      "file": "GPT-5.5 Instant_ più intelligente, chiaro e personalizzato.md",
+      "hash": "sha256:7938ad5233760834bfbe5e895c9fe57feaa4959da455c6190e4804aceaaf7883"
+    }
   ]
 }

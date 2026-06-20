@@ -1,6 +1,12 @@
 {
   "date": "2026-06-11",
-  "themes": ["AI safety", "AI agents", "AI", "research"],
+  "themes": [
+    "AI safety",
+    "AI agents",
+    "AI",
+    "research"
+  ],
+  "vendor": "Google",
   "title": {
     "en": "From Psychology to Epidemiology: DeepMind's $10M Multi-Agent Safety Call",
     "ja": "心理学から疫学へ ―― DeepMind の 1,000 万ドル・マルチエージェント安全性公募",
@@ -12,6 +18,9 @@
     "zh": "DeepMind 的 1,000 万美元资助公募，静静地承认单模型安全无法在一个数百万智能体彼此交互的世界里幸存。问题从心理学（这个心智对齐了吗）转向流行病学（这个种群稳定吗）——而这一切背后那个未被点名的先例，就是闪崩。"
   },
   "sources": [
-    { "file": "Google DeepMind and partners announce multi-agent safety research funding call..md", "hash": "sha256:27adba701c40317b20cbb374982e757e18082e5c5acba01031115e4bb30378bd" }
+    {
+      "file": "Google DeepMind and partners announce multi-agent safety research funding call..md",
+      "hash": "sha256:27adba701c40317b20cbb374982e757e18082e5c5acba01031115e4bb30378bd"
+    }
   ]
 }

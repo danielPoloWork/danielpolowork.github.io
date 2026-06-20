@@ -64,26 +64,27 @@
 
   /* ---------- Full list (blog.html) ---------- */
   var PAGE_SIZE = 10;            // X posts per page before the paginator kicks in
-  var state = { q: "", topic: "", sort: "newest", page: 1 };  // topic = normalised theme key ("" = all)
-  var topicOpen = false;         // dropdown open state (persists across list re-renders)
+  var state = { q: "", topic: "", vendor: "", sort: "newest", page: 1 };  // topic/vendor = normalised keys ("" = all)
 
-  // Themes are FREE tags: they drift in casing ("AI safety" vs "AI Safety") and pile up a long
-  // singleton tail. Group them case-insensitively into ONE entry per theme, count posts per
-  // theme, and display the dominant casing — so the filter stays clean and self-heals as posts
-  // are added. (state.topic holds the normalised key; matching is case-insensitive.)
-  function norm(th) { return String(th == null ? "" : th).trim().toLowerCase(); }
+  // Facets (themes + maker) are derived from the posts. Themes are FREE tags that drift in casing
+  // ("AI safety" vs "AI Safety") and pile up a long singleton tail, so we group case-insensitively
+  // into ONE entry per value, count posts per value, and display the dominant casing — self-healing
+  // as posts are added. state.<facet> holds the normalised key; matching is case-insensitive.
+  function norm(v) { return String(v == null ? "" : v).trim().toLowerCase(); }
+  function themesOf(p) { return p.themes || []; }
+  function vendorOf(p) { return p.vendor ? [p.vendor] : []; }
 
-  function topicModel() {
+  function facetModel(valuesOf) {
     var map = {};
     posts.forEach(function (p) {
       var seen = {};
-      (p.themes || []).forEach(function (th) {
-        var k = norm(th);
-        if (!k || seen[k]) return;          // count each post once per theme
+      valuesOf(p).forEach(function (raw) {
+        var k = norm(raw);
+        if (!k || seen[k]) return;          // count each post once per value
         seen[k] = 1;
         if (!map[k]) map[k] = { count: 0, variants: {} };
         map[k].count++;
-        map[k].variants[th] = (map[k].variants[th] || 0) + 1;
+        map[k].variants[raw] = (map[k].variants[raw] || 0) + 1;
       });
     });
     return Object.keys(map).map(function (k) {
@@ -93,12 +94,17 @@
     }).sort(function (a, b) { return b.count - a.count || (a.label.toLowerCase() < b.label.toLowerCase() ? -1 : 1); });
   }
 
-  // Display label for the current selection (themes are not translated; "All" is localised).
-  function topicLabel() {
-    if (!state.topic) return t("blog.all");
-    var rows = topicModel();
-    for (var i = 0; i < rows.length; i++) if (rows[i].key === state.topic) return rows[i].label;
+  // Display label for a selection (values are not translated; "All" is localised).
+  function facetLabel(rows, key) {
+    if (!key) return t("blog.all");
+    for (var i = 0; i < rows.length; i++) if (rows[i].key === key) return rows[i].label;
     return t("blog.all");
+  }
+
+  // Close every open facet dropdown except `keep` (one open at a time + outside-click close).
+  function closeFacets(keep) {
+    var open = document.querySelectorAll(".topic-filter.open");
+    for (var i = 0; i < open.length; i++) if (open[i] !== keep && open[i]._close) open[i]._close();
   }
 
   // Controls are built once per load / language switch — NOT on every keystroke, so the
@@ -115,7 +121,11 @@
     search.addEventListener("input", function () { state.q = search.value; state.page = 1; renderList(); });
     bar.appendChild(search);
 
-    bar.appendChild(buildTopicFilter());
+    var topics = facetModel(themesOf);
+    if (topics.length) bar.appendChild(buildFacetFilter({ stateKey: "topic", labelKey: "blog.filterTopic", rows: topics }));
+
+    var makers = facetModel(vendorOf);
+    if (makers.length) bar.appendChild(buildFacetFilter({ stateKey: "vendor", labelKey: "blog.filterMaker", rows: makers }));
 
     var sort = el("select", "blog-sort");
     sort.innerHTML = '<option value="newest">' + esc(t("blog.sortNewest")) + '</option><option value="oldest">' + esc(t("blog.sortOldest")) + "</option>";
@@ -124,17 +134,18 @@
     bar.appendChild(sort);
   }
 
-  // Compact single-select dropdown of every theme (with per-theme post counts), replacing the
-  // flat chip wall. Outside-click / Escape close is handled here + a single document listener.
-  function buildTopicFilter() {
+  // Compact single-select dropdown for one facet (with per-value post counts), replacing the flat
+  // chip wall. Keyboard (Arrow/Enter/Esc) + outside-click close (via the document listener) included.
+  function buildFacetFilter(cfg) {
+    var rows = cfg.rows, key = cfg.stateKey;
     var wrap = el("div", "topic-filter");
 
     var btn = el("button", "topic-btn");
     btn.type = "button";
     btn.setAttribute("aria-haspopup", "listbox");
     btn.setAttribute("aria-expanded", "false");
-    btn.innerHTML = '<span class="tf-label">' + esc(t("blog.filterTopic")) + '</span>' +
-      '<span class="tf-value">' + esc(topicLabel()) + '</span>' +
+    btn.innerHTML = '<span class="tf-label">' + esc(t(cfg.labelKey)) + '</span>' +
+      '<span class="tf-value">' + esc(facetLabel(rows, state[key])) + '</span>' +
       '<svg class="tf-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
     wrap.appendChild(btn);
 
@@ -143,20 +154,20 @@
     menu.hidden = true;
     wrap.appendChild(menu);
 
-    function setValue() { var v = wrap.querySelector(".tf-value"); if (v) v.textContent = topicLabel(); }
-    function open() { menu.hidden = false; topicOpen = true; btn.setAttribute("aria-expanded", "true"); wrap.className = "topic-filter open"; }
-    function close() { menu.hidden = true; topicOpen = false; btn.setAttribute("aria-expanded", "false"); wrap.className = "topic-filter"; }
-    wrap._close = close;   // reached by the document-level outside-click handler
+    function setValue() { var v = wrap.querySelector(".tf-value"); if (v) v.textContent = facetLabel(rows, state[key]); }
+    function open() { closeFacets(wrap); menu.hidden = false; btn.setAttribute("aria-expanded", "true"); wrap.className = "topic-filter open"; }
+    function close() { menu.hidden = true; btn.setAttribute("aria-expanded", "false"); wrap.className = "topic-filter"; }
+    wrap._close = close;   // reached by closeFacets + the document-level outside-click handler
 
-    function addOption(key, label, count) {
-      var sel = state.topic === key;
+    function addOption(optKey, label, count) {
+      var sel = state[key] === optKey;
       var o = el("button", "tf-opt" + (sel ? " active" : ""));
       o.type = "button";
       o.setAttribute("role", "option");
       o.setAttribute("aria-selected", sel ? "true" : "false");
       o.innerHTML = '<span class="tf-opt-label">' + esc(label) + '</span><span class="tf-count">' + count + '</span>';
       o.addEventListener("click", function () {
-        state.topic = key; state.page = 1;
+        state[key] = optKey; state.page = 1;
         close(); setValue();
         var opts = menu.querySelectorAll(".tf-opt");
         for (var i = 0; i < opts.length; i++) { opts[i].className = "tf-opt"; opts[i].setAttribute("aria-selected", "false"); }
@@ -167,7 +178,7 @@
     }
 
     addOption("", t("blog.all"), posts.length);
-    topicModel().forEach(function (r) { addOption(r.key, r.label, r.count); });
+    rows.forEach(function (r) { addOption(r.key, r.label, r.count); });
 
     btn.addEventListener("click", function () { menu.hidden ? open() : close(); });
     btn.addEventListener("keydown", function (e) {
@@ -191,9 +202,10 @@
   function filteredRows() {
     var q = state.q.trim().toLowerCase();
     var rows = posts.filter(function (p) {
-      if (state.topic && !(p.themes || []).some(function (th) { return norm(th) === state.topic; })) return false;
+      if (state.topic && !themesOf(p).some(function (th) { return norm(th) === state.topic; })) return false;
+      if (state.vendor && norm(p.vendor) !== state.vendor) return false;
       if (q) {
-        var hay = (pick(p.title) + " " + pick(p.excerpt) + " " + (p.themes || []).join(" ")).toLowerCase();
+        var hay = (pick(p.title) + " " + pick(p.excerpt) + " " + (p.themes || []).join(" ") + " " + (p.vendor || "")).toLowerCase();
         if (hay.indexOf(q) < 0) return false;
       }
       return true;
@@ -305,11 +317,10 @@
     b.addEventListener("click", function () { setTimeout(draw, 0); });
   });
 
-  // One document-level listener (not re-bound per control rebuild) closes the topic dropdown
-  // on any click outside it.
+  // One document-level listener (not re-bound per control rebuild) closes any open facet
+  // dropdown on a click outside it.
   document.addEventListener("click", function (e) {
-    if (!topicOpen) return;
-    var wrap = document.querySelector(".topic-filter");
-    if (wrap && !wrap.contains(e.target) && wrap._close) wrap._close();
+    var open = document.querySelectorAll(".topic-filter.open");
+    for (var i = 0; i < open.length; i++) if (!open[i].contains(e.target) && open[i]._close) open[i]._close();
   });
 })();

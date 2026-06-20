@@ -1,6 +1,12 @@
 {
   "date": "2026-05-19",
-  "themes": ["AI", "AI agents", "science", "life sciences"],
+  "themes": [
+    "AI",
+    "AI agents",
+    "science",
+    "life sciences"
+  ],
+  "vendor": "Google",
   "title": {
     "en": "Automating the Hypothesis: Gemini for Science and the Inversion of Creative Labor",
     "ja": "仮説を自動化する ―― Gemini for Science と創造的労働の反転",
@@ -12,6 +18,9 @@
     "zh": "Gemini for Science 自动化了构思——假设生成、文献综合、新颖建模——反转了「AI 干苦力、人类保留创造力」的安心故事。但 Co-Scientist 与 AlphaEvolve 优化的是指标，而非真理：它们让假设变便宜，却不让验证变便宜；而「发现来自通用智能体」这一赌注，是一边援引狭窄专家 AlphaFold 一边下的。"
   },
   "sources": [
-    { "file": "Gemini for Science_ AI experiments and tools for a new era of discovery.md", "hash": "sha256:baa07f35fa82b3a15674b10680da49c5e7d091557a99118527a656201feca2df" }
+    {
+      "file": "Gemini for Science_ AI experiments and tools for a new era of discovery.md",
+      "hash": "sha256:baa07f35fa82b3a15674b10680da49c5e7d091557a99118527a656201feca2df"
+    }
   ]
 }

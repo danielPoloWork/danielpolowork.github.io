@@ -1,6 +1,12 @@
 {
   "date": "2026-05-28",
-  "themes": ["AI agents", "software development", "enterprise", "productivity"],
+  "themes": [
+    "AI agents",
+    "software development",
+    "enterprise",
+    "productivity"
+  ],
+  "vendor": "Mistral",
   "title": {
     "en": "The Agent Interface Has Standardized: Reading Mistral's Vibe",
     "ja": "エージェントのインターフェースは標準化した ―― Mistral の Vibe を読む",
@@ -12,6 +18,9 @@
     "zh": "Vibe 把 Le Chat 改名为一个统一的工作与代码智能体——而它的功能清单（技能、子智能体、会话作用域权限、先计划后执行、CLI/IDE 对等）如今是编码智能体的事实上的参考架构。更锐利的读法——Code 模式是更安全的那个，因为工程早已发明了审阅闸门，而 Work 模式只在计划签字的背后作用于活动系统。"
   },
   "sources": [
-    { "file": "Vibe gets to work..md", "hash": "sha256:6924c05aa710110a46bb52909ea15628dbaff6fcb2e2a13307000ec5313278ad" }
+    {
+      "file": "Vibe gets to work..md",
+      "hash": "sha256:6924c05aa710110a46bb52909ea15628dbaff6fcb2e2a13307000ec5313278ad"
+    }
   ]
 }

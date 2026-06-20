@@ -1,6 +1,11 @@
 {
   "date": "2026-06-12",
-  "themes": ["AI", "Knowledge Management", "Software Development"],
+  "themes": [
+    "AI",
+    "Knowledge Management",
+    "Software Development"
+  ],
+  "vendor": "Google",
   "title": {
     "en": "The Format I Was Already Writing by Hand: Inside the Open Knowledge Format",
     "ja": "私がすでに手で書いていたフォーマット：Open Knowledge Format を読む",

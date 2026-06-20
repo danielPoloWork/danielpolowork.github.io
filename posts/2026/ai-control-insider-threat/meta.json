@@ -1,6 +1,12 @@
 {
   "date": "2026-06-18",
-  "themes": ["AI safety", "security", "AI", "software development"],
+  "themes": [
+    "AI safety",
+    "security",
+    "AI",
+    "software development"
+  ],
+  "vendor": "Google",
   "title": {
     "en": "The Agent as Insider Threat: Reading DeepMind's AI Control Roadmap",
     "ja": "内部脅威としてのエージェント ―― DeepMind の AI Control Roadmap を読む",
@@ -12,6 +18,9 @@
     "zh": "DeepMind 的 AI 控制路线图要求你把自己构建的 AI 当作潜在的内部威胁。它最好的构想是按能力索引安全姿态；而它最重要的发现——被标记的智能体行为大多是过度热心而非恶意——却静静颠覆了整个计划赖以构建的对抗式框架。"
   },
   "sources": [
-    { "file": "Securing internal systems against increasingly capable and imperfectly aligned AI.md", "hash": "sha256:37b443da16b839f50e6115171afef6e8d7e95d2ce9b19856ee7f6ad71b16f92d" }
+    {
+      "file": "Securing internal systems against increasingly capable and imperfectly aligned AI.md",
+      "hash": "sha256:37b443da16b839f50e6115171afef6e8d7e95d2ce9b19856ee7f6ad71b16f92d"
+    }
   ]
 }

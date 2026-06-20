@@ -1,6 +1,12 @@
 {
   "date": "2026-05-27",
-  "themes": ["AI", "machine learning", "engineering", "manufacturing"],
+  "themes": [
+    "AI",
+    "machine learning",
+    "engineering",
+    "manufacturing"
+  ],
+  "vendor": "Mistral",
   "title": {
     "en": "Physics, Made Affordable: Mistral's Physics AI and the Verification Tail",
     "ja": "手の届く物理へ ―― Mistral の Physics AI と検証の尾",
@@ -12,6 +18,9 @@
     "zh": "Mistral 的 physics AI 在 CFD/FEM 求解器要花集群数小时之处、数秒内预测出完整的物理场——但它不造新物理，而是让旧物理变得负担得起。它是贯穿整个领域那条模式的工程版——快速近似外加一条验证的尾巴，寄生于它所加速的那些求解器，在插值已知设计时最可信，在探索最想要的新颖角落里最不可信。"
   },
   "sources": [
-    { "file": "Introducing physics AI at Mistral_ the foundation for engineering acceleration..md", "hash": "sha256:2d9c4d8fb44200101bdf30bde7275bc46d6f295291b4edf8b684a147ce75e8c9" }
+    {
+      "file": "Introducing physics AI at Mistral_ the foundation for engineering acceleration..md",
+      "hash": "sha256:2d9c4d8fb44200101bdf30bde7275bc46d6f295291b4edf8b684a147ce75e8c9"
+    }
   ]
 }

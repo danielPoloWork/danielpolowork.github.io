@@ -1,6 +1,12 @@
 {
   "date": "2026-06-09",
-  "themes": ["AI", "software development", "life sciences", "AI safety"],
+  "themes": [
+    "AI",
+    "software development",
+    "life sciences",
+    "AI safety"
+  ],
+  "vendor": "Anthropic",
   "title": {
     "en": "Capability and Restraint: Reading the Fable 5 / Mythos 5 Launch",
     "ja": "能力と抑制 ―― Fable 5 / Mythos 5 ローンチを読む",
@@ -12,6 +18,9 @@
     "zh": "Fable 5 与 Mythos 5 是作为两款产品出售的单一前沿模型，将二者分隔的只是一层安全防护。三天之后的暂停，把这次发布变成了一场检验预防性封锁究竟出于原则还是临场应付的活体试验。"
   },
   "sources": [
-    { "file": "Claude Fable 5 and Claude Mythos 5.md", "hash": "sha256:ad2858386b2b2366ad1b9e7401e9734324441d061e1e8f3e1db3e08f7cfaee71" }
+    {
+      "file": "Claude Fable 5 and Claude Mythos 5.md",
+      "hash": "sha256:ad2858386b2b2366ad1b9e7401e9734324441d061e1e8f3e1db3e08f7cfaee71"
+    }
   ]
 }

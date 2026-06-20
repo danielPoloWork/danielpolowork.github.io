@@ -1,6 +1,12 @@
 {
   "date": "2026-06-10",
-  "themes": ["AI", "machine learning", "software development", "edge computing"],
+  "themes": [
+    "AI",
+    "machine learning",
+    "software development",
+    "edge computing"
+  ],
+  "vendor": "Google",
   "title": {
     "en": "Two Decoders for Two Computers: Reading DiffusionGemma's 4x Claim",
     "ja": "二台のコンピュータに二つのデコーダ ―― DiffusionGemma の「4 倍」を読む",
@@ -12,6 +18,9 @@
     "zh": "DiffusionGemma 并行生成 256 个 token，而非一次一个，宣称输出快 4 倍。但那个头条数字是最无趣的部分：真正的故事是它挪动的是哪道瓶颈、为何这一胜利在云端反转，以及一项自回归从结构上无法企及的双向注意力能力。"
   },
   "sources": [
-    { "file": "DiffusionGemma_ 4x faster text generation.md", "hash": "sha256:849d5fb460732bcbb7951b294e70a300895711e2c77a122d4d371c49342e54d9" }
+    {
+      "file": "DiffusionGemma_ 4x faster text generation.md",
+      "hash": "sha256:849d5fb460732bcbb7951b294e70a300895711e2c77a122d4d371c49342e54d9"
+    }
   ]
 }

@@ -21,6 +21,9 @@ is extra authoring direction (see below).
 - **date** — `YYYY-MM-DD` (ask the user; the runtime forbids `new Date()`, so never guess).
 - **themes** — free tags from the blog's domain (AI, software development, and the broader
   world of building and advancing the field). Infer 1–3 from the sources and confirm.
+- **vendor** (optional) — the AI lab/company the post is mainly about (`Google`, `Anthropic`,
+  `OpenAI`, `Mistral`, …). Infer from the sources and confirm; **omit** for vendor-agnostic
+  posts. Powers the blog's **Maker** filter, so use the company name, not the product.
 - **extra guidance** — `$ARGUMENTS`: free-form instructions the user typed after the
   command (e.g. angle to take, points to stress or avoid, tone, target length, a source to
   foreground, a thesis to argue). Treat it as authoring direction layered **on top of** the
@@ -82,7 +85,7 @@ language):
 Write `posts/<YYYY>/<slug>/meta.json` — the per-post **source of truth**. Do NOT hand-edit
 `posts/index.json`; it is generated.
 ```json
-{ "date": "<date>", "themes": [...],
+{ "date": "<date>", "themes": [...], "vendor": "<AI lab/company, or omit if agnostic>",
   "title":   { "en": "...", "ja": "...", "zh": "..." },
   "excerpt": { "en": "...", "ja": "...", "zh": "..." },
   "sources": [ { "file": "<raw filename>", "hash": "sha256:<from check-source.mjs>" } ] }

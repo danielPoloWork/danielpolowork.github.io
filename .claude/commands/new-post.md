@@ -13,6 +13,8 @@ truth for the list. Every post is one article with four sections; there is no pe
   unique across **all** years.
 - **date** — `YYYY-MM-DD` (ask the user; never invent — the runtime forbids `new Date()`).
 - **themes** — free tags (AI, Software Development, …), shown as-is, not translated.
+- **vendor** (optional) — the AI lab/company the post is mainly about (`Google`, `Anthropic`,
+  `OpenAI`, `Mistral`, …); omit for vendor-agnostic posts. Powers the blog's **Maker** filter.
 - **title** / **excerpt** — `{en,ja,zh}`. If the user gives one language, draft the other
   two faithfully and show them for approval.
 
@@ -36,7 +38,7 @@ truth for the list. Every post is one article with four sections; there is no pe
    (Leave placeholder prose under each heading for the author to fill, or write it if the
    user provides content.)
 2. Write `posts/<YYYY>/<slug>/meta.json` (the per-post source of truth — do NOT hand-edit the
-   generated `posts/index.json`): `{ date, themes, title:{en,ja,zh}, excerpt:{en,ja,zh} }`.
+   generated `posts/index.json`): `{ date, themes, vendor (optional), title:{en,ja,zh}, excerpt:{en,ja,zh} }`.
    The `slug` (folder name) and `path` (`<YYYY>/<slug>`) are not fields — `reindex.mjs` derives
    both into the index.
 3. Regenerate the aggregate: `node tools/reindex.mjs` (rebuilds `posts/index.json`).

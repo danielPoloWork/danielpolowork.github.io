@@ -1,0 +1,25 @@
+{
+  "date": "2026-06-23",
+  "themes": [
+    "AI",
+    "software development",
+    "collaboration"
+  ],
+  "vendor": "Anthropic",
+  "title": {
+    "en": "Claude Tag: From Power Tool to Teammate",
+    "ja": "Claude Tag ―― パワーツールからチームメイトへ",
+    "zh": "Claude Tag：从强力工具到队友"
+  },
+  "excerpt": {
+    "en": "Anthropic calls Claude Tag 'the beginning of an evolution of Claude Code,' but the real move is topological — AI work shifts from a private, ephemeral session to a shared, persistent Slack teammate the whole team can tag. I read the launch note for what it promises (multiplayer, learning, initiative, asynchrony) and for what it under-discloses (agent memory as a new data store, the channel as an expanded trust boundary, configuration as the security perimeter).",
+    "ja": "Anthropic は Claude Tag を「Claude Code の進化の始まり」と呼ぶ。だが本質的な変化はトポロジーにある ―― AI の仕事が、私的で一過性のセッションから、チーム全員がタグ付けできる共有・永続の Slack チームメイトへと移る。私はこのローンチノートを、約束するもの（マルチプレイヤー、学習、主体性、非同期）と、語り落とすもの（新たなデータストアとしてのエージェントメモリ、拡張された信頼境界としてのチャンネル、セキュリティ境界としての構成）の両面から読む。",
+    "zh": "Anthropic 称 Claude Tag 是「Claude Code 进化的开端」，但真正的转变在于拓扑 —— AI 工作从私密、短暂的会话，转向全团队都能 @ 的共享、持久的 Slack 队友。我从两面解读这份发布说明：它承诺了什么（多人协作、学习、主动性、异步），又对什么避而不谈（作为新数据存储的智能体记忆、作为扩展信任边界的频道、作为安全边界的配置）。"
+  },
+  "sources": [
+    {
+      "file": "anthropic-introducing-claude-tag.md",
+      "hash": "sha256:88c9357d56db8d7f95985e037ff0a0ef0bc2e36590542db3cdf9426c91773488"
+    }
+  ]
+}
